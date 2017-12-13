@@ -7,10 +7,13 @@ const windowWidth = window.innerWidth;
 const windowHeight = 750 / 1200 * windowWidth;
 
 
-const imageWidth = windowWidth *  0.083;
-const imageHeight = windowHeight * 0.132;
+const imageWidth = 100;
+const imageHeight = 99;
 const imageX =  548 / 1200 *  windowWidth;
-const imageY = 327 / 750 *  windowHeight;
+function CalculatePositionY() {
+    return (windowHeight - imageHeight) / 2;
+}
+const imageY = CalculatePositionY();
 
 const Fade = ({ children, ...props }) => (
     <CSSTransition
@@ -62,6 +65,7 @@ const styles = {
         width: imageWidth,
         height: imageHeight,
         top: imageY,
+        bottom : imageY,
         left: imageX
     }
 }

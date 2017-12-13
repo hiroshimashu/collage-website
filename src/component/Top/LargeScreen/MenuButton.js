@@ -4,6 +4,10 @@ import Brightness from 'material-ui/svg-icons/image/brightness-1';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import buttonStyle from './buttonStyle';
 import divStyle from './divStyle';
+import AccessMenu from'../../../static/accessMenu.png';
+import AboutMenu from '../../../static/abouMenu.png';
+import ServiceMenu from '../../../static/serviceMenu.png';
+import WorksMenu from '../../../static/worksMenu.png';
 
 class MenuButton extends Component {
     constructor(props) {
@@ -60,10 +64,10 @@ class MenuButton extends Component {
                     <Brightness style = {buttonStyle.b2} onMouseEnter = {this.handleHover2} onMouseLeave = {this.handleHover2} onClick={() => scrollToComponent(this.props.target2, { offset: 0, align: 'top', duration: 500})} />
                     <Brightness style = {buttonStyle.b3} onMouseEnter = {this.handleHover3} onMouseLeave = {this.handleHover3} onClick={() => scrollToComponent(this.props.target3, { offset: 0, align: 'top', duration: 500})} />
                     <Brightness style = {buttonStyle.b4} onMouseEnter = {this.handleHover4} onMouseLeave = {this.handleHover4} onClick={() => scrollToComponent(this.props.target4, { offset: 0, align: 'top', duration: 500})} />
-                    {this.state.hover1 && <div style = {divStyle.div1}>ABOUT</div>}
-                    {this.state.hover2 && <div style = {divStyle.div2}>WORKS</div>}
-                    {this.state.hover3 && <div style = {divStyle.div3}>SERVICE</div>}
-                    {this.state.hover4 && <div style = {divStyle.div4}>ACCESS</div>}
+                    {this.state.hover1 && <img src =  {AboutMenu} style = {divStyle.div1} />}
+                    {this.state.hover2 && <img src =  {WorksMenu} style = {divStyle.div2} />}
+                    {this.state.hover3 && <img src =  {ServiceMenu} style = {divStyle.div3} />}
+                    {this.state.hover4 && <img src =  {AccessMenu}  style = {divStyle.div4} />}
                 </div>
             </MuiThemeProvider>
         );
