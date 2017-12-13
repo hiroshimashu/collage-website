@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Logo from './Logo';
 import AnimationScene1 from './AnimationSceen1';
 import AnimationScene3 from './AnimationSceen3';
 import AnimationScene4 from './AnimationScene4';
@@ -64,7 +63,6 @@ class Scene extends Component {
     render() {
         return(
             <div style = {{position: 'relative', width: windowWidth, height:windowHeight}}>
-                <Logo />
                 <AnimationScene1 handleAnimation = {this.handleThree}/>
                 {this.state.onThree && <Background show =  {this.state.onThree} handleAnimation = {this.handleAnimation1} /> }
                 {this.state.show2 && <AnimationScene3 handleAnimation = {this.handleAnimation2} />}

@@ -31,7 +31,6 @@ class AboutScreen extends Component {
     render() {
         return(
             <div className="aboutWrapper" style = {{position: 'relative', width:windowWidth, height:windowHeight}}>
-                <Logo />
                 <div style = {styles.aboutWrapper}>
                     <AboutTitle />
                     <ConceptTitle />

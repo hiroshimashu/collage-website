@@ -32,7 +32,6 @@ class ServiceScreen extends Component {
             <Router>
                 <MuiThemeProvider>
                     <div style = {{position: 'relative', width: windowWidth, height:windowHeight, backgroundColor: '#f7f7ed'}}>
-                        <Logo />
                         <ServiceTitle />
                         <Share style = {styles.share} />
                         <ServiceSelector />

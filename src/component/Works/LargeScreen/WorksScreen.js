@@ -75,7 +75,6 @@ class WorksScreen2 extends Component {
         return(
             <Fade in = { this.state.show}>
                 <div className="worksWrapper" style = {styles.worksWrapper}>
-                    <img src = {Logo} style = {styles.logo} />
                     <img src = {WorksTitle} style = {styles.title}/>
                     <WorksCard
                         src1 = {Ads}

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { CSSTransition } from 'react-transition-group';
 import '../../../index.css';
+import Collage from './Logo';
 import Logo from '../../../static/collage_red.png';
 import Logo2 from '../../../static/blueCollage.png';
 import Logo3 from '../../../static/pinkCollage.png';
@@ -120,6 +121,7 @@ class AnimationSceen5 extends Component {
         return(
             <Fade in = { this.state.show} timeout = {1000}>
                 <div>
+                    <Collage />
                     <Fade in = {this.state.green} timeout = {2000}>
                         <img src = {Logo} alt = 'sceen1' style = { styles.collage}/>
                     </Fade>

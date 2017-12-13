@@ -19,11 +19,11 @@ function Logo() {
 
 const styles = {
     logo: {
-        position: 'absolute',
+        position: 'fixed',
         width: '42px',
         height: '42px',
-        top: '20px',
-        left: '19px',
+        marginTop: '20px',
+        marginLeft: '19px',
         zIndex:2
     },
 }
