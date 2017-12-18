@@ -81,6 +81,7 @@ class Scene extends Component {
         this.cloud = cloud;
         this.rotation = rotation;
         this.ParticleColor = ParticleColor;
+        this.dirs = [];
         this.mount.appendChild(this.renderer.domElement);
         let orbit = new OrbitControls(camera, this.renderer.domElement);
         this.orbit =  orbit;
@@ -90,13 +91,11 @@ class Scene extends Component {
             this.scene.children.forEach((child) => {
                 if(child instanceof THREE.Points) {
                     let vertices = child.geometry.colors;
-                    console.log(vertices);
                     vertices.forEach(function (v) {
                         v.r = 233/ 255;
                         v.g = 233 / 255;
                         v.b = 233 / 255;
                         v.a = 0.3;
-                        console.log(v);
                     });
                 }
                 child.geometry.colorsNeedUpdate = true;
@@ -124,15 +123,26 @@ class Scene extends Component {
 
             const range = 500;
             for (let i = 0; i < 1000; i++) {
-                let x = Math.random() * range - range / 2;
-                let z = Math.random() * range - range / 2;
-                let theta = Math.atan2(x,z);
+                let vx = (Math.random() * range - range / 2);
+                let vy = (Math.random() * range - range / 2);
+                let vz = (Math.random() * range - range / 2);
+                let x = (Math.random() * range - range / 2);
+                let y = (Math.random() * range - range / 2);
+                let z = (Math.random() * range - range / 2);
+                console.log(vx, vy, vz);
+                let magnitude = Math.sqrt(Math.pow(vx,2) + Math.pow(vy,2) + Math.pow(vz,2));
+                let theta = Math.atan2(vx,vz);
+                let particle = new THREE.Vector3(0, 0, 0); // 極座標
+                particle.magnitude = magnitude;
+                particle.dirs = [x / magnitude, y / magnitude, z / magnitude];
+                particle.velocity = particle.dirs.map(element => element * magnitude);
+                console.log(particle.magnitude);
+                console.log(particle.velocity);
+
+
                 let r = Math.sqrt(Math.pow(x, 2) + Math.pow(z, 2));
                 x = r * Math.cos(theta);
                 z = r * Math.sin(theta);
-                let particle = new THREE.Vector3(x, Math.random() * range - range / 2, z); // 極座標
-                particle.dirs = [];
-                console.log(particle.dirs);
                 particle.aVelocity = 0.01 * Math.random(); // 角速度
                 particle.theta = theta;
                 particle.r = r;
@@ -176,12 +186,16 @@ class Scene extends Component {
             if(child instanceof THREE.Points) {
                 let vertices = child.geometry.vertices;
                 vertices.forEach(function (v) {
-                    if(v.theta > Math.PI) {
-                        v.theta =  -1 * Math.PI;
+                    if(v.magnitude >= 0) {
+                        console.log(v);
+                        v.x += v.velocity[0]
+                        v.y += v.velocity[1];
+                        v.z += v.velocity[2];
+                        v.magnitude = v.magnitude - 100;
+                        v.velocity = v.dirs.map(element => element * v.magnitude);
+                    } else if (v.magnitude <= 0) {
+
                     }
-                    v.theta += v.aVelocity;
-                    v.x = v.r * Math.cos(v.theta);
-                    v.z = v.r * Math.sin(v.theta);
                 });
             }
             child.geometry.verticesNeedUpdate = true;
