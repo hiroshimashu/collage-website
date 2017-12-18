@@ -4,6 +4,7 @@ import { CSSTransition } from 'react-transition-group';
 import '../../../index.css';
 import Particle from '../../../static/particle.png';
 import OrbitControls from 'three-orbitcontrols';
+import TWEEN from '@tweenjs/tween.js';
 
 const windowWidth = window.innerWidth;
 const windowHeight = window.innerHeight;
@@ -29,6 +30,7 @@ class Scene extends Component {
         this.start = this.start.bind(this);
         this.animate = this.animate.bind(this);
         this.handleMouseMove = this.handleMouseMove.bind(this);
+        this.handleCameraMove = this.handleCameraMove.bind(this);
     }
 
 
@@ -40,7 +42,7 @@ class Scene extends Component {
 
 
         const controls = {
-            size:10,
+            size:6,
             transparent:true,
             opacity: 1,
             vertexColors:true,
@@ -60,11 +62,18 @@ class Scene extends Component {
         renderer.setSize(windowWidth, windowHeight);
 
         const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 1, 1000);
-        camera.position.set(250, 10, 50);
+        camera.position.set(1000, 0, 0);
+
+        const pos = {x: 0};
+        let tween = new TWEEN.Tween(pos)
+            .to({x: 1})
+            .easing(TWEEN.Easing.Sinusoidal.InOut)
+            .onUpdate(this.handleCameraMove)
+        this.tween =  tween;
+        this.pos = pos;
+
         this.createParticles(controls.size, controls.transparent, controls.opacity, controls.vertexColors, controls.sizeAttenuation, controls.color);
         this.start();
-
-        this.dirs = [];
 
         this.scene = scene;
         this.camera = camera;
@@ -77,6 +86,23 @@ class Scene extends Component {
         this.orbit =  orbit;
         this.orbit.enableZoom = false;
         this.handleMouseMove();
+        setTimeout(() => {
+            this.scene.children.forEach((child) => {
+                if(child instanceof THREE.Points) {
+                    let vertices = child.geometry.colors;
+                    console.log(vertices);
+                    vertices.forEach(function (v) {
+                        v.r = 233/ 255;
+                        v.g = 233 / 255;
+                        v.b = 233 / 255;
+                        v.a = 0.3;
+                        console.log(v);
+                    });
+                }
+                child.geometry.colorsNeedUpdate = true;
+            })
+            this.renderer.render(this.scene, this.camera);
+        }, 4000);
     }
     createParticles(size, transparent, opacity, vertexColors, sizeAttenuation, color) {
 
@@ -92,20 +118,28 @@ class Scene extends Component {
                 map: texture,
                 sizeAttenuation: sizeAttenuation,
                 color: color
-            })
+            });
+
+            this.tween.start();
 
             const range = 500;
-            for (let i = 0; i < 300; i++) {
-                let particle = new THREE.Vector3(0, 0, 0);
+            for (let i = 0; i < 1000; i++) {
+                let x = Math.random() * range - range / 2;
+                let z = Math.random() * range - range / 2;
+                let theta = Math.atan2(x,z);
+                let r = Math.sqrt(Math.pow(x, 2) + Math.pow(z, 2));
+                x = r * Math.cos(theta);
+                z = r * Math.sin(theta);
+                let particle = new THREE.Vector3(x, Math.random() * range - range / 2, z); // 極座標
+                particle.aVelocity = 0.01 * Math.random(); // 角速度
+                particle.theta = theta;
+                particle.r = r;
                 geom.vertices.push(particle);
-                this.dirs.push(new THREE.Vector3(Math.random() * range - range / 2, Math.random() * range - range / 2, Math.random() * range - range / 2));
                 geom.colors.push(new THREE.Color(this.ParticleColor[Math.floor(Math.random() * this.ParticleColor.length)]));
             }
-
             this.cloud = new THREE.Points(geom, material);
             this.cloud.name = 'particles';
             this.scene.add(this.cloud);
-            console.log(this.scene);
         });
     }
 
@@ -122,18 +156,34 @@ class Scene extends Component {
     }
 
 
-
+    handleCameraMove() {
+        if(this.camera.position.x >= 250) {
+            this.camera.position.x = 1000 - (750 * this.pos.x);
+        }
+    }
 
     animate() {
-        this.rotation += 0.01;
-        this.camera.position.x = Math.sin(this.rotation) * 200;
-        this.camera.position.z = Math.cos(this.rotation) * 150;
+        TWEEN.update();
         this.renderScene();
         this.frameId = window.requestAnimationFrame(this.animate);
     }
 
 
     renderScene() {
+        this.scene.children.forEach((child) => {
+            if(child instanceof THREE.Points) {
+                let vertices = child.geometry.vertices;
+                vertices.forEach(function (v) {
+                    if(v.theta > Math.PI) {
+                        v.theta =  -1 * Math.PI;
+                    }
+                    v.theta += v.aVelocity;
+                    v.x = v.r * Math.cos(v.theta);
+                    v.z = v.r * Math.sin(v.theta);
+                });
+            }
+            child.geometry.verticesNeedUpdate = true;
+        })
         this.renderer.render(this.scene, this.camera);
     }
 

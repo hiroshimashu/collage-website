@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import scrollToComponent from 'react-scroll-to-component';
+import { Link } from 'react-router-dom';
 import Brightness from 'material-ui/svg-icons/image/brightness-1';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import buttonStyle from './buttonStyle';
@@ -60,10 +61,10 @@ class MenuButton extends Component {
         return(
             <MuiThemeProvider>
                 <div>
-                    <Brightness style = {buttonStyle.b1} onMouseEnter = {this.handleHover1} onMouseLeave = {this.handleHover1} onClick={() => scrollToComponent(this.props.target1, { offset: 0, align: 'top', duration: 500})} />
-                    <Brightness style = {buttonStyle.b2} onMouseEnter = {this.handleHover2} onMouseLeave = {this.handleHover2} onClick={() => scrollToComponent(this.props.target2, { offset: 0, align: 'top', duration: 500})} />
-                    <Brightness style = {buttonStyle.b3} onMouseEnter = {this.handleHover3} onMouseLeave = {this.handleHover3} onClick={() => scrollToComponent(this.props.target3, { offset: 0, align: 'top', duration: 500})} />
-                    <Brightness style = {buttonStyle.b4} onMouseEnter = {this.handleHover4} onMouseLeave = {this.handleHover4} onClick={() => scrollToComponent(this.props.target4, { offset: 0, align: 'top', duration: 500})} />
+                    <Link to = 'about'><Brightness style = {buttonStyle.b1} onMouseEnter = {this.handleHover1} onMouseLeave = {this.handleHover1} /></Link>
+                    <Link to = 'works'><Brightness style = {buttonStyle.b2} onMouseEnter = {this.handleHover2} onMouseLeave = {this.handleHover2} /></Link>
+                    <Link to = 'service'><Brightness style = {buttonStyle.b3} onMouseEnter = {this.handleHover3} onMouseLeave = {this.handleHover3} /></Link>
+                    <Link to = 'access'> <Brightness style = {buttonStyle.b4} onMouseEnter = {this.handleHover4} onMouseLeave = {this.handleHover4} /></Link>
                     {this.state.hover1 && <img src =  {AboutMenu} style = {divStyle.div1} />}
                     {this.state.hover2 && <img src =  {WorksMenu} style = {divStyle.div2} />}
                     {this.state.hover3 && <img src =  {ServiceMenu} style = {divStyle.div3} />}

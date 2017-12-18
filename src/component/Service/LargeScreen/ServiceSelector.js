@@ -82,7 +82,7 @@ class ServiceSelector extends Component {
             <StyleRoot>
                 <div className='selectWrapper' style =  { styles.selectWrapper }>
                     <ServiceElement
-                        src = '/'
+                        src = '/service'
                         link = {this.state.link1}
                         handleStateChange = {this.handleClick1}
                     >

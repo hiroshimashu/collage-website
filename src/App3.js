@@ -1,4 +1,8 @@
 import React, { Component } from 'react';
+import {
+    BrowserRouter as Router,
+    Route
+} from 'react-router-dom';
 import Top from './component/Top/LargeScreen/TopScreen';
 import Top_Night from './component/Top/LargeScreen/Top_Night';
 import About from './component/About/LargeScreen/AboutScreen';
@@ -47,14 +51,16 @@ class App3 extends Component {
 
     render() {
         return (
-            <div>
-                {!this.state.night && <Top target1 = {this.state.target1} target2 = {this.state.target2} target3 = {this.state.target3} target4 = {this.state.target4}/>}
-                {this.state.night && <Top_Night target1 = {this.state.target1} target2 = {this.state.target2} target3 = {this.state.target3} target4 = {this.state.target4} />}
-                <About ref = {aboutScreen => this.aboutScreen = aboutScreen} />
-                <Works ref = {workScreen => this.workScreen = workScreen} />
-                <Service ref = {serviceScreen => this.serviceScreen = serviceScreen} />
-                <Access  ref = {accessScreen => this.accessScreen = accessScreen } />
-            </div>
+            <Router>
+                <div>
+                    {!this.state.night && <Route exact path = '/' component = {Top} />}
+                    {this.state.night && <Route exact path = '/' component = {Top_Night} />}
+                    <Route path =  '/about' component = {About} />
+                    <Route path =  '/works' component = {Works} />
+                    <Route path =  '/service' component = {Service} />
+                    <Route path =  '/access' component = {Access} />
+                </div>
+            </Router>
         );
     }
 }

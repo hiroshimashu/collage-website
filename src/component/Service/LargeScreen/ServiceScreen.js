@@ -35,7 +35,7 @@ class ServiceScreen extends Component {
                         <ServiceTitle />
                         <Share style = {styles.share} />
                         <ServiceSelector />
-                        <Route exact path="/"  component = {InteractiveScreen}/>
+                        <Route exact path="/service"  component = {InteractiveScreen}/>
                         <Route exact path="/selling"  component = {SellingPlanScreen}/>
                         <Route exact path="/logcolle"  component = {LogcolleSceen}/>
                         <Route exact path="/lineStamp"  component = {LineStamp}/>

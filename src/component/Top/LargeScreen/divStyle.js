@@ -34,7 +34,7 @@ const styleDiv = {
         fontSize: '18px',
         textAlign: 'left',
         lineHeight: '18px',
-        zIndex: 3
+        zIndex: 6
     },
     div2: {
         position: 'absolute',
@@ -47,7 +47,7 @@ const styleDiv = {
         fontSize: '18px',
         textAlign: 'left',
         lineHeight: '18px',
-        zIndex: 3
+        zIndex: 6
     },
     div3: {
         position: 'absolute',
@@ -60,7 +60,7 @@ const styleDiv = {
         fontSize: '18px',
         textAlign: 'left',
         lineHeight: '18px',
-        zIndex: 3
+        zIndex: 6
     },
     div4: {
         position: 'absolute',
@@ -73,7 +73,7 @@ const styleDiv = {
         fontSize: '18px',
         textAlign: 'left',
         lineHeight: '18px',
-        zIndex: 3
+        zIndex: 6
     }
 }
 

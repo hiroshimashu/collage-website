@@ -24,7 +24,7 @@ const styles = {
         height: '42px',
         marginTop: '20px',
         marginLeft: '19px',
-        zIndex:2
+        zIndex:6
     },
 }
 
