@@ -131,6 +131,8 @@ class Scene extends Component {
                 x = r * Math.cos(theta);
                 z = r * Math.sin(theta);
                 let particle = new THREE.Vector3(x, Math.random() * range - range / 2, z); // 極座標
+                particle.dirs = [];
+                console.log(particle.dirs);
                 particle.aVelocity = 0.01 * Math.random(); // 角速度
                 particle.theta = theta;
                 particle.r = r;
