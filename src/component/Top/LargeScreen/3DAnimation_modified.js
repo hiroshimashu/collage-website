@@ -42,7 +42,7 @@ class Scene extends Component {
 
 
         const controls = {
-            size:6,
+            size:10,
             transparent:true,
             opacity: 1,
             vertexColors:true,
@@ -62,7 +62,7 @@ class Scene extends Component {
         renderer.setSize(windowWidth, windowHeight);
 
         const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 1, 1000);
-        camera.position.set(1000, 0, 0);
+        camera.position.set(750, 0, 0);
 
         const pos = {x: 0};
         let tween = new TWEEN.Tween(pos)
@@ -101,7 +101,7 @@ class Scene extends Component {
                 child.geometry.colorsNeedUpdate = true;
             })
             this.renderer.render(this.scene, this.camera);
-        }, 4000);
+        }, 3000);
     }
     createParticles(size, transparent, opacity, vertexColors, sizeAttenuation, color) {
 
@@ -119,7 +119,6 @@ class Scene extends Component {
                 color: color
             });
 
-            this.tween.start();
 
             const range = 500;
             for (let i = 0; i < 1000; i++) {
@@ -129,8 +128,7 @@ class Scene extends Component {
                 let x = (Math.random() * range - range / 2);
                 let y = (Math.random() * range - range / 2);
                 let z = (Math.random() * range - range / 2);
-                console.log(vx, vy, vz);
-                let magnitude = Math.sqrt(Math.pow(vx,2) + Math.pow(vy,2) + Math.pow(vz,2));
+                let magnitude = 30;
                 let theta = Math.atan2(vx,vz);
                 let particle = new THREE.Vector3(0, 0, 0); // 極座標
                 particle.magnitude = magnitude;
@@ -138,11 +136,7 @@ class Scene extends Component {
                 particle.velocity = particle.dirs.map(element => element * magnitude);
                 console.log(particle.magnitude);
                 console.log(particle.velocity);
-
-
                 let r = Math.sqrt(Math.pow(x, 2) + Math.pow(z, 2));
-                x = r * Math.cos(theta);
-                z = r * Math.sin(theta);
                 particle.aVelocity = 0.01 * Math.random(); // 角速度
                 particle.theta = theta;
                 particle.r = r;
@@ -191,10 +185,16 @@ class Scene extends Component {
                         v.x += v.velocity[0]
                         v.y += v.velocity[1];
                         v.z += v.velocity[2];
-                        v.magnitude = v.magnitude - 100;
+                        v.magnitude = v.magnitude - 6;
                         v.velocity = v.dirs.map(element => element * v.magnitude);
+                        v.r = Math.sqrt(Math.pow(v.x, 2) + Math.pow(v.z, 2));
                     } else if (v.magnitude <= 0) {
-
+                        if(v.theta > Math.PI) {
+                            v.theta =  -1 * Math.PI;
+                        }
+                        v.theta += v.aVelocity;
+                        v.x = v.r * Math.cos(v.theta);
+                        v.z = v.r * Math.sin(v.theta);
                     }
                 });
             }

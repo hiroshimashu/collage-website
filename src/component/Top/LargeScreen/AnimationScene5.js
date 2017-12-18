@@ -56,7 +56,7 @@ class AnimationSceen5 extends Component {
 
         setTimeout(() => {
             this.setState({show: !this.state.show});
-        }, 0);
+        }, 100);
 
         this.handleClick = this.handleClick.bind(this);
     }
@@ -119,7 +119,7 @@ class AnimationSceen5 extends Component {
 
     render() {
         return(
-            <Fade in = { this.state.show} timeout = {1000}>
+            <Fade in = { this.state.show} timeout = {2000}>
                 <div>
                     <Collage />
                     <Fade in = {this.state.green} timeout = {2000}>
@@ -154,7 +154,7 @@ const styles = {
         height: titleHeight,
         top: titleY,
         left: titleX,
-        zIndex: 100
+        zIndex: 101
     }
 }
 

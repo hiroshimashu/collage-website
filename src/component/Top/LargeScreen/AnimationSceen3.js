@@ -46,21 +46,21 @@ class AnimationScene3 extends Component {
 
         setTimeout(() => {
             this.setState({show: !this.state.show});
-        }, 800);
+        }, 1000);
 
     }
 
     componentDidMount() {
         setTimeout(() => {
             this.props.handleAnimation();
-        }, 500);
+        }, 800);
     }
 
 
     render() {
         return(
             <Fade in = { this.state.show } timeout = {2000}>
-                <img src = {Collage} alt = 'collage' style = {styles.collage}/>
+                <img src = {Collage} alt = 'collage' style = {styles.collage} />
             </Fade>
         );
     }

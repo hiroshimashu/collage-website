@@ -54,7 +54,7 @@ class App3 extends Component {
             <Router>
                 <div>
                     {!this.state.night && <Route exact path = '/' component = {Top} />}
-                    {this.state.night && <Route exact path = '/' component = {Top_Night} />}
+                    {this.state.night && <Route exact path = '/' component = {Top} />}
                     <Route path =  '/about' component = {About} />
                     <Route path =  '/works' component = {Works} />
                     <Route path =  '/service' component = {Service} />
