@@ -155,7 +155,6 @@ class Scene extends Component {
             this.cloud = new THREE.Points(geom, material);
             this.cloud.name = 'particles';
             this.scene.add(this.cloud);
-            console.log(this.scene);
         });
     }
 

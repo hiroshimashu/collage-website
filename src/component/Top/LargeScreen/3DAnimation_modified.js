@@ -87,7 +87,7 @@ class Scene extends Component {
         this.orbit =  orbit;
         this.orbit.enableZoom = false;
         this.handleMouseMove();
-        setTimeout(() => {
+        /*setTimeout(() => {
             this.scene.children.forEach((child) => {
                 if(child instanceof THREE.Points) {
                     let vertices = child.geometry.colors;
@@ -101,7 +101,7 @@ class Scene extends Component {
                 child.geometry.colorsNeedUpdate = true;
             })
             this.renderer.render(this.scene, this.camera);
-        }, 3000);
+        }, 3000); */
     }
     createParticles(size, transparent, opacity, vertexColors, sizeAttenuation, color) {
 
@@ -134,8 +134,6 @@ class Scene extends Component {
                 particle.magnitude = magnitude;
                 particle.dirs = [x / magnitude, y / magnitude, z / magnitude];
                 particle.velocity = particle.dirs.map(element => element * magnitude);
-                console.log(particle.magnitude);
-                console.log(particle.velocity);
                 let r = Math.sqrt(Math.pow(x, 2) + Math.pow(z, 2));
                 particle.aVelocity = 0.01 * Math.random(); // 角速度
                 particle.theta = theta;
@@ -181,7 +179,6 @@ class Scene extends Component {
                 let vertices = child.geometry.vertices;
                 vertices.forEach(function (v) {
                     if(v.magnitude >= 0) {
-                        console.log(v);
                         v.x += v.velocity[0]
                         v.y += v.velocity[1];
                         v.z += v.velocity[2];

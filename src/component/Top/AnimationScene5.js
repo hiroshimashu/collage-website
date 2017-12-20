@@ -7,12 +7,6 @@ import Logo3 from '../../static/pinkCollage.png';
 import Logo4 from '../../static/purpleCollage.png';
 import SNS from './SNS';
 
-const windowWidth =  window.innerWidth;
-const windowHeight = windowWidth *  1334 /750;
-const titleWidth = windowWidth *  0.713;
-const titleHeight = windowHeight * 0.07;
-const titleX =  106 / 750 *  windowWidth;
-const titleY = 632 / 1334 *  windowHeight;
 
 
 const Fade = ({ children, ...props }) => (
@@ -39,6 +33,24 @@ class AnimationSceen5 extends Component {
             purple: false,
             state:0
         };
+
+        this.windowWidth = this.props.windowWidth;
+        this.windowHeight = this.windowWidth *  1334 /750;
+        this.titleWidth = this.windowWidth *  0.713;
+        this.titleHeight = this.windowHeight * 0.07;
+        this.titleX =  106 / 750 *  this.windowWidth;
+        this.titleY = 632 / 1334 *  this.windowHeight;
+
+        this.styles = {
+            collage: {
+                position: 'absolute',
+                width: this.titleWidth,
+                height: this.titleHeight,
+                top: this.titleY,
+                left: this.titleX,
+                zIndex: 100
+            }
+        }
 
         this.handleStateChange = this.handleStateChange.bind(this);
 
@@ -99,20 +111,23 @@ class AnimationSceen5 extends Component {
 
 
     render() {
+
+
+
         return(
             <Fade in = { this.state.show} timeout = {1000}>
                 <div>
                     <Fade in = {this.state.green} timeout = {2000}>
-                        <img src = {Logo} alt = 'sceen1' style = { styles.collage}/>
+                        <img src = {Logo} alt = 'sceen1' style = { this.styles.collage}/>
                     </Fade>
                     <Fade in = {this.state.red} timeout = {2000}>
-                        <img src = {Logo2} alt = "screen1" style = {styles.collage} />
+                        <img src = {Logo2} alt = "screen1" style = {this.styles.collage} />
                     </Fade>
                     <Fade in = {this.state.pink} timeout = {2000}>
-                        <img src = {Logo3} alt = "screen1" style = {styles.collage} />
+                        <img src = {Logo3} alt = "screen1" style = {this.styles.collage} />
                     </Fade>
                     <Fade in = {this.state.purple} timeout = {2000}>
-                        <img src = {Logo4} alt = "screen1" style = {styles.collage} />
+                        <img src = {Logo4} alt = "screen1" style = {this.styles.collage} />
                     </Fade>
                     <SNS />
                 </div>
@@ -121,16 +136,6 @@ class AnimationSceen5 extends Component {
     }
 }
 
-const styles = {
-    collage: {
-        position: 'absolute',
-        width: titleWidth,
-        height: titleHeight,
-        top: titleY,
-        left: titleX,
-        zIndex: 100
-    }
-}
 
 
 export default AnimationSceen5;

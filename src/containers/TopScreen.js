@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import AnimationScene1 from './AnimationSceen1';
-import AnimationScene3 from './AnimationSceen3';
-import AnimationSceen5 from './AnimationScene5';
-import Background from './3DAnimation_modified';
+import AnimationScene1 from '../component/Top/LargeScreen/AnimationSceen1';
+import AnimationScene3 from '../component/Top/LargeScreen/AnimationSceen3';
+import AnimationSceen5 from '../component/Top/LargeScreen/AnimationScene5';
+import Background from '../component/Top/LargeScreen/3DAnimation_modified';
 
 const windowWidth = window.innerWidth;
 const windowHeight = window.innerHeight;
@@ -19,14 +19,18 @@ class Scene extends Component {
             show2: false,
             show3: false,
             show4: false,
-            width: this.props.Width,
-            height: this.props.Height
+            width: this.props.windowsize
         };
         this.handleAnimation1 = this.handleAnimation1.bind(this);
         this.handleAnimation2 = this.handleAnimation2.bind(this);
         this.handleAnimation3 = this.handleAnimation3.bind(this);
         this.handleAnimation4 = this.handleAnimation4.bind(this);
         this.handleThree = this.handleThree.bind(this);
+    }
+
+
+    componentDidMount() {
+        setInterval(() => {console.log(this.state.width);}, 3000);
     }
 
     handleThree() {
@@ -59,29 +63,23 @@ class Scene extends Component {
         });
     }
 
-    componentDidMount() {
-        setInterval(() => {console.log(this.state.width);}, 1000);
-    }
-
-
-
-
     render() {
         return(
-            <div style = {{position: 'relative', width: this.state.width, height:this.state.height}}>
+            <div style = {{position: 'relative', width: this.state.width, height:windowHeight}}>
                 <AnimationScene1 handleAnimation = {this.handleThree}/>
                 {this.state.onThree && <Background show =  {this.state.onThree} handleAnimation = {this.handleAnimation1} /> }
                 {this.state.show2 && <AnimationScene3 handleAnimation = {this.handleAnimation3} />}
-                {this.state.show4 && <AnimationSceen5/>}
+                {this.state.show4 && <AnimationSceen5  windowWidth = {this.props.windowsize}/>}
             </div>
         );
     }
+
 }
 
 
 function mapStateToProps(state) {
     return {
-        window: state.window
+        windowsize: state.windowsize
     };
 }
 

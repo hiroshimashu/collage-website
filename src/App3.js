@@ -3,12 +3,14 @@ import {
     BrowserRouter as Router,
     Route
 } from 'react-router-dom';
-import Top from './component/Top/LargeScreen/TopScreen';
+import { connect } from 'react-redux';
+import Top from './containers/TopScreen';
 import Top_Night from './component/Top/LargeScreen/Top_Night';
 import About from './component/About/LargeScreen/AboutScreen';
 import Works from './component/Works/LargeScreen/WorksScreen';
 import Service from './component/Service/LargeScreen/ServiceScreen';
 import Access from './component/Access/Access';
+
 
 class App3 extends Component {
     constructor(props) {
@@ -19,8 +21,11 @@ class App3 extends Component {
             target2: null,
             target3: null,
             target4: null,
-            night: false
+            night: false,
+            width: this.props.windowsize,
+            height: window.innerHeight
         };
+
     }
 
     componentWillMount() {
@@ -32,6 +37,7 @@ class App3 extends Component {
             });
         }
     }
+
 
     componentDidMount() {
 
@@ -51,10 +57,11 @@ class App3 extends Component {
 
     render() {
         return (
+
             <Router>
                 <div>
-                    {!this.state.night && <Route exact path = '/' component = {Top} />}
-                    {this.state.night && <Route exact path = '/' component = {Top} />}
+                    {!this.state.night && <Route exact path = '/'  component = {Top} />}
+                    {this.state.night && <Route exact path = '/' component = {Top_Night} />}
                     <Route path =  '/about' component = {About} />
                     <Route path =  '/works' component = {Works} />
                     <Route path =  '/service' component = {Service} />
@@ -65,4 +72,13 @@ class App3 extends Component {
     }
 }
 
-export default App3;
+
+function mapStateToProps(state) {
+    return {
+        windowsize: state.windowsize
+    };
+}
+
+export default connect(mapStateToProps)(App3);
+
+

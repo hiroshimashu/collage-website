@@ -15,9 +15,8 @@ const companyMain1X = 548 /1200 * windowSize;
 const companyMain1Y = windowHeight *  304 / 2774;
 
 const cImage2Width = windowSize * 0.269;
-const cImage2Height = windowHeight *  0.04;
 const cImage2X = 124 / 1200 * windowSize
-const cImage2Y = windowHeight *  485 / 2774;
+const cImage2Y = windowHeight *  500 / 2774;
 const companyName2Width = windowSize * 0.282;
 const companyName2Height = windowHeight *  0.01;
 const companyName2X = 549 / 1200 * windowSize;
@@ -74,7 +73,7 @@ const groupStyle = {
     cImage2: {
         position: 'absolute',
         width: cImage2Width,
-        height: cImage2Height,
+        height: 'auto',
         top: cImage2Y,
         left: cImage2X,
 

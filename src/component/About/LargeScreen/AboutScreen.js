@@ -3,7 +3,7 @@ import Logo from '../../Top/LargeScreen/Logo';
 import AboutTitle from './AboutTitle';
 import ConceptTitle from './ConceptTitle';
 import ConceptMain from './ConceptMain';
-import BackgroundParticle from '../BackroundParticle';
+import BackgroundParticle from './BackroundParticle';
 import CompanyProfileTitle from './CompanyProfileTitle';
 import CompanyProfile from './CompanyProfile';
 import ProfileDivider from './ProfileDivider';
@@ -15,8 +15,13 @@ import group2 from '../../../static/group2.png';
 import detail1 from '../../../static/group1Detail.png';
 import detail2 from '../../../static/group2Detail.png';
 import Assemblage from '../../../static/ASSEMBLAGE_logo.png';
-import Zero from '../../../static/zero.png';
+import Zero from '../../../static/collageZero.png';
 import groupStyle from './groupStyle';
+import AccessMenu from'../../../static/accessMenu.png';
+import AboutMenu from '../../../static/abouMenu.png';
+import ServiceMenu from '../../../static/serviceMenu.png';
+import WorksMenu from '../../../static/worksMenu.png';
+import divStyle from './divStyle';
 
 const windowWidth = window.innerWidth;
 const windowHeight = windowWidth * 2744 / 1200;
@@ -31,13 +36,17 @@ class AboutScreen extends Component {
     render() {
         return(
             <div className="aboutWrapper" style = {{position: 'relative', width:windowWidth, height:windowHeight}}>
+                <img src =  {AboutMenu} style = {divStyle.div1} />
+                <img src =  {WorksMenu} style = {divStyle.div2} />
+                <img src =  {ServiceMenu} style = {divStyle.div3} />
+                <img src =  {AccessMenu}  style = {divStyle.div4} />
+                <BackgroundParticle />
                 <div style = {styles.aboutWrapper}>
                     <AboutTitle />
                     <ConceptTitle />
                     <ConceptMain />
                 </div>
                 <div style = {styles.profileWrapper}>
-                    <BackgroundParticle />
                     <CompanyProfileTitle />
                     <CompanyProfile />
                     <ProfileDivider />
@@ -82,7 +91,6 @@ const styles = {
         width: windowWidth,
         height: aboutWrapperHeight,
         position: 'relative',
-        backgroundColor: '#f6f6f6',
     },
     profileWrapper: {
         position: 'relative',
@@ -92,8 +100,7 @@ const styles = {
     groupWrapper: {
         position: 'relative',
         width: '100%',
-        height: groupWrapperHeight,
-        backgroundColor: '#f6f6f6'
+        height: groupWrapperHeight
     },
 
 }
