@@ -1,5 +1,5 @@
 
-export default function(state = window.innerWidth, action) {
+export default function(state = {width:window.innerWidth}, action) {
     switch(action.type){
         case 'RESIZE':
             return  Object.assign({}, state, {
