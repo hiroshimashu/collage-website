@@ -64,7 +64,7 @@ class MenuButton extends Component {
                     <Link to = 'about'><Brightness style = {buttonStyle.b1} onMouseEnter = {this.handleHover1} onMouseLeave = {this.handleHover1} /></Link>
                     <Link to = 'works'><Brightness style = {buttonStyle.b2} onMouseEnter = {this.handleHover2} onMouseLeave = {this.handleHover2} /></Link>
                     <Link to = 'service'><Brightness style = {buttonStyle.b3} onMouseEnter = {this.handleHover3} onMouseLeave = {this.handleHover3} /></Link>
-                    <Link to = 'access'> <Brightness style = {buttonStyle.b4} onMouseEnter = {this.handleHover4} onMouseLeave = {this.handleHover4} /></Link>
+                    <Link to = 'access'><Brightness style = {buttonStyle.b4} onMouseEnter = {this.handleHover4} onMouseLeave = {this.handleHover4} /></Link>
                     {this.state.hover1 && <img src =  {AboutMenu} style = {divStyle.div1} />}
                     {this.state.hover2 && <img src =  {WorksMenu} style = {divStyle.div2} />}
                     {this.state.hover3 && <img src =  {ServiceMenu} style = {divStyle.div3} />}

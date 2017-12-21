@@ -1,5 +1,6 @@
 import React from 'react';
 import logo from '../../../static/logo.png';
+import { Link } from 'react-router-dom';
 
 const windowWidth = window.innerWidth;
 const windowHeight =  window.innerHeight * 750 / 1200;
@@ -10,7 +11,9 @@ const logoY = windowHeight * 20 / 1200;
 
 function Logo() {
     return(
-        <img src = {logo} style = {styles.logo} />
+        <Link to = '/'>
+            <img src = {logo} style = {styles.logo} />
+        </Link>
     );
 }
 

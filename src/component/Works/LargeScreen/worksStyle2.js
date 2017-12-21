@@ -6,7 +6,6 @@ const imgHeight =  windowHeight *  0.134;
 const imgX = 600 / 1200 * windowWidth;
 const imgY =  212 / 2246 * windowHeight;
 const titleWidth = windowWidth *  0.333;
-const titleHeight =  windowHeight * 0.164;
 const titleX =  630 / 1200  *  windowWidth;
 const titleY = 537 / 2246 * windowHeight;
 const backgroundWidth =  windowWidth *  0.50;
@@ -37,7 +36,7 @@ const worksStyle2 =  {
     titleStyle: {
         position: 'absolute',
         width: titleWidth,
-        height: titleHeight,
+        height: 'auto',
         top: titleY,
         left: titleX,
         fontFamily: 'dnp-shuei-mgothic-std',

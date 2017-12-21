@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Logo from '../../Top/LargeScreen/Logo';
 import AboutTitle from './AboutTitle';
 import ConceptTitle from './ConceptTitle';
 import ConceptMain from './ConceptMain';
@@ -17,11 +16,6 @@ import detail2 from '../../../static/group2Detail.png';
 import Assemblage from '../../../static/ASSEMBLAGE_logo.png';
 import Zero from '../../../static/collageZero.png';
 import groupStyle from './groupStyle';
-import AccessMenu from'../../../static/accessMenu.png';
-import AboutMenu from '../../../static/abouMenu.png';
-import ServiceMenu from '../../../static/serviceMenu.png';
-import WorksMenu from '../../../static/worksMenu.png';
-import divStyle from './divStyle';
 
 const windowWidth = window.innerWidth;
 const windowHeight = windowWidth * 2744 / 1200;
@@ -36,10 +30,6 @@ class AboutScreen extends Component {
     render() {
         return(
             <div className="aboutWrapper" style = {{position: 'relative', width:windowWidth, height:windowHeight}}>
-                <img src =  {AboutMenu} style = {divStyle.div1} />
-                <img src =  {WorksMenu} style = {divStyle.div2} />
-                <img src =  {ServiceMenu} style = {divStyle.div3} />
-                <img src =  {AccessMenu}  style = {divStyle.div4} />
                 <BackgroundParticle />
                 <div style = {styles.aboutWrapper}>
                     <AboutTitle />

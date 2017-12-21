@@ -5,7 +5,6 @@ const imgWidth = windowWidth * 0.50;
 const imgHeight =  windowHeight *  0.134;
 const imgY =  212 / 2246 * windowHeight;
 const titleWidth = windowWidth *  0.476;
-const titleHeight =  windowHeight * 0.097;
 const titleX =  12 / 1200  *  windowWidth;
 const titleY = 537 / 2246 * windowHeight;
 
@@ -22,7 +21,7 @@ const worksStyle1 =  {
     titleStyle: {
         position: 'absolute',
         width: titleWidth,
-        height: titleHeight,
+        height: 'auto',
         top: titleY,
         left: titleX,
         ':hover': {

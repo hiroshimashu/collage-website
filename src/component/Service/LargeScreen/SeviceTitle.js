@@ -1,6 +1,5 @@
 import React from 'react';
 import Service from '../../../static/ServiceTitle.png';
-import Service2 from '../../../static/SERVICE@2x.png';
 
 
 const windowSize = window.innerWidth;

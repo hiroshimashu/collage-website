@@ -1,11 +1,11 @@
-const initialState = {
-    windowSize: window.innerWidth
-}
 
-export default function(state = initialState, action) {
+export default function(state = window.innerWidth, action) {
     switch(action.type){
         case 'RESIZE':
-            return action.payload;
+            return  Object.assign({}, state, {
+            width: action.payload
+        });
+        default:
+            return state;
     }
-    return state;
 }

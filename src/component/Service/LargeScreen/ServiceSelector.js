@@ -82,7 +82,7 @@ class ServiceSelector extends Component {
             <StyleRoot>
                 <div className='selectWrapper' style =  { styles.selectWrapper }>
                     <ServiceElement
-                        src = '/service'
+                        src = {this.props.src1}
                         link = {this.state.link1}
                         handleStateChange = {this.handleClick1}
                     >
@@ -90,7 +90,7 @@ class ServiceSelector extends Component {
                     </ServiceElement>
                     <div style =  {{marginLeft: '8px', marginRight: '8px'}}> / </div>
                     <ServiceElement
-                        src= '/selling'
+                        src= {this.props.src2}
                         link = {this.state.link2}
                         handleStateChange = {this.handleClick2}
                     >
@@ -98,7 +98,7 @@ class ServiceSelector extends Component {
                     </ServiceElement>
                     <div style =  {{marginLeft: '8px', marginRight: '8px'}}> / </div>
                     <ServiceElement
-                        src = {'/logcolle'}
+                        src = {this.props.src3}
                         link = {this.state.link3}
                         handleStateChange = { this.handleClick3}
                     >
@@ -106,7 +106,7 @@ class ServiceSelector extends Component {
                     </ServiceElement>
                     <div style =  {{marginLeft: '8px', marginRight: '8px'}}> / </div>
                     <ServiceElement
-                        src = {'/lineStamp'}
+                        src = {this.props.src4}
                         link = { this.state.link4}
                         handleStateChange = { this.handleClick4}
                     >

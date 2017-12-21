@@ -4,6 +4,8 @@ import {
     Route
 } from 'react-router-dom';
 import { connect } from 'react-redux';
+import Logo from './component/Top/LargeScreen/Logo';
+import Header from './component/Header';
 import Top from './containers/TopScreen';
 import Top_Night from './component/Top/LargeScreen/Top_Night';
 import About from './component/About/LargeScreen/AboutScreen';
@@ -60,12 +62,14 @@ class App3 extends Component {
 
             <Router>
                 <div>
-                    {!this.state.night && <Route exact path = '/'  component = {Top} />}
+                    <Header />
+                    <Logo />
+                    {!this.state.night &&<Route exact path = '/' component = {Top} />}
                     {this.state.night && <Route exact path = '/' component = {Top_Night} />}
-                    <Route path =  '/about' component = {About} />
-                    <Route path =  '/works' component = {Works} />
-                    <Route path =  '/service' component = {Service} />
-                    <Route path =  '/access' component = {Access} />
+                    <Route path="/about" component={About} />
+                    <Route path="/works" component={Works} />
+                    <Route path="/service" component={Service} />
+                    <Route path="/access" component={Access} />
                 </div>
             </Router>
         );

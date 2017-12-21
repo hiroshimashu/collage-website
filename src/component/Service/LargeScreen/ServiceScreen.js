@@ -1,15 +1,17 @@
 import React, { Component } from 'react';
-import Logo from './Logo';
 import {  BrowserRouter as Router, Route, Link} from 'react-router-dom';
 import ServiceTitle from './SeviceTitle';
 import Share from 'material-ui/svg-icons/social/share';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import ServiceSelector from './ServiceSelector';
 import InteractiveScreen from '../InteractiveMovie/LargeScreen/InteractiveScreen';
-import SellingPlanScreen from '../SellingPlan/LargeScreen/SellingPlanScreen';
-import LogcolleSceen from '../Logcolle/LargeScreen/LogColleScreen';
+import Selling from '../SellingPlan/LargeScreen/SellingPlanScreen';
+import LogColle from '../Logcolle/LargeScreen/LogColleScreen';
 import LineStamp from '../LineStamp/LargeScreen/LineStampScreen';
+
 import Mail from '../../../static/mail.png';
+import BackgroundParticle from './BackroundParticle';
+
 
 const windowWidth = window.innerWidth;
 const windowHeight = 750 / 1200  * windowWidth;
@@ -26,26 +28,34 @@ const img2Y = windowHeight * 689 / 750;
 
 
 
-class ServiceScreen extends Component {
-    render() {
-        return(
-            <Router>
-                <MuiThemeProvider>
-                    <div style = {{position: 'relative', width: windowWidth, height:windowHeight, backgroundColor: '#f7f7ed'}}>
-                        <ServiceTitle />
-                        <Share style = {styles.share} />
-                        <ServiceSelector />
-                        <Route exact path="/service"  component = {InteractiveScreen}/>
-                        <Route exact path="/selling"  component = {SellingPlanScreen}/>
-                        <Route exact path="/logcolle"  component = {LogcolleSceen}/>
-                        <Route exact path="/lineStamp"  component = {LineStamp}/>
-                        <img src = {Mail} alt = 'mail' style = {styles.mail}/>
-                    </div>
-                </MuiThemeProvider>
-            </Router>
-        );
-    }
+const ServiceScreen = ({ match }) => {
+
+
+    return(
+        <Router>
+            <MuiThemeProvider>
+                <div style = {{position: 'relative', width: windowWidth, height:windowHeight}}>
+                    <BackgroundParticle />
+                    <ServiceTitle />
+                    <Share style = {styles.share} />
+                    <ServiceSelector src1 = {match.url} src2 ={`${match.url}/selling`} src3 = {`${match.url}/logcolle`} src4 = {`${match.url}/line`} />
+                    <Route exact path = { match.url } component = {InteractiveScreen} />
+                    <Route path = {`${match.url}/selling` } component = {Selling} />
+                    <Route path = {`${match.url}/logcolle`} component = {LogColle} />
+                    <Route path = {`${match.url}/line`} component = {LineStamp} />
+                    <img src = {Mail} alt = 'mail' style = {styles.mail} />
+                </div>
+            </MuiThemeProvider>
+        </Router>
+    );
 }
+
+
+
+
+
+
+
 
 const styles = {
     share: {

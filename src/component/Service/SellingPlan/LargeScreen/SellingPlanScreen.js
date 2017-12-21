@@ -21,10 +21,30 @@ class SellingPlanScreen extends Component {
             blur: ''
         };
 
+        this.id = null;
+
         this.handleClick1 = this.handleClick1.bind(this);
         this.handleClick2 = this.handleClick2.bind(this);
         this.handleClick3 = this.handleClick3.bind(this);
         this.handleClick4 = this.handleClick4.bind(this);
+    }
+
+    componentDidMount() {
+        this.id = setInterval(() => {
+            if (this.state.page === 1) {
+                this.handleClick2();
+            } else if (this.state.page === 2) {
+                this.handleClick3();
+            } else if (this.state.page === 3) {
+                this.handleClick4();
+            } else {
+                this.handleClick1();
+            }
+        }, 4000);
+    }
+
+    componentWillUnmount() {
+        clearInterval(this.id);
     }
 
     handleClick1() {

@@ -102,7 +102,20 @@ class Scene extends Component {
             })
             this.renderer.render(this.scene, this.camera);
         }, 3000); */
+
+        console.log(this.renderer.context.canvas, this.camera);
+
     }
+
+    componentWillReceiveProps() {
+        this.renderer.context.canvas.width = this.props.windowWidth.width;
+        this.camera.aspect = this.props.windowWidth.width / windowHeight;
+        this.camera.updateProjectionMatrix();
+        this.renderer.render(this.scene, this.camera);
+
+    }
+
+
     createParticles(size, transparent, opacity, vertexColors, sizeAttenuation, color) {
 
 
@@ -207,11 +220,10 @@ class Scene extends Component {
     }
 
 
-
     render() {
         return(
             <Fade in = { this.props.show} timeout = {2000}>
-                <div style = {{width: windowWidth, height: windowHeight, position: 'absolute', zIndex: 5}} ref={(mount) => { this.mount = mount; }} />
+                <div style = {{width: this.props.windowWidth.width, height: windowHeight, position: 'absolute', zIndex: 5}} ref={(mount) => { this.mount = mount; }} />
             </Fade>
         );
     }

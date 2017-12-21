@@ -3,7 +3,7 @@ import WorksCard from '../WorksCard2';
 import { CSSTransition } from 'react-transition-group';
 import '../../../index.css';
 import WorksTitle from '../../../static/WorksTitle.png';
-import Logo from '../../../static/logo.png';
+import BackgroundParticle from './BackroundParticle';
 import worksStyle1 from './worksStyle1';
 import worksStyle2 from './worksStyle2';
 import worksStyle3 from './worksStyle3';
@@ -73,56 +73,56 @@ class WorksScreen2 extends Component {
 
     render() {
         return(
-            <Fade in = { this.state.show}>
-                <div className="worksWrapper" style = {styles.worksWrapper}>
-                    <img src = {WorksTitle} style = {styles.title}/>
-                    <WorksCard
-                        src1 = {Ads}
-                        src2 = {title1}
-                        title  = '広告制作'
-                        imgStyle =  {worksStyle1.imgStyle}
-                        titleStyle =  {worksStyle1.titleStyle}
-                    />
-                    <WorksCard
-                        src1 = {Event}
-                        src2 = {title2}
-                        title  = 'イベント実施'
-                        imgStyle =  {worksStyle2.imgStyle}
-                        titleStyle =  {worksStyle2.titleStyle}
-                        background = {worksStyle2.backgroundStyle}
-                    />
-                    <WorksCard
-                        src1 = {Campaign}
-                        src2 = {title3}
-                        title  = 'キャンペーン企画'
-                        imgStyle =  {worksStyle3.imgStyle}
-                        titleStyle =  {worksStyle3.titleStyle}
-                    />
-                    <WorksCard
-                        src1 = { Casting }
-                        src2 = {title4}
-                        title  = 'キャスティング'
-                        imgStyle =  {worksStyle4.imgStyle}
-                        titleStyle =  {worksStyle4.titleStyle}
-                        background = {worksStyle4.backgroundStyle}
-                    />
-                    <WorksCard
-                        src1 = {PR}
-                        src2 = {title5}
-                        title  = 'PR'
-                        imgStyle =  {worksStyle5.imgStyle}
-                        titleStyle =  {worksStyle5.titleStyle}
-                    />
-                    <WorksCard
-                        src1 = {Media}
-                        src2 = {title6}
-                        title  = 'メディア'
-                        imgStyle =  {worksStyle6.imgStyle}
-                        titleStyle =  {worksStyle6.titleStyle}
-                        background = {worksStyle6.backgroundStyle}
-                    />
-                </div>
-            </Fade>
+
+            <div className="worksWrapper" style = {styles.worksWrapper}>
+                <img src = {WorksTitle} style = {styles.title}/>
+                <BackgroundParticle />
+                <WorksCard
+                    src1 = {Ads}
+                    src2 = {title1}
+                    title  = '広告制作'
+                    imgStyle =  {worksStyle1.imgStyle}
+                    titleStyle =  {worksStyle1.titleStyle}
+                />
+                <WorksCard
+                    src1 = {Event}
+                    src2 = {title2}
+                    title  = 'イベント実施'
+                    imgStyle =  {worksStyle2.imgStyle}
+                    titleStyle =  {worksStyle2.titleStyle}
+                    background = {worksStyle2.backgroundStyle}
+                />
+                <WorksCard
+                    src1 = {Campaign}
+                    src2 = {title3}
+                    title  = 'キャンペーン企画'
+                    imgStyle =  {worksStyle3.imgStyle}
+                    titleStyle =  {worksStyle3.titleStyle}
+                />
+                <WorksCard
+                    src1 = { Casting }
+                    src2 = {title4}
+                    title  = 'キャスティング'
+                    imgStyle =  {worksStyle4.imgStyle}
+                    titleStyle =  {worksStyle4.titleStyle}
+                    background = {worksStyle4.backgroundStyle}
+                />
+                <WorksCard
+                    src1 = {PR}
+                    src2 = {title5}
+                    title  = 'PR'
+                    imgStyle =  {worksStyle5.imgStyle}
+                    titleStyle =  {worksStyle5.titleStyle}
+                />
+                <WorksCard
+                    src1 = {Media}
+                    src2 = {title6}
+                    title  = 'メディア'
+                    imgStyle =  {worksStyle6.imgStyle}
+                    titleStyle =  {worksStyle6.titleStyle}
+                    background = {worksStyle6.backgroundStyle}
+                />
+            </div>
         );
     }
 }

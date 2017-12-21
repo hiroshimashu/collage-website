@@ -9,6 +9,8 @@ import SNS from './SNS';
 
 
 
+const windowWidth = window.innerWidth;
+
 const Fade = ({ children, ...props }) => (
     <CSSTransition
         {...props}
@@ -34,7 +36,7 @@ class AnimationSceen5 extends Component {
             state:0
         };
 
-        this.windowWidth = this.props.windowWidth;
+        this.windowWidth = windowWidth;
         this.windowHeight = this.windowWidth *  1334 /750;
         this.titleWidth = this.windowWidth *  0.713;
         this.titleHeight = this.windowHeight * 0.07;

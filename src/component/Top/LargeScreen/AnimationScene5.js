@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { CSSTransition } from 'react-transition-group';
 import '../../../index.css';
-import Collage from './Logo';
+import Header from '../../Header';
 import Logo from '../../../static/collage_red.png';
 import Logo2 from '../../../static/blueCollage.png';
 import Logo3 from '../../../static/pinkCollage.png';
@@ -65,6 +65,7 @@ class AnimationSceen5 extends Component {
         setInterval(this.handleStateChange, 2000);
     }
 
+
     handleStateChange() {
         if(this.state.state === 0) {
             this.setState(() => {
@@ -121,7 +122,6 @@ class AnimationSceen5 extends Component {
         return(
             <Fade in = { this.state.show} timeout = {2000}>
                 <div>
-                    <Collage />
                     <Fade in = {this.state.green} timeout = {2000}>
                         <img src = {Logo} alt = 'sceen1' style = { styles.collage}/>
                     </Fade>

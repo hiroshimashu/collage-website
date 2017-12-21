@@ -19,7 +19,6 @@ class Scene extends Component {
             show2: false,
             show3: false,
             show4: false,
-            width: this.props.windowsize
         };
         this.handleAnimation1 = this.handleAnimation1.bind(this);
         this.handleAnimation2 = this.handleAnimation2.bind(this);
@@ -28,10 +27,6 @@ class Scene extends Component {
         this.handleThree = this.handleThree.bind(this);
     }
 
-
-    componentDidMount() {
-        setInterval(() => {console.log(this.state.width);}, 3000);
-    }
 
     handleThree() {
         this.setState((prevState) => {
@@ -65,9 +60,9 @@ class Scene extends Component {
 
     render() {
         return(
-            <div style = {{position: 'relative', width: this.state.width, height:windowHeight}}>
-                <AnimationScene1 handleAnimation = {this.handleThree}/>
-                {this.state.onThree && <Background show =  {this.state.onThree} handleAnimation = {this.handleAnimation1} /> }
+            <div style = {{position: 'relative', width: this.props.windowsize, height:windowHeight}}>
+                <AnimationScene1 handleAnimation = {this.handleThree} />
+                {this.state.onThree && <Background show =  {this.state.onThree} handleAnimation = {this.handleAnimation1} windowWidth = {this.props.windowsize} /> }
                 {this.state.show2 && <AnimationScene3 handleAnimation = {this.handleAnimation3} />}
                 {this.state.show4 && <AnimationSceen5  windowWidth = {this.props.windowsize}/>}
             </div>

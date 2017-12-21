@@ -5,6 +5,7 @@ import Introduce2 from './Introduce2';
 import Dots from './Dots';
 import Screen2 from './InteractiveScreen2';
 
+
 const windowWidth = window.innerWidth;
 const windowHeight = 750 / 1200  * windowWidth;
 const imgWidth = windowWidth * 0.419;
@@ -28,9 +29,26 @@ class InteractiveScreen extends Component {
             blur: ''
         };
 
+        this.id = null;
+
         this.handleClick1 = this.handleClick1.bind(this);
         this.handleClick2 = this.handleClick2.bind(this);
     }
+
+    componentDidMount() {
+        this.id = setInterval(() => {
+            if (this.state.page === 2) {
+                this.handleClick1();
+            } else {
+                this.handleClick2();
+            }
+        }, 3000);
+    }
+
+    componentWillUnmount() {
+        clearInterval(this.id);
+    }
+
 
     handleClick1() {
         console.log(this.state.blur)
@@ -50,7 +68,7 @@ class InteractiveScreen extends Component {
                 color1: '#bfbfbf',
                 color2: '#a99fc5',
                 page: 2,
-                blur: 'blur(10px)'
+                blur: 'blur(20px)'
             };
         });
     }
