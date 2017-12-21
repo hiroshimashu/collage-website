@@ -26,9 +26,8 @@ const styleDiv = {
     div1: {
         position: 'absolute',
         width: div1Width,
-        height: div1Height,
+        height: 'auto',
         top: div1Y,
-        left: div1X,
         fontFamily: 'dnp-shuei-mgothic-std',
         color: '#b3b3b3',
         fontSize: '18px',
@@ -39,9 +38,8 @@ const styleDiv = {
     div2: {
         position: 'absolute',
         width: div2Width,
-        height: div2Height,
+        height: 'auto',
         top: div2Y,
-        left: div2X,
         fontFamily: 'dnp-shuei-mgothic-std',
         color: '#b3b3b3',
         fontSize: '18px',
@@ -52,9 +50,8 @@ const styleDiv = {
     div3: {
         position: 'absolute',
         width: div3Width,
-        height: div3Height,
+        height: 'auto',
         top: div3Y,
-        left: div3X,
         fontFamily: 'dnp-shuei-mgothic-std',
         color: '#b3b3b3',
         fontSize: '18px',
@@ -65,9 +62,8 @@ const styleDiv = {
     div4: {
         position: 'absolute',
         width: div4Width,
-        height: div4Height,
+        height: 'auto',
         top: div4Y,
-        left: div4X,
         fontFamily: 'dnp-shuei-mgothic-std',
         color: '#b3b3b3',
         fontSize: '18px',

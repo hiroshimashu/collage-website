@@ -12,14 +12,14 @@ function calculatePositionX() {
 }
 
 const titleX  = calculatePositionX();
-const titleY = windowHeight *  240 / 2744;
+const titleY = windowHeight *  253 / 2744;
 
 
 
 
-function ConceptTitle() {
+function ConceptTitle(props) {
     return(
-        <img src = {conceptTitle} alt = 'conceptTitle' style = {styles.conceptMainTitle}/>
+        <img src = {conceptTitle} alt = 'conceptTitle' style = {{...styles.conceptMainTitle, left: props.conceptTitleX, right: props.conceptTitleX}}/>
     );
 }
 
@@ -28,8 +28,6 @@ const styles = {
         position: 'absolute',
         width: titleWidth,
         height: titleHeight,
-        left: titleX,
-        right:titleX,
         top: titleY,
     }
 };

@@ -15,9 +15,9 @@ const conceptY = windowHeight * 322 / 2917;
 
 
 
-function ConceptMain() {
+function ConceptMain(props) {
     return(
-        <img src ={concept} style={styles.conceptMain} />
+        <img src ={concept} style={{...styles.conceptMain, left: props.conceptX, right: props.conceptX}} />
     );
 }
 
@@ -25,16 +25,8 @@ const styles = {
     conceptMain: {
         position: 'absolute',
         width: conceptWidth,
-        height: conceptHeight,
-        top:conceptY,
-        left:conceptX,
-        right:conceptX,
-        fontSize: '16.99px',
-        color:  '#484848',
-        lineHeight: '45px',
-        textAlign: 'center',
-        transform: 'scaleY(1.0008)',
-        fontFamily: 'a-otf-futo-min-a101-pr6n'
+        height: 'auto',
+        top:conceptY
     }
 }
 

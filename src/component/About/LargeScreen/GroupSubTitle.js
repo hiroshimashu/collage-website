@@ -15,26 +15,19 @@ const titleX = calculatePositionX()
 const titleY = 183 / 2744 * windowHeight;
 
 
-function GroupSubTitle2() {
+function GroupSubTitle(props) {
     return(
-        <img src = {sub} alt = 'sub' style = {styles.subtitle} />
+        <img src = {sub} alt = 'sub' style = {{...styles.subtitle, left:props.groupSubTitleX, right:props.groupSubTitleX}} />
     );
 }
 
 const styles = {
     subtitle: {
-        fontFamily: 'a-otf-gothic-bbb-pr6n',
-        color: '#a2a2a2',
-        fontSize: '11px',
-        textAlign: 'center',
         position: 'absolute',
-        letterSpacing: '0.1em',
         width: titleWidth,
-        height: titleHeight,
-        top: titleY,
-        left: calculatePositionX(),
-        right: calculatePositionX()
+        height: 'auto',
+        top: titleY
     }
 };
 
-export default GroupSubTitle2;
+export default GroupSubTitle;

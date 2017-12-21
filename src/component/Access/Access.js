@@ -52,6 +52,7 @@ class Access extends Component {
 
         this.state = {
             width: windowWidth,
+            shareX: imgX,
             titleX: img3X,
             mapX: this.calculateX(windowWidth, windowWidth * 0.555),
             addressX: this.calculateX(windowWidth, windowWidth * 377 / 1200)
@@ -72,9 +73,10 @@ class Access extends Component {
         this.setState(() => {
             return {
                 width: this.props.window.width,
+                shareX: this.props.window.width * 1148 / 1200,
                 titleX:this.calculateX(this.props.window.width, 468),
                 mapX:this.calculateX(this.props.window.width, this.img4Width),
-                addressX:this.calculateX(this.props.window.width, this.props.window.width * 377 / 1200)
+                addressX:this.calculateX(this.props.window.width, img2Width)
             };
         });
     }
@@ -89,7 +91,7 @@ class Access extends Component {
                 <div className="wrapper" style={{position: 'relative', width: this.state.width, height: windowHeight}}>
                     <BackgroundParticle width = {this.state.width} />
                     <img src = {Title} alt = 'title' style = {{...styles.title, left: this.state.titleX, right: this.state.titleX}} />
-                    <Share style = {styles.share} />
+                    <Share style = {{...styles.share, left:this.state.shareX}} />
                     <img src = {Address} alt = 'address' style = {{...styles.address, left: this.state.addressX, right: this.state.addressX}}/>
                     <Map
                         googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places"

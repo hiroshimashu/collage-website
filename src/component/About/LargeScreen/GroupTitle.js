@@ -13,26 +13,18 @@ function calculatePositionX() {
 const titleX = calculatePositionX()
 const titleY = 133 /2744 * windowHeight;
 
-function GroupTitle2() {
+function GroupTitle2(props) {
     return(
-        <img src = {group} className="groupTitle" alt = 'group' style = {styles.group} />
+        <img src = {group} className="groupTitle" alt = 'group' style = {{...styles.group, left:props.groupTitleX, right: props.groupTitleX}} />
     );
 }
 
 const styles = {
     group: {
-        color:  '#2d2d2d',
-        fontFamily: 'a-otf-gothic-bbb-pr6n',
-        fontWeight: 600,
-        fontSize: '20px',
-        textAlign: 'center',
-        letterSpacing: '0.1em',
         position: 'absolute',
         width: titleWidth,
-        height: titleHeight,
-        top: titleY,
-        left: titleX,
-        right: titleX,
+        height: 'auto',
+        top: titleY
     }
 }
 

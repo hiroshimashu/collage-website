@@ -18,24 +18,24 @@ import deal from '../../../static/deal.png';
 import job from '../../../static/job.png';
 
 
-function CompanyProfile() {
+function CompanyProfile(props) {
     return(
         <div>
-            <CompanyProfileMain img = {profileStyle.img1} src = {building} src2 = {companyName} subtitle = '社名' information = '株式会社コラージュ' main = { profileStyle.main1 }/>
-            <CompanyProfileMain img = {profileStyle.img2} src = {Placeholder} src2 = {address} subtitle = '住所' information ='〒106-0032 東京都港区六本木　5-9-20' main = { profileStyle.main2 }/>
-            <CompanyProfileMain img = {profileStyle.img3} src = {Calender} src2 = {companyName} subtitle = 'カレンダー' information ='株式会社コラージュ' main = { profileStyle.main3 }/>
-            <CompanyProfileMain img = {profileStyle.img4} src = {User} src2 = {wada} subtitle = 'user' information ='和田 嘉吉郎' main = { profileStyle.main4 }/>
-            <CompanyProfileMain img = {profileStyle.img5} src = {Coin} src2 = {resource} subtitle = 'coin' information ='800万円' main = { profileStyle.main5 }/>
-            <CompanyProfileMain img = {profileStyle.img6} src = {Calculator} src2 = {month} subtitle = '決算' information ='1月' main = { profileStyle.main6 }/>
+            <CompanyProfileMain img = {{...profileStyle.img1, left: props.img1}} src = {building} src2 = {companyName} subtitle = '社名' information = '株式会社コラージュ' main = {{...profileStyle.main1, left: props.main1 }}/>
+            <CompanyProfileMain img = {{...profileStyle.img2, left: props.img2}} src = {Placeholder} src2 = {address} subtitle = '住所' information ='〒106-0032 東京都港区六本木　5-9-20' main = {{...profileStyle.main2, left:props.main2 }}/>
+            <CompanyProfileMain img = {{...profileStyle.img3, left: props.img3}} src = {Calender} src2 = {companyName} subtitle = 'カレンダー' information ='株式会社コラージュ' main = {{...profileStyle.main3, left: props.main3 }} />
+            <CompanyProfileMain img = {{...profileStyle.img4, left: props.img4}} src = {User} src2 = {wada} subtitle = 'user' information ='和田 嘉吉郎' main = {{...profileStyle.main4, left: props.main4 }} />
+            <CompanyProfileMain img = {{...profileStyle.img5, left: props.img5}} src = {Coin} src2 = {resource} subtitle = 'coin' information ='800万円' main = {{...profileStyle.main5, left: props.main5 }} />
+            <CompanyProfileMain img = {{...profileStyle.img6, left: props.img6}} src = {Calculator} src2 = {month} subtitle = '決算' information ='1月' main = {{...profileStyle.main6, left: props.main6 }} />
             <CompanyProfileMain
-                img = {profileStyle.img7}
+                img = {{...profileStyle.img7, left: props.img7}}
                 src = {Bank}
                 src2 = {deal}
                 subtitle = 'bank'
                 information = {<div>みずほ銀行 神谷町支店<br/>三菱東京UFJ銀行 恵比寿支店<br/>三井住友銀行 恵比寿支店<br/></div>}
-                main = { profileStyle.main7 }
+                main = {{...profileStyle.main7, left: props.main7 }}
             />
-            <CompanyProfileMain img = {profileStyle.img8} src = {Pencil}  src2 = {job} subtitle = 'pencil' information ='広告・宣伝に関する業務全般 + α' main = {profileStyle.main8 }/>
+            <CompanyProfileMain img = {{...profileStyle.img8, left: props.img8}} src = {Pencil}  src2 = {job} subtitle = 'pencil' information ='広告・宣伝に関する業務全般 + α' main = {{...profileStyle.main8, left: props.main8 }}/>
         </div>
     );
 }
