@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Price from '../../../../static/price.png';
 
 const windowWidth = window.innerWidth;
-const windowHeight = 750 / 1200  * windowWidth;
+const windowHeight = window.innerHeight;
 
 const priceWidth = windowWidth *  767 / 1200;
 const priceHeight = windowHeight * 354 / 750;
@@ -21,7 +21,7 @@ class Screen3 extends Component {
 const styles = {
     price: {
         position: 'absolute',
-        width: priceWidth,
+        width: 'auto',
         height: priceHeight,
         left: priceX,
         top: priceY

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import Dots from './Dots';
 import Screen1 from './Screen1';
 import Screen2 from './Screen2';
@@ -18,7 +19,8 @@ class SellingPlanScreen extends Component {
             color3: '#bfbfbf',
             color4: '#bfbfbf',
             page: 1,
-            blur: ''
+            blur: '',
+            width: this.props.window.width
         };
 
         this.id = null;
@@ -43,6 +45,13 @@ class SellingPlanScreen extends Component {
         }, 4000);
     }
 
+    componentWillReceiveProps() {
+        this.setState(() => {
+            return {
+                width: this.props.window.width
+            };
+        });
+    }
     componentWillUnmount() {
         clearInterval(this.id);
     }
@@ -125,4 +134,10 @@ class SellingPlanScreen extends Component {
     }
 }
 
-export default SellingPlanScreen;
+function mapStateToProps(state) {
+    return {
+        window: state.windowsize
+    };
+}
+
+export default connect(mapStateToProps)(SellingPlanScreen);

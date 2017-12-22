@@ -8,7 +8,7 @@ import who2 from '../../../../static/who2.png';
 import Man from '../../../../static/man.svg';
 
 const windowWidth = window.innerWidth;
-const windowHeight = 750 / 1200  * windowWidth;
+const windowHeight = window.innerHeight;
 
 const feel1Width = windowWidth * 0.293;
 const feel1Height = windowHeight * 0.419;
@@ -68,21 +68,21 @@ const styles = {
     feel1: {
         position: 'absolute',
         width: feel1Width,
-        height: feel1Height,
+        height: 'auto',
         left: feel1X,
         top: feel1Y
     },
     feel2: {
         position: 'absolute',
         width: feel2Width,
-        height: feel2Height,
+        height: 'auto',
         left: feel2X,
         top: feel2Y
     },
     title: {
         position: 'absolute',
         width: titleWidth,
-        height: titleHeight,
+        height: 'auto',
         left: titleX,
         top: titleY
     },

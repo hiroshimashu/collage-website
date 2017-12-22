@@ -13,7 +13,7 @@ import orientationTitle from '../../../../static/orientationTitle.png';
 import completeTitle from '../../../../static/completeTitle.png';
 
 const windowWidth = window.innerWidth;
-const windowHeight = 750 / 1200  * windowWidth;
+const windowHeight =window.innerHeight;
 const titleWidth = windowWidth * 0.139;
 const titleHeight = windowHeight * 0.036;
 function CalculateTitleX() {
@@ -103,7 +103,7 @@ const styles = {
     title: {
         position: 'absolute',
         width: titleWidth,
-        height: titleHeight,
+        height: 'auto',
         top: titleY,
         left: titleX,
         right: titleX
@@ -118,7 +118,7 @@ const styles = {
     apply: {
         position: 'absolute',
         width: applyWidth,
-        height: applyHeight,
+        height: 'auto',
         top: applyY,
         left: applyX,
         fontSize: '19.5px',
@@ -137,7 +137,7 @@ const styles = {
     orientation: {
         position: 'absolute',
         width: oriWidth,
-        height: oriHeight,
+        height: 'auto',
         top: oriY,
         left: oriX,
         fontSize: '19.98px',
@@ -156,7 +156,7 @@ const styles = {
     complete: {
         position: 'absolute',
         width: completeWidth,
-        height: completeHeight,
+        height: 'auto',
         top: completeY,
         left: completeX,
         fontSize: '19.98px',
@@ -168,21 +168,21 @@ const styles = {
     applyDiscription: {
         position: 'absolute',
         width: d1Width,
-        height: d1Height,
+        height: 'auto',
         top: d1Y,
         left: d1X
     },
     orienDiscription: {
         position: 'absolute',
         width: d2Width,
-        height: d2Height,
+        height: 'auto',
         top: d2Y,
         left: d2X
     },
     completeDiscription: {
         position: 'absolute',
         width: d3Width,
-        height: d3Height,
+        height: 'auto',
         top: d3Y,
         left: d3X
     },

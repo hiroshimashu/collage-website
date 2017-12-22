@@ -14,7 +14,7 @@ import BackgroundParticle from './BackroundParticle';
 
 
 const windowWidth = window.innerWidth;
-const windowHeight = 750 / 1200  * windowWidth;
+const windowHeight = window.innerHeight;
 const imgWidth = windowWidth * 0.025;
 const imgHeight = windowHeight * 0.043;
 const imgX = 1148 / 1200 * windowWidth;
@@ -70,7 +70,7 @@ const styles = {
     mail: {
         position: 'absolute',
         width: img2Width,
-        height:img2Height,
+        height:'auto',
         left:img2X,
         right:img2X,
         top:img2Y,

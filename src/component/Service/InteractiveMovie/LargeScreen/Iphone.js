@@ -4,22 +4,22 @@ import Potato from '../../../../static/potato.png';
 import Play from '../../../../static/play.png';
 
 const windowWidth = window.innerWidth;
-const windowHeight =  windowWidth *  750 / 1200;
+const windowHeight =  window.innerHeight;
 const iphoneWidth = windowWidth * 0.518;
 const iphoneHeight = windowHeight *  0.411;
 
 const iphoneX = 541 /1200 * windowWidth;
-const iphoneY = windowHeight * 271 / 750;
+const iphoneY = windowHeight * 220 / 750;
 
 const potatoWidth = windowWidth * 0.407;
 const potatoHeight = windowHeight *  0.365;
 const potatoX = windowWidth * 607 /1200;
-const potatoY = windowHeight * 288 / 750;
+const potatoY = windowHeight * 237 / 750;
 
 const playWidth = windowWidth * 0.066;
 const playHeight = windowHeight *  0.105;
 const playX = 812 /1200 *  windowWidth;
-const playY = windowHeight * 392 /750;
+const playY = windowHeight * 341 /750;
 
 
 
@@ -31,7 +31,7 @@ function Iphone2(props) {
             <img src ={ Iphone } style =  {{
                 position: 'absolute',
                 width:iphoneWidth,
-                height: iphoneHeight,
+                height: 'auto',
                 top: iphoneY,
                 left: iphoneX,
                 right: iphoneX,
@@ -40,7 +40,7 @@ function Iphone2(props) {
             <img src = { Potato } style = {{
                 position: 'absolute',
                 width:potatoWidth,
-                height: potatoHeight,
+                height: 'auto',
                 top: potatoY,
                 left: potatoX,
                 right: potatoX,
@@ -51,7 +51,7 @@ function Iphone2(props) {
                 <img src = { Play } style = {{
                     position: 'absolute',
                     width:playWidth,
-                    height: playHeight,
+                    height: 'auto',
                     top: playY,
                     left: playX,
                     right: playX,

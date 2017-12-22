@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import SellingMain from '../../../../static/SellingMain.gif';
 import SellingTitle from '../../../../static/SellingTitle.png';
 import LeftTalk from '../../../../static/leftTalk.png';
@@ -7,7 +8,7 @@ import RightTalk from '../../../../static/rightTalk.png';
 
 
 const windowWidth = window.innerWidth;
-const windowHeight = 750 / 1200  * windowWidth;
+const windowHeight = window.innerHeight;
 const titleWidth = windowWidth * 0.363;
 const titleHeight = windowHeight * 0.119;
 function calculatePositionX() {
@@ -56,7 +57,7 @@ const styles = {
     main: {
         position: 'absolute',
         width: mainWidth,
-        height: mainHeight,
+        height: 'auto',
         top: mainY,
         left: mainX,
         right: mainX
@@ -64,7 +65,7 @@ const styles = {
     title: {
         position: 'absolute',
         width: titleWidth,
-        height: titleHeight,
+        height: 'auto',
         top: titleY,
         left: titleX,
         right: titleX
@@ -72,14 +73,14 @@ const styles = {
     left: {
         position: 'absolute',
         width: leftWidth,
-        height: leftHeight,
+        height: 'auto',
         top: leftY,
         left: leftX
     },
     right: {
         position: 'absolute',
         width: rightWidth,
-        height: rightHeight,
+        height: 'auto',
         top: rightY,
         left: rightX
     }
