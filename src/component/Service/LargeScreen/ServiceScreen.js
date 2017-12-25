@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {  BrowserRouter as Router, Route, Link} from 'react-router-dom';
+import { connect } from 'react-redux';
 import ServiceTitle from './SeviceTitle';
 import Share from 'material-ui/svg-icons/social/share';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
@@ -23,7 +24,7 @@ const imgY = windowHeight * 20 / 750;
 const img2Width = windowWidth * 0.27;
 const img2Height = windowHeight * 0.037;
 const img2X = 437 / 1200 * windowWidth;
-const img2Y = windowHeight * 689 / 750;
+const img2Y = windowHeight * 705 / 750;
 
 
 
@@ -74,6 +75,7 @@ const styles = {
         left:img2X,
         right:img2X,
         top:img2Y,
+
     }
 }
 

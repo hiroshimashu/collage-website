@@ -6,7 +6,7 @@ import LineStore from '../../../../static/lineStoreLarge.png';
 import Characters from '../../../../static/characters.png';
 
 const windowWidth = window.innerWidth;
-const windowHeight = 750 / 1200  * windowWidth;
+const windowHeight = window.innerHeight;
 const img1Width = windowWidth * 0.609;
 const img1Height = windowHeight * 0.415;
 const img1X = 262 / 1200 * windowWidth
@@ -15,7 +15,7 @@ const img1Y = windowHeight * 228 / 750;
 const img4Width = windowWidth * 0.131;
 const img4Height = windowHeight * 0.061;
 const img4X = 523 / 1200 * windowWidth
-const img4Y = windowHeight * 592 / 750;
+const img4Y = windowHeight * 630 / 750;
 
 
 function LineStampScreen() {
@@ -31,14 +31,14 @@ const styles = {
     character: {
         position: 'absolute',
         width: img1Width,
-        height: img1Height,
+        height: 'auto',
         left: img1X,
         top: img1Y
     },
     line: {
         position: 'absolute',
         width: img4Width,
-        height: img4Height,
+        height: 'auto',
         left: img4X,
         top: img4Y
     },

@@ -209,6 +209,22 @@ class AboutScreen extends Component {
     }
 }
 
+const styles = {
+    aboutWrapper: {
+        height: aboutWrapperHeight,
+        position: 'relative',
+    },
+    profileWrapper: {
+        position: 'relative',
+        height : profileWrapperHeight,
+    },
+    groupWrapper: {
+        position: 'relative',
+        height: groupWrapperHeight
+    },
+
+}
+
 function mapStateToProps(state) {
     return {
         window: state.windowsize

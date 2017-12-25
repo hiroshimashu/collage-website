@@ -125,10 +125,10 @@ class SellingPlanScreen extends Component {
                     handleClick4 = {this.handleClick4}
 
                 />
-                {this.state.page === 1 && <Screen1 />}
-                {this.state.page === 2 && <Screen2 />}
-                {this.state.page === 3 && <Screen3 />}
-                {this.state.page === 4 && <Screen4 />}
+                {this.state.page === 1 && <Screen1 width = {this.state.width}/>}
+                {this.state.page === 2 && <Screen2 width = {this.state.width}/>}
+                {this.state.page === 3 && <Screen3 width = {this.state.width} />}
+                {this.state.page === 4 && <Screen4 width = {this.state.width}/>}
             </div>
         );
     }

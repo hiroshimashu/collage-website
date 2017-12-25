@@ -47,7 +47,7 @@ function Iphone2(props) {
                 zIndex: 1,
                 filter: `${props.blur}`
             }} />
-            <a href = '	http://collage-movie.hippy.jp/cooking/index.html' target="_blank">
+            <a href = '	http://collage-movie.hippy.jp/cooking/cooking.html' target="_blank">
                 <img src = { Play } style = {{
                     position: 'absolute',
                     width:playWidth,

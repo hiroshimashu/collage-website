@@ -2,10 +2,11 @@ import React, { Component } from 'react';
 import ServiceElement from './ServiceElement';
 import {StyleRoot} from 'radium';
 
+
 const windowWidth = window.innerWidth;
-const windowHeight =  windowWidth * 750 / 1200;
-const selectorWidth = windowWidth *  0.457;
-const selectorHeight =  windowHeight *  0.024;
+const windowHeight = window.innerHeight;
+const selectorWidth = 548;
+const selectorHeight =  18;
 function calculateMainX() {
     const  x = (windowWidth - selectorWidth)/2;
     return x;
@@ -128,20 +129,11 @@ const styles =  {
         left: selectorX,
         right: selectorX,
         fontFamily: 'dnp-shuei-mgothic-std',
-        fontSize: '17.73px',
-        lineHeight: '17.73px',
+        fontSize: '16.px',
+        lineHeight: '16px',
         textAlign: 'left',
         zIndex: 100,
         letterSpacing: '0.1em',
-        '@media (max-width: 1200px) and (min-width: 801px)': {
-            fontSize: '14px',
-        },
-        '@media (max-width: 800px) and (min-width: 701px)': {
-            fontSize: '12px',
-        },
-        '@media (max-width: 700px)': {
-            fontSize: '10px',
-        }
     }
 }
 

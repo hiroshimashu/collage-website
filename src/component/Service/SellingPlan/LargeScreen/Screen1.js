@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import SellingMain from '../../../../static/SellingMain.gif';
 import SellingTitle from '../../../../static/SellingTitle.png';
 import LeftTalk from '../../../../static/leftTalk.png';

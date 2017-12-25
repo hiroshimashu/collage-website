@@ -2,7 +2,7 @@ import React from 'react';
 import sns from '../../../../static/sns.png';
 
 const windowWidth = window.innerWidth;
-const windowHeight = 750 / 1200  * windowWidth;
+const windowHeight = window.innerHeight;
 const screenWidth = windowWidth * 0.142;
 const screenHeight = windowHeight * 0.403;
 const screenX = 377 / 1200 * windowWidth
@@ -21,7 +21,7 @@ const styles = {
     screen: {
         position: 'absolute',
         width: screenWidth,
-        height: screenHeight,
+        height: 'auto',
         top: screenY,
         left: screenX
     }
