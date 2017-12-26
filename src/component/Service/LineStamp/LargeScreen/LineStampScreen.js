@@ -1,7 +1,5 @@
-import React from 'react';
-import Satoshi from '../../../../static/satoshiLarge.png';
-import Yuya from '../../../../static/yuyaLarge.png';
-import Miki from '../../../../static/mikiLarge.png';
+import React, {Component} from 'react';
+import { connect } from 'react-redux';
 import LineStore from '../../../../static/lineStoreLarge.png';
 import Characters from '../../../../static/characters.png';
 
@@ -18,21 +16,48 @@ const img4X = 523 / 1200 * windowWidth
 const img4Y = windowHeight * 630 / 750;
 
 
-function LineStampScreen() {
-    return(
-        <div>
-            <img src = {Characters} alt = 'character' style = {styles.character}/>
-            <img src = {LineStore} alt = 'line' style = {styles.line} />
-        </div>
-    );
+class LineStampScreen extends Component{
+    constructor(props) {
+        super(props);
+        this.state = {
+            width: this.props.window.width,
+            img1Width: this.props.window.width * 0.609,
+            img1X: this.props.window.width * 262 / 1200,
+            lineX: this.calculateX(this.props.window.width, img4Width)
+        };
+
+        this.calculateX = this.calculateX.bind(this);
+    }
+
+    componentWillReceiveProps() {
+        this.setState(() => {
+            return {
+                width: this.props.window.width,
+                img1Width: this.props.window.width * 0.609,
+                img1X: this.props.window.width * 262 / 1200,
+                lineX: this.calculateX(this.props.window.width, img4Width)
+            };
+        });
+    }
+    calculateX(window, width) {
+        return (window - width) / 2;
+    }
+
+
+    render() {
+        return (
+            <div>
+                <img src={Characters} alt='character' style={{...styles.character, left: this.state.img1X, width: this.state.img1Width}}/>
+                <img src={LineStore} alt='line' style={{...styles.line, left: this.state.lineX, right: this.state.lineX}}/>
+            </div>
+        );
+    }
 }
 
 const styles = {
     character: {
         position: 'absolute',
-        width: img1Width,
         height: 'auto',
-        left: img1X,
         top: img1Y
     },
     line: {
@@ -44,5 +69,12 @@ const styles = {
     },
 }
 
+function mapStateToProps(state) {
+    return {
+        window: state.windowsize
+    };
+}
 
-export default LineStampScreen;
+
+
+export default connect(mapStateToProps)(LineStampScreen);

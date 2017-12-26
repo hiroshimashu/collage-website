@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {  BrowserRouter as Router, Route, Link} from 'react-router-dom';
+import {  BrowserRouter as Router, Route} from 'react-router-dom';
 import { connect } from 'react-redux';
 import ServiceTitle from './SeviceTitle';
 import Share from 'material-ui/svg-icons/social/share';
@@ -18,37 +18,69 @@ const windowWidth = window.innerWidth;
 const windowHeight = window.innerHeight;
 const imgWidth = windowWidth * 0.025;
 const imgHeight = windowHeight * 0.043;
-const imgX = 1148 / 1200 * windowWidth;
-const imgY = windowHeight * 20 / 750;
+const imgY = windowHeight * 40 / 750;
 
 const img2Width = windowWidth * 0.27;
-const img2Height = windowHeight * 0.037;
 const img2X = 437 / 1200 * windowWidth;
 const img2Y = windowHeight * 705 / 750;
 
+const titleWidth = 503;
+const selectorWidth = 548;
 
 
 
-const ServiceScreen = ({ match }) => {
+class ServiceScreen extends Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            width: this.props.window.width,
+            titleX: this.calculateX(this.props.window.width, titleWidth),
+            shareX: this.props.window.width * 1148 /1200,
+            selectorX: this.calculateX(this.props.window.width, selectorWidth),
+            mailX: this.calculateX(this.props.window.width, img2Width)
+        };
+
+        this.calculateX = this.calculateX.bind(this);
+    }
+
+    componentWillReceiveProps() {
+        console.log(this.props.window.width);
+        this.setState(() => {
+            return {
+                width: this.props.window.width,
+                titleX: this.calculateX(this.props.window.width, titleWidth),
+                shareX: this.props.window.width * 1148 /1200,
+                selectorX: this.calculateX(this.props.window.width, selectorWidth),
+                mailX: this.calculateX(this.props.window.width, img2Width)
+            };
+        });
+    }
 
 
-    return(
-        <Router>
-            <MuiThemeProvider>
-                <div style = {{position: 'relative', width: windowWidth, height:windowHeight}}>
-                    <BackgroundParticle />
-                    <ServiceTitle />
-                    <Share style = {styles.share} />
-                    <ServiceSelector src1 = {match.url} src2 ={`${match.url}/selling`} src3 = {`${match.url}/logcolle`} src4 = {`${match.url}/line`} />
-                    <Route exact path = { match.url } component = {InteractiveScreen} />
-                    <Route path = {`${match.url}/selling` } component = {Selling} />
-                    <Route path = {`${match.url}/logcolle`} component = {LogColle} />
-                    <Route path = {`${match.url}/line`} component = {LineStamp} />
-                    <img src = {Mail} alt = 'mail' style = {styles.mail} />
-                </div>
-            </MuiThemeProvider>
-        </Router>
-    );
+    calculateX(window, width) {
+        return (window - width) / 2;
+    }
+
+    render() {
+        return(
+            <Router>
+                <MuiThemeProvider>
+                    <div style = {{position: 'relative', width: this.state.width, height: windowHeight}}>
+                        <BackgroundParticle width = {this.state.width}/>
+                        <ServiceTitle titleX = {this.state.titleX}/>
+                        <Share style = {{...styles.share, left: this.state.shareX}} />
+                        <ServiceSelector selectorX = {this.state.selectorX} src1 = {this.props.match.url} src2 ={`${this.props.match.url}/selling`} src3 = {`${this.props.match.url}/logcolle`} src4 = {`${this.props.match.url}/line`} />
+                        <Route exact path = { this.props.match.url } component = {InteractiveScreen} />
+                        <Route path = {`${this.props.match.url}/selling` } component = {Selling} />
+                        <Route path = {`${this.props.match.url}/logcolle`} component = {LogColle} />
+                        <Route path = {`${this.props.match.url}/line`} component = {LineStamp} />
+                        <img src = {Mail} alt = 'mail' style = {{...styles.mail, left: this.state.mailX, right: this.state.mailX}} />
+                    </div>
+                </MuiThemeProvider>
+            </Router>
+        );
+    }
 }
 
 
@@ -63,8 +95,6 @@ const styles = {
         position: 'absolute',
         width: imgWidth,
         height:imgHeight,
-        left:imgX,
-        right:imgX,
         top:imgY,
         color:'#b3b3b3'
     },
@@ -72,12 +102,16 @@ const styles = {
         position: 'absolute',
         width: img2Width,
         height:'auto',
-        left:img2X,
-        right:img2X,
         top:img2Y,
 
     }
 }
 
+function mapStateToProps(state) {
+    return {
+        window: state.windowsize
+    };
+}
 
-export default ServiceScreen;
+
+export default connect(mapStateToProps)(ServiceScreen);

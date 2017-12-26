@@ -30,7 +30,7 @@ function BackgroundParticles(props) {
                     },
                 }
             }}
-            width = {'100%'}
+            width = {props.width}
             height = {'100%'}
             style =  {{
                 position:'absolute',

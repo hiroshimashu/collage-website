@@ -24,7 +24,7 @@ class App3 extends Component {
             target3: null,
             target4: null,
             night: false,
-            width: this.props.windowsize,
+            window: this.props.windowsize,
             height: window.innerHeight
         };
 

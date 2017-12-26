@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import Iphone from './Iphone';
+import { connect } from 'react-redux';
 import Introduce1 from './Introduce';
 import Introduce2 from './Introduce2';
 import Dots from './Dots';
 import Screen2 from './InteractiveScreen2';
-
+import { StyleRoot } from 'radium';
 
 const windowWidth = window.innerWidth;
 const windowHeight = 750 / 1200  * windowWidth;
@@ -14,7 +15,7 @@ function calculatePositionX() {
     const x = (windowWidth - imgWidth)
     return x / 2;
 }
-const imgX = calculatePositionX()
+const imgX = calculatePositionX();
 const imgY = windowHeight * 41 / 750;
 
 
@@ -26,7 +27,9 @@ class InteractiveScreen extends Component {
             color1: '#a99fc5',
             color2: '#bfbfbf',
             page: 1,
-            blur: ''
+            blur: '',
+            width: this.props.window.width
+
         };
 
         this.id = null;
@@ -43,6 +46,14 @@ class InteractiveScreen extends Component {
                 this.handleClick2();
             }
         }, 3000);
+    }
+
+    componentWillReceiveProps(){
+        this.setState(() => {
+            return {
+                width: this.props.window.width
+            };
+        });
     }
 
     componentWillUnmount() {
@@ -75,13 +86,15 @@ class InteractiveScreen extends Component {
 
     render() {
         return(
-            <div>
-                <Iphone blur = {this.state.blur}/>
-                <Introduce1  blur = {this.state.blur}/>
-                <Introduce2  blur = {this.state.blur}/>
-                <Dots color1 = {this.state.color1} color2 = {this.state.color2} handleClick1 = {this.handleClick1} handleClick2 = {this.handleClick2}/>
-                {this.state.page === 2 && <Screen2 />}
-            </div>
+            <StyleRoot>
+                <div>
+                    <Iphone blur = {this.state.blur} width = {this.state.width} />
+                    <Introduce1  blur = {this.state.blur} width = {this.state.width}/>
+                    <Introduce2  blur = {this.state.blur} width = {this.state.width}/>
+                    <Dots color1 = {this.state.color1} color2 = {this.state.color2} handleClick1 = {this.handleClick1} handleClick2 = {this.handleClick2}/>
+                    {this.state.page === 2 && <Screen2 width = {this.state.width} />}
+                </div>
+            </StyleRoot>
         );
     }
 }
@@ -97,4 +110,11 @@ const styles = {
     }
 }
 
-export default InteractiveScreen;
+function mapStateToProps(state) {
+    return {
+        window: state.windowsize
+    };
+}
+
+
+export default connect(mapStateToProps)(InteractiveScreen);

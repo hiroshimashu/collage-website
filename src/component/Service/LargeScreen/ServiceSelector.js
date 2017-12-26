@@ -81,7 +81,7 @@ class ServiceSelector extends Component {
     render() {
         return(
             <StyleRoot>
-                <div className='selectWrapper' style =  { styles.selectWrapper }>
+                <div className='selectWrapper' style =  {{ ...styles.selectWrapper, left:this.props.selectorX, right: this.props.selectorX }}>
                     <ServiceElement
                         src = {this.props.src1}
                         link = {this.state.link1}
@@ -126,8 +126,6 @@ const styles =  {
         width:selectorWidth,
         height: selectorHeight,
         top: selectorY,
-        left: selectorX,
-        right: selectorX,
         fontFamily: 'dnp-shuei-mgothic-std',
         fontSize: '16.px',
         lineHeight: '16px',

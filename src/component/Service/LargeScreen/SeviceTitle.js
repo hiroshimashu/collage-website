@@ -3,7 +3,7 @@ import Service from '../../../static/ServiceTitle.png';
 
 
 const windowSize = window.innerWidth;
-const windowHeight = windowSize *  750 / 1200;
+const windowHeight = window.innerHeight;
 const imgWidth = 503;
 const imgHeight = 93;
 function calculatePositionX() {
@@ -14,9 +14,9 @@ const imgX = calculatePositionX()
 const imgY = windowHeight * 41 / 750;
 
 
-function ServiceTitle() {
+function ServiceTitle(props) {
     return (
-        <img src = {Service} alt =  'smallImage' style =  {styles.serviceTitle} />
+        <img src = {Service} alt =  'smallImage' style =  {{...styles.serviceTitle, left: props.titleX, right: props.titleX}} />
     );
 }
 
@@ -25,8 +25,6 @@ const styles = {
         position: 'absolute',
         width: imgWidth,
         height:imgHeight,
-        left:imgX,
-        right:imgX,
         top:imgY,
     }
 };

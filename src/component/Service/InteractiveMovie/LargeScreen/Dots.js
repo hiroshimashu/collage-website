@@ -3,7 +3,7 @@ import Brightness from 'material-ui/svg-icons/image/brightness-1';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 const windowWidth = window.innerWidth;
-const windowHeight =  windowWidth *  750 / 1200;
+const windowHeight =  window.innerHeight;
 const dot1Width = windowWidth * 0.012;
 const dot1Height = windowHeight *  0.019;
 const dot1X = 25 / 1200 *  windowWidth;

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Feature from '../../../../static/FEATURE.png';
 const windowWidth = window.innerWidth;
 const windowHeight = window.innerHeight
@@ -12,20 +12,45 @@ const interactive2Y = windowHeight * 220 / 750;
 
 
 
-function InteractiveScreen2() {
-    return(
-        <img src = {Feature} alt = 'feature' style ={styles.img}/>
-    );
+class InteractiveScreen2 extends Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            width: this.props.width * 0.674,
+            interactive2X: this.calculateX(this.props.width,this.props.width * 0.674)
+        };
+
+        this.calculateX = this.calculateX.bind(this);
+
+    }
+
+
+    componentWillReceiveProps(){
+        this.setState(() => {
+            return {
+                width: this.props.width * 0.674,
+                interactive2X: this.calculateX(this.props.width,this.props.width * 0.674)
+            };
+        });
+    }
+
+    calculateX(window, width) {
+        return (window - width) / 2;
+    }
+
+    render() {
+        return (
+            <img src={Feature} alt='feature' style={{...styles.img, width: this.state.width, left: this.state.interactive2X, right: this.state.interactive2X,}}/>
+        );
+    }
 }
 
 const styles = {
     img: {
         position: 'absolute',
-        width: interactive2Width,
         height: 'auto',
         top: interactive2Y,
-        left: interactive2X,
-        right: interactive2X,
         zIndex: 100
     }
 }
