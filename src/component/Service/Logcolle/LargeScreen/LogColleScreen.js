@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import Screen1 from './Screen1';
 import Screen2 from './Screen2';
 import Screen3 from './Screen3';
@@ -7,7 +8,6 @@ import Screen5 from './Screen5';
 import  { StyleRoot } from 'radium';
 import Dots from './Dots';
 import Explanation1 from '../../../../static/explanation1.png';
-import Video from '../../../../static/video-player.png';
 import Google from '../../../../static/googleplay.png';
 import Apple from '../../../../static/appstore.png';
 import Iphone from '../../../../static/Iphone_vertical.png';
@@ -18,26 +18,10 @@ const exWidth = windowWidth * 0.238;
 const exHeight = windowHeight * 0.224;
 const exX = 593 / 1200 * windowWidth
 const exY = windowHeight * 247 / 750;
-
 const videoWidth = exWidth
-const videoHeight = exHeight;
-const videoX = exX;
 const videoY = windowHeight * 460 / 750;
-
-const googleWidth = windowWidth * 0.11;
-const googleHeight = windowHeight * 0.067;
-const googleX = 593 / 1200 * windowWidth
 const googleY = windowHeight * 640 / 750;
-
-
-const appleWidth = windowWidth * 0.11;
-const appleHeight = windowHeight * 0.067;
-const appleX = 0.6221  * windowWidth;
 const appleY = windowHeight * 640 / 750;
-
-const iphoneWidth = windowWidth * 0.159;
-const iphoneHeight = windowHeight * 0.516;
-const iphoneX = 366 / 1200 * windowWidth
 const iphoneY = windowHeight * 232 / 750;
 
 
@@ -53,7 +37,21 @@ class LogColle extends Component {
             color4: '#bfbfbf',
             color5: '#bfbfbf',
             page: 1,
-            blur: ''
+            blur: '',
+            width: this.props.window.width,
+            exWidth:this.props.window.width * 0.238,
+            exX: 593 / 1200 * this.props.window.width,
+            screenWidth: this.props.window.width * 0.142,
+            screenX: 377 / 1200 * this.props.window.width,
+            logWidth: this.props.window.width * 0.083,
+            logX: 410 / 1200 * this.props.window.width,
+            videoHeight:  this.props.window.width * 593 / 1200 * 0.4,
+            googleWidth: this.props.window.width * 0.11,
+            googleX: 593 / 1200 * this.props.window.width,
+            appleWidth: this.props.window.width * 0.11,
+            appleX: 0.6221  * this.props.window.width,
+            iphoneWidth: this.props.window.width * 0.159,
+            iphoneX: 366 / 1200 * this.props.window.width
         };
 
         this.id = null;
@@ -84,6 +82,27 @@ class LogColle extends Component {
     componentWillUnmount() {
         console.log('cleared');
         clearInterval(this.id);
+    }
+
+    componentWillReceiveProps(){
+        this.setState(() => {
+            return {
+                width: this.props.window.width,
+                exWidth:this.props.window.width * 0.238,
+                exX: 593 / 1200 * this.props.window.width,
+                screenWidth: this.props.window.width * 0.142,
+                screenX: 377 / 1200 * this.props.window.width,
+                logWidth:this.props.window.width * 0.083,
+                logX: 410 / 1200 * this.props.window.width,
+                googleWidth: this.props.window.width * 0.11,
+                googleX: 593 / 1200 * this.props.window.width,
+                videoHeight:  this.props.window.width * 593 / 1200 * 0.4 ,
+                appleWidth: this.props.window.width * 0.11,
+                appleX: 0.6221  * this.props.window.width,
+                iphoneWidth: this.props.window.width * 0.159,
+                iphoneX: 366 / 1200 * this.props.window.width
+            };
+        });
     }
 
     handleClick1() {
@@ -164,16 +183,16 @@ class LogColle extends Component {
         return(
             <StyleRoot>
                 <div>
-                    <img src = {Explanation1} alt = 'exp' style = {styles.ex} />
-                    <iframe id="ytplayer" type="text/html" style = {styles.video} src="http://www.youtube.com/embed/M7lc1UVf-VE?autoplay=1&origin=http://example.com" frameBorder="0"/>
-                    <img src = {Iphone} alt = 'iphone' style = {styles.iphone} />
-                    <img src = {Google} style = {styles.google}/>
-                    <img src = {Apple} style = {styles.apple} />
-                    {this.state.page === 1 &&<Screen1 />}
-                    {this.state.page === 2 &&<Screen2 />}
-                    {this.state.page === 3 &&<Screen3 />}
-                    {this.state.page === 4 &&<Screen4 />}
-                    {this.state.page === 5 &&<Screen5 />}
+                    <img src = {Explanation1} alt = 'exp' style = {{...styles.ex, width: this.state.exWidth,left: this.state.exX }} />
+                    <iframe id="ytplayer" type="text/html" style = {{...styles.video, width: this.state.exWidth,left: this.state.exX}} src="http://www.youtube.com/embed/M7lc1UVf-VE?autoplay=1&origin=http://example.com" frameBorder="0"/>
+                    <img src = {Iphone} alt = 'iphone' style = {{...styles.iphone, width: this.state.iphoneWidth,left: this.state.iphoneX}} />
+                    <img src = {Google} style = {{...styles.google, width: this.state.googleWidth,left: this.state.googleX}} />
+                    <img src = {Apple} style = {{...styles.apple, width: this.state.appleWidth,left: this.state.appleX}} />
+                    {this.state.page === 1 &&<Screen1 screenWidth = {this.state.screenWidth} screenX = {this.state.screenX} logWidth = {this.state.logWidth} logX = {this.state.logX} />}
+                    {this.state.page === 2 &&<Screen2 screenWidth = {this.state.screenWidth} screenX = {this.state.screenX} />}
+                    {this.state.page === 3 &&<Screen3 screenWidth = {this.state.screenWidth} screenX = {this.state.screenX} />}
+                    {this.state.page === 4 &&<Screen4 screenWidth = {this.state.screenWidth} screenX = {this.state.screenX} />}
+                    {this.state.page === 5 &&<Screen5 screenWidth = {this.state.screenWidth} screenX = {this.state.screenX} />}
                     <Dots
                         color1 = {this.state.color1}
                         color2 = {this.state.color2}
@@ -185,6 +204,7 @@ class LogColle extends Component {
                         handleClick3 = {this.handleClick3}
                         handleClick4 = {this.handleClick4}
                         handleClick5 = {this.handleClick5}
+                        width = {this.state.width}
                     />
                 </div>
             </StyleRoot>
@@ -195,46 +215,35 @@ class LogColle extends Component {
 const styles = {
     ex: {
         position: 'absolute',
-        width: exWidth,
         height: 'auto',
         top: exY,
-        left: exX,
-        right: exX
     },
     video: {
         position: 'absolute',
-        width: videoWidth,
-        height: videoHeight,
         top: videoY,
-        left: videoX,
-        right: videoX
+        height: 'auto'
     },
     google: {
         position: 'absolute',
-        width: googleWidth,
-        height: googleHeight,
-        top: googleY,
-        left: googleX,
-        right: googleX
+        height: 'auto',
+        top: googleY
     },
     apple: {
         position: 'absolute',
-        width: appleWidth,
-        height: appleHeight,
-        top: appleY,
-        left: appleX,
-        right: appleX
+        height: 'auto',
+        top: appleY
     },
     iphone: {
         position: 'absolute',
-        width: iphoneWidth,
         height: 'auto',
-        top: iphoneY,
-        left: iphoneX
+        top: iphoneY
     },
+};
 
-
-
+function mapStateToProps(state) {
+    return {
+        window: state.windowsize
+    };
 }
 
-export default LogColle;
+export default connect(mapStateToProps)(LogColle);

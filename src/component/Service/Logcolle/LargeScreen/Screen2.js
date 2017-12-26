@@ -9,10 +9,10 @@ const screenX = 377 / 1200 * windowWidth
 const screenY = windowHeight * 273 / 750;
 
 
-function Screen2() {
+function Screen2(props) {
     return(
         <div>
-            <img src = {sns} style ={styles.screen} />
+            <img src = {sns} style = {{...styles.screen, width: props.screenWidth, left: props.screenX}} />
         </div>
     );
 }
@@ -20,10 +20,8 @@ function Screen2() {
 const styles = {
     screen: {
         position: 'absolute',
-        width: screenWidth,
         height: 'auto',
         top: screenY,
-        left: screenX
     }
 };
 

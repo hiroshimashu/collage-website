@@ -14,86 +14,106 @@ import completeTitle from '../../../../static/completeTitle.png';
 
 const windowWidth = window.innerWidth;
 const windowHeight =window.innerHeight;
-const titleWidth = windowWidth * 0.139;
-const titleHeight = windowHeight * 0.036;
-function CalculateTitleX() {
-    return (windowWidth - titleWidth) / 2;
-}
-const titleX = CalculateTitleX()
 const titleY = windowHeight * 227 / 750;
-
-const contractWidth = windowWidth * 0.068;
-const contractX = 304 / 1200 *  windowWidth;
 const contractY = windowHeight * 312 / 750;
-
-const applyWidth = windowWidth * 0.083;
-const applyHeight = windowHeight * 0.025;
-const applyX = 283/ 1200 *  windowWidth;
 const applyY = windowHeight * 420 / 750;
-
-const operatorWidth = windowWidth * 0.068;
-const operatorX = 555 / 1200 *  windowWidth;
 const operatorY = windowHeight * 308 / 750;
-
-const oriWidth = windowWidth * 0.066;
-const oriHeight = windowHeight * 0.024;
-const oriX = 551/ 1200 *  windowWidth;
 const oriY = windowHeight * 419 / 750;
-
-const newsWidth = windowWidth * 0.068;
-const newsX = 815 / 1200 *  windowWidth;
 const newsY = windowHeight * 311 / 750;
-
-const completeWidth = windowWidth * 0.033;
-const completeHeight = windowHeight * 0.025;
-const completeX = 840/ 1200 *  windowWidth;
 const completeY = windowHeight * 419 / 750;
-
-const d1Width = windowWidth * 0.178;
-const d1Height = windowHeight * 0.091;
-const d1X = 228/ 1200 *  windowWidth;
 const d1Y = windowHeight * 469 / 750;
-
-const d2Width = windowWidth * 0.179;
-const d2Height = windowHeight * 0.157;
-const d2X = 491/ 1200 *  windowWidth;
 const d2Y = windowHeight * 469 / 750;
-
-const d3Width = windowWidth * 0.170;
-const d3Height = windowHeight * 0.053;
-const d3X = 763/ 1200 *  windowWidth;
 const d3Y = windowHeight * 469 / 750;
-
-const arrowWidth = windowWidth * 0.014;
-const arrowHeight = windowHeight * 0.039;
-const arrowX = 1134/ 1200 *  windowWidth;
 const arrowY = windowHeight * 350 / 750;
-
-
-const sampleWidth = windowWidth * 0.017;
-const sampleHeight = windowHeight * 0.304;
-const sampleX = 1100/ 1200 *  windowWidth;
 const sampleY = windowHeight * 251 / 750;
 
 
 
 
 class Screen2 extends Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            titleWidth:this.props.width * 0.139,
+            titleX: this.calculateX(this.props.width, this.props.width * 0.139),
+            contractWidth: this.props.width * 0.068,
+            contractX: 304 / 1200 *  this.props.width,
+            applyWidth: this.props.width * 0.083,
+            applyX: 283/ 1200 *  this.props.width,
+            d1Width: this.props.width * 0.178,
+            d1X: 228/ 1200 *  this.props.width,
+            operatorWidth: this.props.width * 0.068,
+            operatorX: 555 / 1200 *  this.props.width,
+            oriWidth: this.props.width * 0.066,
+            oriX: 551/ 1200 *  this.props.width,
+            d2Width:this.props.width * 0.179,
+            d2X: 491/ 1200 *  this.props.width,
+            newsWidth:this.props.width * 0.068,
+            newsX: 815 / 1200 *  this.props.width,
+            completeWidth: this.props.width * 0.033,
+            completeX: 840/ 1200 *  this.props.width,
+            d3Width: this.props.width * 0.170,
+            d3X: 763/ 1200 *  this.props.width,
+            arrowWidth: this.props.width * 0.014,
+            arrowX: 1134/ 1200 *  this.props.width,
+            sampleWidth: this.props.width * 0.017,
+            sampleX: 1100/ 1200 *  this.props.width
+        };
+        this.calculateX = this.calculateX.bind(this);
+    }
+
+    componentWillReceiveProps(){
+        this.setState(() => {
+            return {
+                titleWidth:this.props.width * 0.139,
+                titleX: this.calculateX(this.props.width, this.props.width * 0.139),
+                contractWidth: this.props.width * 0.068,
+                contractX: 304 / 1200 *  this.props.width,
+                applyWidth: this.props.width * 0.083,
+                applyX: 283/ 1200 *  this.props.width,
+                d1Width: this.props.width * 0.178,
+                d1X: 228/ 1200 *  this.props.width,
+                operatorWidth: this.props.width * 0.068,
+                operatorX: 555 / 1200 *  this.props.width,
+                oriWidth: this.props.width * 0.066,
+                oriX: 551/ 1200 *  this.props.width,
+                d2Width: this.props.width * 0.179,
+                d2X: 491/ 1200 *  this.props.width,
+                newsWidth:this.props.width * 0.068,
+                newsX: 815 / 1200 *  this.props.width,
+                completeWidth: this.props.width * 0.033,
+                completeX: 840/ 1200 *  this.props.width,
+                d3Width: this.props.width * 0.170,
+                d3X: 763/ 1200 *  this.props.width,
+                arrowWidth: this.props.width * 0.014,
+                arrowX: 1134/ 1200 *  this.props.width,
+                sampleWidth: this.props.width * 0.017,
+                sampleX: 1100/ 1200 *  this.props.width
+            };
+        });
+    }
+
+    calculateX(window, width) {
+        return (window - width) / 2;
+    }
+
+
     render() {
         return(
             <div>
-                <img src = {Title} alt = 'title' style = {styles.title}/>
-                <img src = {Contract} alt ='contract' style = {styles.contract} />
-                <img style = {styles.apply} src = {applyTitle} alt = 'apply'/>
-                <img src = {Operator} alt = 'operator' style = {styles.operator} />
-                <img style = {styles.orientation} src = {orientationTitle} alt =  'orientation'/>
-                <img src = {NewsPaper} alt = 'newspaper' style = {styles.news} />
-                <img src = {completeTitle} style = {styles.complete} alt = 'complete'/>
-                <img src = {Apply} alt = 'apply' style = {styles.applyDiscription}/>
-                <img src = {Orientation} alt = 'orientaion' style = {styles.orienDiscription}/>
-                <img src = {Complete} alt = 'complete' style = {styles.completeDiscription}/>
-                <RightArrow style = {styles.arrow} alt = 'arrow' />
-                <img src = {Sample} alt = 'sample' style = {styles.sample} />
+                <img src = {Title} alt = 'title' style = {{...styles.title, width: this.state.titleWidth, left: this.state.titleX, right: this.state.titleX}}/>
+                <img src = {Contract} alt ='contract' style = {{...styles.contract, width: this.state.contractWidth, height: this.state.contractWidth, left: this.state.contractX}} />
+                <img style = {{...styles.apply, left: this.state.applyX, width: this.state.applyWidth}} src = {applyTitle} alt = 'apply'/>
+                <img src = {Operator} alt = 'operator' style = {{...styles.operator, width: this.state.operatorWidth, left: this.state.operatorX, height: this.state.operatorWidth }} />
+                <img style = {{...styles.orientation, left: this.state.oriX, width: this.state.oriWidth}} src = {orientationTitle} alt =  'orientation' />
+                <img src = {NewsPaper} alt = 'newspaper' style = {{...styles.news, width: this.state.newsWidth, height: this.state.newsWidth, left: this.state.newsX }} />
+                <img src = {completeTitle} style = {{...styles.complete, width: this.state.completeWidth, left: this.state.completeX}} alt = 'complete'/>
+                <img src = {Apply} alt = 'apply' style = {{...styles.applyDiscription , width: this.state.d1Width, left: this.state.d1X}}/>
+                <img src = {Orientation} alt = 'orientation' style = {{...styles.orienDiscription, width: this.state.d2Width, left: this.state.d2X }}/>
+                <img src = {Complete} alt = 'complete' style = {{...styles.completeDiscription, width: this.state.d3Width, left: this.state.d3X }} />
+                <RightArrow style = {{...styles.arrow, left: this.state.arrowX, width: this.state.arrowWidth}} alt = 'arrow' />
+                <img src = {Sample} alt = 'sample' style = {{...styles.sample, width: this.state.sampleWidth, left:this.state.sampleX}} />
             </div>
         );
     }
@@ -102,103 +122,60 @@ class Screen2 extends Component {
 const styles = {
     title: {
         position: 'absolute',
-        width: titleWidth,
         height: 'auto',
-        top: titleY,
-        left: titleX,
-        right: titleX
+        top: titleY
     },
     contract: {
         position: 'absolute',
-        width: contractWidth,
-        height: contractWidth,
-        top: contractY,
-        left: contractX
+        top: contractY
     },
     apply: {
         position: 'absolute',
-        width: applyWidth,
         height: 'auto',
-        top: applyY,
-        left: applyX,
-        fontSize: '19.5px',
-        lineHeight: '19.98px',
-        textAlign:'left',
-        letterSpacing: '0.1em',
-        transform:'scaleY(1.0007)'
+        top: applyY
     },
     operator: {
         position: 'absolute',
-        width: operatorWidth,
-        height: operatorWidth,
-        top: operatorY,
-        left: operatorX
+        top: operatorY
     },
     orientation: {
         position: 'absolute',
-        width: oriWidth,
         height: 'auto',
-        top: oriY,
-        left: oriX,
-        fontSize: '19.98px',
-        lineHeight: '19.98px',
-        textAlign:'center',
-        letterSpacing: '0.10em',
-        transform:'scaleY(1.0007)'
+        top: oriY
     },
     news: {
         position: 'absolute',
-        width: newsWidth,
-        height: newsWidth,
-        top: newsY,
-        left: newsX
+        top: newsY
     },
     complete: {
         position: 'absolute',
-        width: completeWidth,
         height: 'auto',
-        top: completeY,
-        left: completeX,
-        fontSize: '19.98px',
-        lineHeight: '19.98px',
-        textAlign:'left',
-        letterSpacing: '0.10em',
-        transform:'scaleY(1.0007)'
+        top: completeY
     },
     applyDiscription: {
         position: 'absolute',
-        width: d1Width,
         height: 'auto',
-        top: d1Y,
-        left: d1X
+        top: d1Y
     },
     orienDiscription: {
         position: 'absolute',
-        width: d2Width,
         height: 'auto',
-        top: d2Y,
-        left: d2X
+        top: d2Y
     },
     completeDiscription: {
         position: 'absolute',
-        width: d3Width,
         height: 'auto',
-        top: d3Y,
-        left: d3X
+        top: d3Y
     },
     arrow: {
         position: 'absolute',
-        width: arrowWidth,
-        height: arrowHeight,
-        top: arrowY,
-        left: arrowX
+        height: 'auto',
+        top: arrowY
     },
     sample: {
         position: 'absolute',
-        width: sampleWidth,
-        height: sampleHeight,
-        top: sampleY,
-        left: sampleX
+        height: 'auto',
+        top: sampleY
     }
 }
 
