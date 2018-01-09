@@ -4,11 +4,11 @@ import '../../index.css';
 import Logo from '../../static/logo.png';
 
 const windowWidth =  window.innerWidth;
-const windowHeight = windowWidth *  1334 /750;
+const windowHeight = window.innerHeight
 const imageWidth = windowWidth * 0.133;
-const imageHeight = windowHeight * 0.074;
+const imageHeight = imageWidth * 0.99;
 const imageX = windowWidth * 326 / 750;
-const imageY = windowHeight * 618 / 1334;
+const imageY = (windowHeight - imageHeight) / 2;
 
 const Fade = ({ children, ...props }) => (
     <CSSTransition
@@ -58,8 +58,9 @@ const styles = {
     logo : {
         position: 'absolute',
         width: imageWidth,
-        height: imageHeight,
+        height: imageHeight ,
         top: imageY,
+        bottom: imageY,
         left: imageX
     }
 }

@@ -27,10 +27,7 @@ const worksStyle3 =  {
         height: 'auto',
         top: titleY,
         left: titleX,
-        zIndex: 2,
-        ':hover': {
-            transform: 'scale(1.05)',
-        },
+        zIndex: 2
     }
 };
 

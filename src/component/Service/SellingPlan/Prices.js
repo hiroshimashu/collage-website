@@ -1,5 +1,6 @@
 import React from 'react';
 import PriceChart from './PriceChart';
+import Price2 from '../../../static/Price2.png';
 import styleChart1 from './styleChart1';
 import styleChart2 from './styleChart2';
 import styleChart3 from './styleChart3';
@@ -19,9 +20,7 @@ const titleY = 1950 / 3812 * windowHeight;
 function Prices() {
     return(
         <div className = 'priceWrapper'>
-            <div className="title" style = {styles.title}>
-                料金
-            </div>
+            <img className="title" style = {styles.title} src = {Price2} />
             <PriceChart
                 wrapperStyle = {styleChart1.wrapper}
                 background = { styleChart1.background}

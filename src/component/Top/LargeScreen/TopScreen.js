@@ -68,8 +68,8 @@ class Scene extends Component {
 
     render() {
         return(
-            <div style = {{position: 'relative', width: this.state.width, height:this.state.height}}>
-                <AnimationScene1 handleAnimation = {this.handleThree}/>
+            <div style = {{position: 'relative', width: windowWidth, height:windowHeight}}>
+                <AnimationScene1 handleAnimation = {this.handleThree} />
                 {this.state.onThree && <Background show =  {this.state.onThree} handleAnimation = {this.handleAnimation1} /> }
                 {this.state.show2 && <AnimationScene3 handleAnimation = {this.handleAnimation3} />}
                 {this.state.show4 && <AnimationSceen5/>}

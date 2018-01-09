@@ -3,6 +3,8 @@ import {
     BrowserRouter as Router,
     Route
 } from 'react-router-dom';
+import './index.css';
+import CSSTransition from 'react';
 import { connect } from 'react-redux';
 import Logo from './component/Top/LargeScreen/Logo';
 import Header from './component/Header';
@@ -14,6 +16,16 @@ import Service from './component/Service/LargeScreen/ServiceScreen';
 import Access from './component/Access/Access';
 
 
+const Fade = ({ children, ...props }) => (
+    <CSSTransition
+        {...props}
+        classNames="fade"
+        unmountOnExit={true}
+    >
+        {children}
+    </CSSTransition>
+);
+
 class App3 extends Component {
     constructor(props) {
         super(props);
@@ -23,6 +35,8 @@ class App3 extends Component {
             target2: null,
             target3: null,
             target4: null,
+            logo: false,
+            header: false,
             night: false,
             window: this.props.windowsize,
             height: window.innerHeight
@@ -79,7 +93,7 @@ class App3 extends Component {
 
 function mapStateToProps(state) {
     return {
-        windowsize: state.windowsize
+        window: state.windowsize
     };
 }
 

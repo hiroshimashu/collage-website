@@ -8,6 +8,9 @@ import Introduce2 from './Introduce2';
 import Iphone2 from './Iphone2';
 import Menu from './Menu';
 import Logo from './Logo';
+import TapD from '../../../static/play-mini.png';
+import ViveD from '../../../static/vive-mini.png';
+import Choice from '../../../static/choice-mini.png';
 import InteractiveMainTitle2 from './InteractiveMainTitle2';
 import InteractiveMain from './InteractiveMain';
 import MailButton from './MailButton';
@@ -57,37 +60,26 @@ class InteractiveMovieScreen2 extends Component {
                 <InteractiveMainTitle2 />
                 <InteractiveMain
                     src = {Tap}
+                    src2 = {TapD}
                     imgStyle= {Style1.imgStyle}
                     exStyle = {Style1.exStyle}
                 >
-                    タップ、シェイク、音声入力などスマホならで<br/>
-                    はの操作に応じて、流れる動画の内容がインタ<br/>
-                    ラクティブに変化！動画をリアルタイムで操作<br/>
-                    しているような視聴体験を味わえます。<br/>
-
                 </InteractiveMain>
                 <InteractiveMain
                     src = {Smartphone}
+                    src2 = {ViveD}
                     imgStyle= {Style2.imgStyle}
                     exStyle = {Style2.exStyle}
                 >
-                スマホブラウザでそのまま再生可能なので、<br/>
-                動画視聴用に専用アプリのDLなどは不要！<br/>
-                WEB上のURL入力のみでアクセスできるため、<br/>
-                SNSでのシェアも簡単！<br/>
                 </InteractiveMain>
                 <InteractiveMain
                     src = {Play}
+                    src2 = {Choice}
                     imgStyle= {Style3.imgStyle}
                     exStyle = {Style3.exStyle}
                 >
-                    選んだ選択肢によって結末が変わるストーリー<br/>
-                    動画。擬似的に会話している様な体験動画。<br/>
-                    動画とECの連動。 今までの「観るだけとは違<br/>
-                    った多彩な映像が検討可能に！<br/>
                 </InteractiveMain>
                 <MailButton />
-                <MailLogo />
                 <MailMain />
             </div>
             </Fade>

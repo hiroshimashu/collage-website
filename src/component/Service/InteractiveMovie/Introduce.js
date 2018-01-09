@@ -1,4 +1,5 @@
 import React from 'react';
+import title1 from '../../../static/title1.png';
 const windowWidth = window.innerWidth;
 const windowHeight =  windowWidth *  1974 / 750;
 const introWidth = windowWidth * 0.684;
@@ -8,16 +9,10 @@ const introY = windowHeight * 447 / 1974;
 
 
 
+
 function Introduce() {
     return(
-        <div style = { styles.intro }>
-            <div style = {{ fontSize: '26px'}}>
-                スマホ上で
-            </div>
-            <div style = {{ fontSize: '34px', color: '#8f82bc'}}>
-                ”触って変わる”
-            </div>
-        </div>
+        <img src = {title1} style = {styles.intro} />
     );
 }
 
@@ -26,15 +21,9 @@ const styles = {
         position: 'absolute',
         fontFamily: 'dnp-shuei-mgothic-std',
         width: introWidth,
-        height: introHeight,
-        fontWeight: '600',
-        lineHeight: '41px',
+        height: 'auto',
         top: introY,
         left: introX,
-        textAlign: 'left',
-        transform: 'matrix(1.0314,0.0087,0.0061,1.0001,0,0)',
-        letterSpacing: '0.1em'
-
     },
 }
 

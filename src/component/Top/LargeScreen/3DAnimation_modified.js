@@ -107,14 +107,6 @@ class Scene extends Component {
 
     }
 
-    componentWillReceiveProps() {
-        this.renderer.context.canvas.width = this.props.windowWidth.width;
-        this.camera.aspect = this.props.windowWidth.width / windowHeight;
-        this.camera.updateProjectionMatrix();
-        this.renderer.render(this.scene, this.camera);
-
-    }
-
 
     createParticles(size, transparent, opacity, vertexColors, sizeAttenuation, color) {
 
@@ -141,7 +133,7 @@ class Scene extends Component {
                 let x = (Math.random() * range - range / 2);
                 let y = (Math.random() * range - range / 2);
                 let z = (Math.random() * range - range / 2);
-                let magnitude = 30;
+                let magnitude = 120;
                 let theta = Math.atan2(vx,vz);
                 let particle = new THREE.Vector3(0, 0, 0); // 極座標
                 particle.magnitude = magnitude;
@@ -191,14 +183,15 @@ class Scene extends Component {
             if(child instanceof THREE.Points) {
                 let vertices = child.geometry.vertices;
                 vertices.forEach(function (v) {
-                    if(v.magnitude >= 0) {
-                        v.x += v.velocity[0]
+                    if(v.magnitude > 1 ) {
+                        v.x += v.velocity[0];
                         v.y += v.velocity[1];
                         v.z += v.velocity[2];
-                        v.magnitude = v.magnitude - 6;
+                        v.magnitude = v.magnitude - 24;
                         v.velocity = v.dirs.map(element => element * v.magnitude);
                         v.r = Math.sqrt(Math.pow(v.x, 2) + Math.pow(v.z, 2));
-                    } else if (v.magnitude <= 0) {
+                    }
+                    else {
                         if(v.theta > Math.PI) {
                             v.theta =  -1 * Math.PI;
                         }
@@ -206,6 +199,7 @@ class Scene extends Component {
                         v.x = v.r * Math.cos(v.theta);
                         v.z = v.r * Math.sin(v.theta);
                     }
+
                 });
             }
             child.geometry.verticesNeedUpdate = true;
@@ -223,7 +217,7 @@ class Scene extends Component {
     render() {
         return(
             <Fade in = { this.props.show} timeout = {2000}>
-                <div style = {{width: this.props.windowWidth.width, height: windowHeight, position: 'absolute', zIndex: 5}} ref={(mount) => { this.mount = mount; }} />
+                <div style = {{width: windowWidth, height: windowHeight, position: 'absolute', zIndex: 5}} ref={(mount) => { this.mount = mount; }} />
             </Fade>
         );
     }

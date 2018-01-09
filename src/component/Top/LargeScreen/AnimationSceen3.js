@@ -46,14 +46,14 @@ class AnimationScene3 extends Component {
 
         setTimeout(() => {
             this.setState({show: !this.state.show});
-        }, 1000);
+        }, 1200);
 
     }
 
     componentDidMount() {
         setTimeout(() => {
             this.props.handleAnimation();
-        }, 800);
+        }, 1500);
     }
 
 

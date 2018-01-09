@@ -32,7 +32,7 @@ const styleStep1 = {
         top: nameY,
         left: nameX,
         fontFamily: 'a-otf-gothic-bbb-pr6n',
-        fontSize: '11px',
+        fontSize: '10px',
         textAlign: 'left',
         transform: 'scaleY(1.0007)',
         fontWeight: 600

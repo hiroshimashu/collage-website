@@ -55,7 +55,6 @@ class SellingPlanScreen2 extends Component {
                 <Prices />
                 <VoiceFromCustomer2 />
                 <MailButton />
-                <MailLogo />
                 <MailMain2 />
             </div>
         );

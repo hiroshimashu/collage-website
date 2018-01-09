@@ -3,10 +3,12 @@ import ApplyingSteps from './ApplyingSteps';
 import step1 from './styleStep1';
 import step2 from './styleStep2';
 import step3 from './styleStep3';
+import sample from '../../../static/sample2.png';
 import Contact from '../../../static/contract.svg';
 import Operator from '../../../static/operator.svg';
 import Newspaper from '../../../static/newspaper.svg';
 import rightArrow from '../../../static/right-arrow.png';
+import How from '../../../static/HowToUse2.png';
 
 const windowWidth =  window.innerWidth;
 const windowHeight = windowWidth *  3812 /750;
@@ -35,9 +37,7 @@ const sampleImageY = 1780 / 3812 * windowHeight;
 function HowToUse() {
     return(
         <div >
-            <div className="title" style = {styles.title}>
-                ご利用の流れ
-            </div>
+            <img className="title" style = {styles.title} src = {How} />
             <ApplyingSteps
                 src = {Contact}
                 imgStyle = {step1.img}
@@ -69,9 +69,7 @@ function HowToUse() {
             >
                 原則24時間以内に企画書PPTデータを納品!<br/>
             </ApplyingSteps>
-            <div className="title" style = {styles.sample}>
-                企画書サンプルはこちら
-            </div>
+            <img src = {sample} className="title" style = {styles.sample} />
             <img src = {rightArrow} alt = 'arrow' style = { styles.sampleImage}/>
         </div>
     );

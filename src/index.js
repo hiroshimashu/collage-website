@@ -13,8 +13,6 @@ let store = createStore(
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 
-console.log(ReactDOM.findDOMNode(this.about));
-
 ReactDOM.render(
     <Provider store={store}>
         <Main />

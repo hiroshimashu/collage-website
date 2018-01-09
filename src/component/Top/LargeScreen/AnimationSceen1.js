@@ -4,7 +4,7 @@ import '../../../index.css';
 import Logo from '../../../static/logo.png';
 
 const windowWidth = window.innerWidth;
-const windowHeight = 750 / 1200 * windowWidth;
+const windowHeight = window.innerHeight;
 
 
 const imageWidth = 100;

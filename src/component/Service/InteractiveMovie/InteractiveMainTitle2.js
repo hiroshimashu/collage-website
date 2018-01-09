@@ -1,4 +1,5 @@
 import React from 'react';
+import Property from '../../../static/Property.png';
 
 const windowWidth = window.innerWidth;
 const windowHeight =  windowWidth *  1974 / 750;
@@ -15,21 +16,19 @@ const titleY = windowHeight * 1136 / 1974;
 
 function InteractiveMainTitle2() {
     return(
-        <div style = {{
-            position: 'absolute',
-            width: titleWidth,
-            height: titleHeight,
-            top: titleY,
-            left: titleX,
-            right: titleX,
-            fontWeight: 600,
-            fontFamily: 'a-otf-gothic-bbb-pr6n',
-            fontSize: '18px',
-
-        }}>
-            インタラクティブ動画の特徴
-        </div>
+        <img src = {Property} style = {styles.property} />
     );
+}
+
+const styles = {
+    property: {
+        position: 'absolute',
+        width: titleWidth,
+        height: titleHeight,
+        top: titleY,
+        left: titleX,
+        right: titleX
+    }
 }
 
 export default InteractiveMainTitle2;

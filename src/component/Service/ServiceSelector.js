@@ -125,8 +125,8 @@ const styles =  {
         left: selectorX,
         right: selectorX,
         fontFamily: 'dnp-shuei-mgothic-std',
-        fontSize: '10.5px',
-        lineHeight: '20px',
+        fontSize: '10px',
+        lineHeight: '11px',
         textAlign: 'left',
         zIndex: 100
     },

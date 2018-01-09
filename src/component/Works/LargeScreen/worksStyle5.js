@@ -8,10 +8,6 @@ const titleWidth = windowWidth *  0.266;
 const titleX =  613 / 1200  *  windowWidth;
 const titleY = 1542 / 2246 * windowHeight;
 
-const backgroundWidth =  windowWidth *  0.50;
-const backgroundHeight = windowHeight * 801 /2246;
-const backgroundX = windowWidth * 0.50;
-const backgroundY = windowHeight * 212 / 2246 + imgY
 
 
 

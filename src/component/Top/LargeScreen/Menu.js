@@ -27,7 +27,7 @@ const styles = {
     menu: {
         position: 'absolute',
         width:menuWidth,
-        height:menuHeight,
+        height: 'auto',
         top:menuY,
         left:menuX,
         zIndex: 100

@@ -1,4 +1,5 @@
 import React from 'react';
+import MailWrapper from '../../../static/Mail-wrapper.png';
 
 const windowWidth = window.innerWidth;
 const windowHeight =  windowWidth *  1974 / 750;
@@ -14,9 +15,7 @@ const ButtonY = windowHeight * 1814 / 1974;
 
 function MailButton() {
     return(
-        <div style =  {styles.wrapper} onClick ={() => {console.log('question?');}}>
-
-        </div>
+        <img style =  {styles.wrapper} src = {MailWrapper}onClick ={() => {console.log('question?');}} />
     );
 }
 

@@ -26,8 +26,8 @@ const Cards = [
     {src1: Ads, src2:title1, style1:worksStyle1.imgStyle, style2:worksStyle1.titleStyle, flag:1},
     {src1: title2, src2:Event, style1:worksStyle2.imgStyle, style2:worksStyle2.titleStyle, flag: 2},
     {src1: Campaign, src2:title3, style1:worksStyle3.imgStyle, style2:worksStyle3.titleStyle, flag:1},
-    {src1: title4, src2:Casting, style1:worksStyle4.imgStyle, style2:worksStyle4.titleStyle, flag:2},
-    {src1: PR, src2:title5, style1:worksStyle5.imgStyle, style2:worksStyle5.titleStyle, flag: 1},
+    {src1: title4, src2:Casting, style1:worksStyle4.imgStyle, style2:worksStyle4.titleStyle, flag:4},
+    {src1: PR, src2:title5, style1:worksStyle5.imgStyle, style2:worksStyle5.titleStyle, flag: 5},
     {src1: title6, src2:Media, style1:worksStyle6.imgStyle, style2:worksStyle6.titleStyle, flag: 3}
 ];
 
@@ -40,7 +40,7 @@ function WorksCard2(props) {
                 return (
                     <div style={{display: 'flex'}}>
                         <img src={card.src1} alt={card.src1} key={card.src1} style={{...card.style1, width:props.width * 0.50}}/>
-                        <img src={card.src2} alt={card.src2} key={card.src2} style={{...card.style2, left: props.width * 613 /1200, width: props.width * 0.33}}/>
+                        <img src={card.src2} alt={card.src2} key={card.src2} style={{...card.style2, left: props.width * 613 /1200, width: props.width * 0.476}}/>
                     </div>
                 );
             }else if(card.flag === 3){
@@ -53,8 +53,22 @@ function WorksCard2(props) {
             }else if(card.flag === 2){
                 return (
                     <div style={{display: 'flex'}}>
-                        <img src={card.src1} alt={card.src1} key={card.src1} style={{...card.style1, width: props.width * 0.33}}/>
+                        <img src={card.src1} alt={card.src1} key={card.src1} style={{...card.style1, width: props.width * 0.33}} />
                         <img src={card.src2} alt={card.src2} key={card.src2} style={{...card.style2, left: props.width * 0.50, width: props.width * 0.50}}/>
+                    </div>
+                );
+            }else if(card.flag === 4){
+                return (
+                    <div style={{display: 'flex'}}>
+                        <img src={card.src1} alt={card.src1} key={card.src1} style={{...card.style1, width: props.width * 0.229}} />
+                        <img src={card.src2} alt={card.src2} key={card.src2} style={{...card.style2, left: props.width * 0.50, width: props.width * 0.50}}/>
+                    </div>
+                );
+            }else if(card.flag === 5){
+                return (
+                    <div style={{display: 'flex'}}>
+                        <img src={card.src1} alt={card.src1} key={card.src1} style={{...card.style1, width:props.width * 0.50}} />
+                        <img src={card.src2} alt={card.src2} key={card.src2} style={{...card.style2, left: props.width * 613 /1200, width: props.width *  0.266}}/>
                     </div>
                 );
             }

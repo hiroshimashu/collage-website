@@ -8,11 +8,6 @@ const imgY =  1220 / 2246 * windowHeight;
 const titleWidth = windowWidth *  0.229;
 const titleX =  13 / 1200  *  windowWidth;
 const titleY = 1250 / 2246 * windowHeight;
-const backgroundWidth =  windowWidth *  0.50;
-const backgroundHeight = windowHeight * 617 /2246;
-const backgroundX = windowWidth * 0.50;
-const backgroundY = windowHeight * 1013 / 2246 + imgHeight
-
 
 
 const worksStyle4 =  {

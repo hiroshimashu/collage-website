@@ -45,7 +45,7 @@ class AnimationSceen5 extends Component {
         this.state = {
             show: false,
             ready: false,
-            green:true,
+            green: false,
             red: false,
             pink:false,
             purple: false,
@@ -55,9 +55,13 @@ class AnimationSceen5 extends Component {
         this.handleStateChange = this.handleStateChange.bind(this);
 
         setTimeout(() => {
-            this.setState({show: !this.state.show});
-        }, 100);
-
+            this.setState(() => {
+                return {
+                    show: true,
+                    green: true
+                };
+            });
+        }, 0)
         this.handleClick = this.handleClick.bind(this);
     }
 
@@ -120,8 +124,7 @@ class AnimationSceen5 extends Component {
 
     render() {
         return(
-            <Fade in = { this.state.show} timeout = {2000}>
-                <div>
+            <div>
                     <Fade in = {this.state.green} timeout = {2000}>
                         <img src = {Logo} alt = 'sceen1' style = { styles.collage}/>
                     </Fade>
@@ -141,8 +144,8 @@ class AnimationSceen5 extends Component {
                         target3 = {this.props.target3}
                         target4 = {this.props.target4}
                     />}
-                </div>
-            </Fade>
+            </div>
+
         );
     }
 }

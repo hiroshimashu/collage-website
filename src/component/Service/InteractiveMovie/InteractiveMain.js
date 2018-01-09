@@ -18,8 +18,8 @@ function InteractiveMain2(props) {
         <div style = {{
             display: 'flex'
         }}>
-            <img src =  {props.src} style = {props.imgStyle}/>
-            <div style = {props.exStyle}>{props.children}</div>
+            <img src =  {props.src} style = {props.imgStyle} />
+            <img src =  {props.src2} style = {props.exStyle} />
         </div>
     );
 }

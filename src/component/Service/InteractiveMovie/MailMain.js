@@ -1,4 +1,5 @@
 import React from 'react';
+import MailMain from '../../../static/Mail-main.png';
 const windowWidth = window.innerWidth;
 const windowHeight =  windowWidth *  1974 / 750;
 const mailWidth = windowWidth * 0.463;
@@ -9,7 +10,7 @@ console.log(mailY, windowHeight);
 
 function MailMain2() {
     return(
-        <div style={styles.mailMain}>お問い合わせはこちら</div>
+        <div style={styles.mailMain} src = {MailMain}>お問い合わせはこちら</div>
     );
 }
 
@@ -21,12 +22,12 @@ const styles = {
         top: mailY,
         left: mailX,
         right: mailX,
-        fontSize: '15.6px',
+        fontSize: '14.6px',
         letterSpacing: '0.1em',
         textAlign: 'left',
         fontFamily: 'dnp-shuei-mgothic-std',
-        transform: 'scaleY(1.0019)',
-        lineHeight: '18.7px'
+        lineHeight: '18.6px',
+        transform: 'scaleY(1.0019)'
     }
 }
 

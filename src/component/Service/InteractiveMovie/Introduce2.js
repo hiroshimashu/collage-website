@@ -1,4 +1,5 @@
 import React from 'react';
+import title2 from '../../../static/title2.png';
 const windowWidth = window.innerWidth;
 const windowHeight =  windowWidth *  1974 / 750;
 const intro2Width = windowWidth * 0.525;
@@ -10,26 +11,17 @@ const intro2Y = windowHeight * 627 / 1974;
 
 function Introduce2() {
     return(
-        <div style = { styles.intro }>
-            <div style = {{ fontSize: '26px',position: 'absolute', top:-10}}>
-                新感覚ムービー
-            </div>
-        </div>
+        <img src = {title2} style = {styles.intro} />
     );
 }
 
 const styles = {
     intro: {
         position: 'absolute',
-        fontFamily: 'dnp-shuei-mgothic-std',
         width: intro2Width,
-        height: intro2Height,
-        fontWeight: '600',
+        height: 'auto',
         top: intro2Y,
-        left: intro2X,
-        textAlign: 'left',
-        transform: 'matrix(1.0314,0.0087,0.0061,1.0001,0,0)',
-        letterSpacing: '0.1em',
+        left: intro2X
     },
 }
 
