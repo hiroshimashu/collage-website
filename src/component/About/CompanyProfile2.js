@@ -8,6 +8,16 @@ import Coin from '../../static/coins.svg';
 import Calculator from '../../static/calculator.svg';
 import Bank from '../../static/bank.svg';
 import Pencil from '../../static/pencil.svg';
+import profile1 from '../../static/profile1-mod.png';
+import profile2 from '../../static/profile2.png';
+import profile3 from '../../static/profile3.png';
+import profile4 from '../../static/profile4.png';
+import profile5 from '../../static/profile5.png';
+import profile6 from '../../static/month.png';
+import profile7 from '../../static/profile7.png';
+import profile8 from '../../static/profile8.png';
+
+
 
 
 const windowWidth = window.innerWidth;
@@ -61,7 +71,7 @@ const imgWidth6 = windowWidth *  0.055;
 const imgHeight6 =  windowHeight * 0.018;
 const imgX6 = windowWidth * 122 / 750;
 const imgY6 = windowHeight * 642 / 2917;
-const mainWidth6 = windowWidth * 0.071;
+const mainWidth6 = windowWidth * 0.051;
 const mainHeight6 =  windowHeight * 0.008;
 const mainX6 = windowWidth *  298 / 750;
 const mainY6 = windowHeight * 655/ 2917;
@@ -96,19 +106,20 @@ const mainY8 = windowHeight * 870 / 2917;
 function CompanyProfile2() {
     return(
         <div>
-            <CompanyProfileMain2 img = {styles.img1} src = {building} subtitle = '社名' information = '株式会社コラージュ' main = { styles.main1 }/>
-            <CompanyProfileMain2 img = {styles.img2} src = {Placeholder} subtitle = '住所' information ='〒106-0032 東京都港区六本木　5-9-20' main = { styles.main2 }/>
-            <CompanyProfileMain2 img = {styles.img3} src = {Calender} subtitle = 'カレンダー' information ='株式会社コラージュ' main = { styles.main3 }/>
-            <CompanyProfileMain2 img = {styles.img4} src = {User} subtitle = 'user' information ='和田嘉吉郎' main = { styles.main4 }/>
-            <CompanyProfileMain2 img = {styles.img5} src = {Coin} subtitle = 'coin' information ='800万円' main = { styles.main5 }/>
-            <CompanyProfileMain2 img = {styles.img6} src = {Calculator} subtitle = '決算' information ='1月' main = { styles.main6 }/>
+            <CompanyProfileMain2 img = {styles.img1} src = {building} src2 ={profile1} subtitle = '社名' information = '株式会社コラージュ' main = { styles.main1 }/>
+            <CompanyProfileMain2 img = {styles.img2} src = {Placeholder} src2 ={profile2} subtitle = '住所' information ='〒106-0032 東京都港区六本木　5-9-20' main = { styles.main2 }/>
+            <CompanyProfileMain2 img = {styles.img3} src = {Calender}  src2 ={profile3} subtitle = 'カレンダー' information ='株式会社コラージュ' main = { styles.main3 }/>
+            <CompanyProfileMain2 img = {styles.img4} src = {User} src2 ={profile4} subtitle = 'user' information ='和田嘉吉郎' main = { styles.main4 }/>
+            <CompanyProfileMain2 img = {styles.img5} src = {Coin} src2 ={profile5} subtitle = 'coin' information ='800万円' main = { styles.main5 }/>
+            <CompanyProfileMain2 img = {styles.img6} src = {Calculator}  src2 ={profile6} subtitle = '決算' information ='1月' main = { styles.main6 }/>
             <CompanyProfileMain2
                 img = {styles.img7}
                 src = {Bank} subtitle = 'bank'
+                src2 ={profile7}
                 information = {<div>みずほ銀行 神谷町支店<br/>三菱東京UFJ銀行 恵比寿支店<br/>三井住友銀行 恵比寿支店<br/></div>}
                 main = { styles.main7 }
             />
-            <CompanyProfileMain2 img = {styles.img8} src = {Pencil} subtitle = 'pencil' information ='広告・宣伝に関する業務全般 + α' main = { styles.main8 }/>
+            <CompanyProfileMain2 img = {styles.img8} src = {Pencil} src2 ={profile8} subtitle = 'pencil' information ='広告・宣伝に関する業務全般 + α' main = { styles.main8 }/>
         </div>
     );
 }
@@ -122,7 +133,7 @@ const styles = {
     },
     main1: {
         width: mainWidth1,
-        height: mainHeight1,
+        height: 'auto',
         left: mainX1,
         top: mainY1,
         fontSize: '13px',
@@ -140,7 +151,7 @@ const styles = {
     },
     main2: {
         width: mainWidth2,
-        height: mainHeight2,
+        height: 'auto',
         left: mainX2,
         top: mainY2,
         fontSize: '13px',
@@ -158,7 +169,7 @@ const styles = {
     },
     main3: {
         width: mainWidth3,
-        height: mainHeight3,
+        height: 'auto',
         left: mainX3,
         top: mainY3,
         fontSize: '13px',
@@ -176,7 +187,7 @@ const styles = {
     },
     main4: {
         width: mainWidth4,
-        height: mainHeight4,
+        height: 'auto',
         left: mainX4,
         top: mainY4,
         fontSize: '13px',
@@ -194,7 +205,7 @@ const styles = {
     },
     main5: {
         width: mainWidth5,
-        height: mainHeight5,
+        height:'auto',
         left: mainX5,
         top: mainY5,
         fontSize: '13px',
@@ -212,7 +223,7 @@ const styles = {
     },
     main6: {
         width: mainWidth6,
-        height: mainHeight6,
+        height:'auto',
         left: mainX6,
         top: mainY6,
         fontSize: '13px',
@@ -230,7 +241,7 @@ const styles = {
     },
     main7: {
         width: mainWidth7,
-        height: mainHeight7,
+        height: 'auto',
         left: mainX7,
         top: mainY7,
         fontSize: '13px',
@@ -248,7 +259,7 @@ const styles = {
     },
     main8: {
         width: mainWidth8,
-        height: mainHeight8,
+        height: 'auto',
         left: mainX8,
         top: mainY8,
         fontSize: '13px',

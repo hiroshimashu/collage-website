@@ -11,6 +11,12 @@ import styleStamp3 from './styleStamp3';
 import Satoshi from '../../../static/satoshi.png';
 import Yuya from '../../../static/yuuya.png';
 import Miki from '../../../static/miki.png';
+import Satoshi2 from '../../../static/satoshi2.png';
+import SatoshiD from '../../../static/satoshiD2.png';
+import Yuya2 from '../../../static/yuya2.png';
+import YuyaD from '../../../static/yuyaD2.png';
+import Miki2 from '../../../static/miki2.png';
+import MikiD from '../../../static/mikiD2.png';
 import MailButton from './MailButton';
 import MailLogo from './MailLogo';
 import MailMain from './MailMain';
@@ -27,48 +33,37 @@ class LineStampScreen2 extends Component {
                 <ServiceTitle2 />
                 <Stamp
                     src = { Satoshi }
+                    src2 = { Satoshi2 }
+                    src3 = { SatoshiD }
                     imgStyle = {styleStamp1.img}
                     wrapper = {styleStamp1.wrapper}
                     name = 'サトシくん'
                     nameStyle = {styleStamp1.nameStyle}
                     childStyle = {styleStamp1.childStyle}
-                >
-                    年齢：33歳　独身<br/>
-                    職種：営業<br/>
-                    趣味：ゴルフ、コンパ<br/>
-                    性格：お調子者でチャラい<br/>
-                </Stamp>
+                />
+
                 <Stamp
                     src = { Yuya }
+                    src2 = { Yuya2}
+                    src3 = { YuyaD }
                     imgStyle = {styleStamp2.img}
                     wrapper = {styleStamp2.wrapper}
                     name = 'ユウヤさん'
                     nameStyle = {styleStamp2.nameStyle}
                     childStyle = {styleStamp2.childStyle}
-                >
-                    年齢：39歳　既婚（娘1人）<br/>
-                    職種：クリエイティブディレクター<br/>
-                    趣味：サッカー観戦、夏フェス、<br/>
-                         ジム<br/>
-                    性格：クールでスカしている<br/>
-                </Stamp>
+                />
                 <Stamp
                     src = { Miki }
+                    src2 = { Miki2 }
+                    src3 = { MikiD }
                     imgStyle = {styleStamp3.img}
                     wrapper = {styleStamp3.wrapper}
                     name = 'ミキちゃん'
                     nameStyle = {styleStamp3.nameStyle}
                     childStyle = {styleStamp3.childStyle}
-                >
-                    年齢：28歳　独身<br/>
-                    職種：営業<br/>
-                    趣味：ショッピング、ジョギング、<br/>
-                       カフェ巡り<br/>
-                    性格：小悪魔
-                </Stamp>
+                />
                 <LineButton />
                 <MailButton />
-                <MailLogo />
                 <MailMain />
             </div>
         );

@@ -7,9 +7,7 @@ function CompanyProfileMain2(props) {
     return(
         <div style = { styles.mainWrapper }>
             <ReactSVG style = {{ ...props.img, position:'absolute'}} path = {props.src} alt = {props.subtitle} />
-            <div style = {{ ...props.main, position: 'absolute' }}>
-                {props.information}
-            </div>
+            <img style = {{ ...props.main, position: 'absolute' }} src = {props.src2} />
         </div>
     );
 }

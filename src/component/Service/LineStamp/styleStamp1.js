@@ -61,14 +61,6 @@ const style1 = {
         height: childHeight,
         top: childY,
         left: childX,
-        fontSize: '6.5px',
-        letterSpacing: '0.1em',
-        textAlign: 'left',
-        transform: 'scaleY(1.0019)',
-        fontFamily: 'a-otf-gothic-bbb-pr6n',
-        lineHeight: '10.8px',
-        fontWeight: 600,
-        color: '#484848'
     }
 
 };

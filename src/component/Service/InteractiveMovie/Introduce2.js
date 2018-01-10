@@ -5,7 +5,7 @@ const windowHeight =  windowWidth *  1974 / 750;
 const intro2Width = windowWidth * 0.525;
 const intro2Height = windowHeight *  0.026;
 const intro2X = windowWidth * 220 / 750;
-const intro2Y = windowHeight * 627 / 1974;
+const intro2Y = windowHeight * 580 / 1974;
 
 
 

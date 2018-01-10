@@ -25,7 +25,7 @@ const styles = {
     conceptMain: {
         position: 'absolute',
         width: conceptWidth,
-        height: conceptHeight,
+        height: 'auto',
         top:conceptY,
         left:conceptX,
         right:conceptX,

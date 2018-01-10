@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import ServiceTitle2 from '../ServiceTitle2';
 import Menu from '../InteractiveMovie/Menu';
 import Logo from '../InteractiveMovie/Logo';
+import LogColleD from '../../../static/logcolleD.png';
 import Iphone from './Iphone';
 import Play from '../../../static/video-player.png';
 import GooglePlay from '../../../static/googleplay.png';
@@ -14,10 +15,10 @@ import MailLogo from './MailLogo';
 const windowWidth =  window.innerWidth;
 const windowHeight = windowWidth *  1334 /750;
 
-const playWidth = windowWidth * 0.104;
-const playHeight = windowHeight * 0.046;
-const playX = windowWidth * 509 / 750;
-const playY = windowHeight * 454 / 1334;
+const playWidth = windowWidth * 0.461;
+const playHeight = windowHeight * 0.142;
+const playX = windowWidth * 372 / 750;
+const playY = 325 / 1334 * windowHeight;
 
 const discriptionWidth = windowWidth * 0.461;
 const discriptionHeight = windowHeight * 0.142;
@@ -57,6 +58,23 @@ class LogColleScreen2 extends Component {
         this.handleSwitch5 = this.handleSwitch5.bind(this);
     }
 
+    componentDidMount() {
+        this.id = setInterval(() => {
+            if (this.state.screen === 1) {
+                this.handleSwitch2();
+            } else if (this.state.screen === 2) {
+                this.handleSwitch3();
+            } else if (this.state.screen === 3) {
+                this.handleSwitch4();
+            } else if(this.state.screen === 4){
+                this.handleSwitch5();
+            } else {
+                this.handleSwitch1();
+            }
+        }, 5000);
+    }
+
+
     handleSwitch1() {
         this.setState({screen:1});
     }
@@ -91,20 +109,12 @@ class LogColleScreen2 extends Component {
                     handleSwitch5 = {this.handleSwitch5}
                 />
                 <Iphone screen = {this.state.screen} />
-                <img src = { Play } style = { styles.play }/>
-                <div style = {styles.discription}>
-                    「観た映画」「読んだ本」「楽しかった<br/>
-                     旅行」「美味しかった食事」・・・。<br/>
-                    <br/>
-                    『ログコレ』では、ありとあらゆるラ<br/>
-                    イフログを、コメント・写真とともに<br/>
-                    ワンストップで記録!
-                </div>
+                <iframe id="ytplayer" type="text/html" style = {styles.play} src="http://www.youtube.com/embed/M7lc1UVf-VE?autoplay=1&origin=http://example.com" frameBorder="0"/>
+                <img src = {LogColleD} style = {styles.discription} />
                 <img src = {GooglePlay} alt = 'googleplay' style = { styles.google } />
                 <img src = {AppStore} alt = 'appstore' style = { styles.app } />
                 <MailButton />
                 <MailMain />
-                <MailLogo />
             </div>
         );
     }

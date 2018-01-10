@@ -17,8 +17,8 @@ function Stamp(props) {
                 <img style = { props.imgStyle } src = { props.src } alt = 'img' />
             </div>
             <div>
-                <div style = {props.nameStyle}>{props.name}</div>
-                <div style = {props.childStyle}>{props.children}</div>
+                <img src = {props.src2} style = {props.nameStyle} />
+                <img src = {props.src3} style = {props.childStyle} />
             </div>
         </div>
     );

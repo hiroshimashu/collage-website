@@ -20,12 +20,12 @@ const styles = {
         top: mailY,
         left: mailX,
         right: mailX,
-        fontSize: '15.6px',
+        fontSize: '14.6px',
         letterSpacing: '0.1em',
         textAlign: 'left',
         fontFamily: 'dnp-shuei-mgothic-std',
         transform: 'scaleY(1.0019)',
-        lineHeight: '18.7px'
+        lineHeight: '17.6px'
     }
 }
 

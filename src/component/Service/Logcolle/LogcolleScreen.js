@@ -21,6 +21,22 @@ class LogcolleScreen extends Component {
         this.handleGoBack = this.handleGoBack.bind(this);
     }
 
+    componentDidMount() {
+        this.id = setInterval(() => {
+            if (this.state.page === 1) {
+                this.handleSwitch2();
+            } else if (this.state.page === 2) {
+                this.handleSwitch3();
+            } else if (this.state.page === 3) {
+                this.handleSwitch4();
+            } else if(this.state.page === 4){
+                this.handleSwitch5();
+            } else {
+                this.handleSwitch1();
+            }
+        }, 5000);
+    }
+
     handleSwitch1(props) {
         console.log('switch is now active');
         this.setState(() => {

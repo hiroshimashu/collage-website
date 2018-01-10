@@ -3,6 +3,12 @@ import Share from '../../../static/share.svg';
 import Satoshi from '../../../static/line1.png';
 import Yuya from '../../../static/line2.png';
 import Miki from '../../../static/line3.png';
+import Satoshi2 from '../../../static/satoshi2.png';
+import SatoshiD from '../../../static/satoshiD2.png';
+import Yuya2 from '../../../static/yuya2.png';
+import YuyaD from '../../../static/yuyaD.png';
+import Miki2 from '../../../static/miki2.png';
+import MikiD from '../../../static/mikiD.png';
 import SubTitle from '../SubTitle';
 import StampExplanation from './StampExplanation';
 import LineStore from '../../../static/line.png';
@@ -42,13 +48,8 @@ class LineMain extends Component {
                 <div className="contentsWrapper" style={styles.content}>
                     <div className="stamp1" style={styles.stamp1}>
                         <img src={Satoshi} alt="satoshi"/>
-                        <StampExplanation
-                            name='サトシくん'
-                            kind='営業'
-                            year='33歳　独身'
-                            interest='ゴルフ　コンパ'
-                            personality='お調子者でチャラい'
-                        />
+                        <img src = {Satoshi2} alt = 'satoshi2' style = {styles.satoshi2}/>
+                        <img src = {SatoshiD} alt = 'satoshiD' style = {styles.satoshiD} />
                     </div>
                     <div className="stamp2" style={styles.stamp2}>
                         <img src={Yuya} alt="yuya"/>
@@ -124,6 +125,20 @@ const styles = {
         left:'40%',
         width: '158px',
         height: '48px',
+    },
+    satoshi2: {
+        position: 'absolute',
+        width: '108px',
+        height: '19px',
+        left:'366px',
+        top:'386px'
+    },
+    satoshiD: {
+        position: 'absolute',
+        width: '176px',
+        height: '84px',
+        left:'366px',
+        top:'424px'
     }
 }
 
