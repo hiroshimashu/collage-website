@@ -4,7 +4,7 @@ import '../../../index.css';
 import CollageWhite from '../../../static/CollageWhite.png';
 
 const windowWidth = window.innerWidth;
-const windowHeight = 750 / 1200 * windowWidth;
+const windowHeight = window.innerHeight;
 
 
 const titleWidth = windowWidth *  0.446;
@@ -48,7 +48,7 @@ const styles = {
     collage: {
         position: 'absolute',
         width: titleWidth,
-        height: titleHeight,
+        height: 'auto',
         top: titleY,
         left: titleX,
         zIndex: 100

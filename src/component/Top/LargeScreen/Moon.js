@@ -3,7 +3,7 @@ import moon from '../../../static/Moon.png';
 
 
 const windowWidth = window.innerWidth;
-const windowHeight = 750 / 1200 * windowWidth;
+const windowHeight = window.innerHeight;
 
 const moonWidth  = windowWidth *  0.052;
 const moonHeight = windowHeight *  0.101;
@@ -22,7 +22,7 @@ const styles = {
     moon: {
         position: 'absolute',
         width: moonWidth,
-        height: moonHeight,
+        height: 'auto',
         top: moonY,
         left: moonX
     }

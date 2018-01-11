@@ -1,5 +1,5 @@
 import Top from './containers/TopScreen';
-import Top_Night from './component/Top/LargeScreen/Top_Night';
+import Top_Night from './component/Top/LargeScreen/Top_Night_Main';
 import About from './component/About/LargeScreen/AboutScreen';
 import Works from './component/Works/LargeScreen/WorksScreen';
 import Service from './component/Service/LargeScreen/ServiceScreen';

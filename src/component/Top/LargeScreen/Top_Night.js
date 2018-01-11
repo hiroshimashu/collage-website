@@ -1,77 +1,40 @@
 import React, { Component } from 'react';
-import Logo from './Logo';
+import AnimationScene1_Night from './AnimationScene1_Night';
+import Top_Night_Main from './Top_Night_Main';
 import Background from '../../../static/Background.png';
-import Forest from './Forest';
-import Switch from './Switch';
-import Stars from './Stars';
-import On from './On';
-import MenuButton from './MenuButton';
-import Moon from './Moon';
-import NightTitleOff from './NightTitleOff';
-import NightTitleOn from './NightTitleOn';
-import Building1 from './Building1';
-import Building2 from './Building2';
 
 
 const windowWidth = window.innerWidth;
 const windowHeight = window.innerHeight;
 
 
-
 class Top_Night extends Component {
     constructor(props) {
         super(props);
-
         this.state = {
-            switch:false,
-            opacity: 1,
+            show1: true,
+            show2: false
         };
 
-        this.handleClick = this.handleClick.bind(this);
+        this.handleAnimation = this.handleAnimation.bind(this);
     }
 
-    handleClick() {
-        console.log('fired')
+    handleAnimation() {
         this.setState((prevState) => {
-            return {switch: !prevState.switch};
+            return {show2: !prevState.show2 };
         });
-        if(this.state.switch) {
-            this.setState((prevState) => {
-                return {opacity: 1};
-            });
-        }else {
-            this.setState((prevState) => {
-                return {opacity: 0.5};
-            });
-        }
     }
-
 
 
     render() {
         return(
-            <div style = {{position: 'relative', width: windowWidth, height: windowHeight}}>
-                <Logo />
-                <img src = {Background} alt = 'background' style =  {{position: 'absolute', width:windowWidth, height:windowHeight}}/>
-                {!this.state.switch && <Forest />}
-                <Switch handleClick = {this.handleClick} opacity = {this.state.opacity} />
-                {this.state.switch && <On />}
-                {!this.state.switch && <Stars /> }
-                <Moon />
-                {!this.state.switch && <NightTitleOff />}
-                {this.state.switch && <NightTitleOn /> }
-                {this.state.switch && <Building1 /> }
-                {this.state.switch && <Building2 /> }
-                <MenuButton
-                    target1 = {this.props.target1}
-                    target2 = {this.props.target2}
-                    target3 = {this.props.target3}
-                    target4 = {this.props.target4}
-                />
+            <div  style = {{position: 'relative', width: windowWidth, height: windowHeight}}>
+                <img src = {Background} style = {{position:'absolute',width:windowWidth, height:windowHeight}} />
+                <AnimationScene1_Night handleAnimation = {this.handleAnimation} />
+                {this.state.show2 && <Top_Night_Main />}
             </div>
         );
     }
 }
-
 
 export default Top_Night;

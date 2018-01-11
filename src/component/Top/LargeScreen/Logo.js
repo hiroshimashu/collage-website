@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from '../../../static/logo.png';
 import { Link } from 'react-router-dom';
+import Logo_Night from '../../../static/top(2).png';
 
 const windowWidth = window.innerWidth;
 const windowHeight =  window.innerHeight * 750 / 1200;

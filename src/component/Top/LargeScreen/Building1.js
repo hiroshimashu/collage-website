@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
-import building1 from '../../../static/Building.png';
+import building1 from '../../../static/building_mod1.png';
 
 const windowWidth = window.innerWidth;
-const windowHeight = 750 /1200 * windowWidth;
+const windowHeight = window.innerHeight;
 
 
-const forestWidth = windowWidth *  0.274;
-const forestHeight = windowHeight * 0.168;
-const forestX =  windowWidth *  871 / 1200;
-const forestY = 624 / 750 *  windowHeight;
+const forestWidth = windowWidth *  0.748;
+const forestHeight = windowHeight * 0.231;
+const forestX =  windowWidth *  302 / 1200;
+const forestY = 577 / 750 *  windowHeight;
 
 
 class Building1 extends Component {
@@ -23,7 +23,7 @@ class Building1 extends Component {
 const styles = {
     forest: {
         position: 'absolute',
-        width:windowWidth,
+        width: forestWidth,
         height: forestHeight,
         left: forestX,
         top: forestY

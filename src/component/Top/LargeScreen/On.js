@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import on from '../../../static/On.png';
 
 const windowWidth = window.innerWidth;
-const windowHeight = 750 /1200 * windowWidth;
+const windowHeight = window.innerHeight;
 
 const onWidth  = windowWidth *  0.16;
 const onHeight = windowHeight *  0.467;
@@ -23,7 +23,7 @@ const styles = {
     on: {
         position: 'absolute',
         width: onWidth,
-        height: onHeight,
+        height: 'auto',
         top: 0,
         left: onX
     }

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import star from '../../../static/starsLarge.png';
 
 const windowWidth = window.innerWidth;
-const windowHeight = 750 / 1200 * windowWidth;
+const windowHeight = window.innerHeight;
 
 const starWidth  = windowWidth;
 const starHeight = windowHeight;

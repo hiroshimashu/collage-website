@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import { CSSTransition } from 'react-transition-group';
 import '../../../index.css';
-import CollageGold from '../../../static/CollageGold.png';
+import CollageGold from '../../../static/COLLAGE_Gold_mod.png';
+import Logo_Night from '../../../static/top(2).png';
 
 const windowWidth = window.innerWidth;
-const windowHeight = 750 / 1200 * windowWidth;
+const windowHeight = window.innerHeight;
 
 
 const titleWidth = windowWidth *  0.446;
@@ -48,7 +49,7 @@ const styles = {
     collage: {
         position: 'absolute',
         width: titleWidth,
-        height: titleHeight,
+        height: 'auto',
         top: titleY,
         left: titleX,
         zIndex: 100
