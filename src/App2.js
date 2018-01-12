@@ -13,6 +13,7 @@ import AccessScreen2 from './component/Access/AccessScreen2';
 import MenuButton from './component/Service/InteractiveMovie/Menu';
 import ServiceSelector from './component/Service/ServiceSelector';
 
+
 class App2 extends Component {
     constructor(props) {
         super(props);
@@ -49,9 +50,7 @@ class App2 extends Component {
             <Router>
                 <div className="App">
 
-                    {this.state.showMenu &&
-                    <Menu onHandleClick={this.handleShowMenu}/>
-                    }
+                    <Menu onHandleClick={this.handleShowMenu} showMenu = {this.state.showMenu}/>
                     <MenuButton handleClick={this.handleShowMenu} />
                     {!this.state.night && <Route exact path="/" component={Top2} />}
                     {this.state.night && <Route exact path="/" component={TopNight2} />}

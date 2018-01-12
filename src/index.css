@@ -22,6 +22,14 @@ body {
   transition: opacity 800ms ease-in;
 }
 
+#menuWrapper.false {
+  transform: translate3d(-100vw, 0, 0);
+}
+
+#menuWrapper.true {
+  transform: translate3d(0vw, 0, 0);
+}
+
 #defaultCanvas0 {
   position: absolute;
   z-index: 1;

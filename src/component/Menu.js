@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import MenuList from './MenuList';
+import '../index.css';
 import MenuStyle1 from './MenuStyle1';
 import MenuStyle2 from './MenuStyle2';
 import MenuStyle3 from './MenuStyle3';
@@ -11,6 +12,7 @@ const windowWidth =  window.innerWidth;
 const windowHeight = windowWidth *  1334 /750;
 const wrapperWidth = windowWidth * 0.50;
 
+
 class Menu extends Component{
     constructor(props) {
         super(props);
@@ -18,9 +20,11 @@ class Menu extends Component{
 
 
     render() {
-        return(
+        let visibility = this.props.showMenu.toString();
 
-            <div className="menuWrapper" style = { styles.wrapper }>
+
+        return(
+            <div id="menuWrapper" className = {visibility} style = { styles.wrapper }>
                 <Link to= '/'  onClick = {this.props.onHandleClick}>
                     <MenuList
                         mainStyle = {MenuStyle1.mainStyle}
@@ -72,6 +76,7 @@ class Menu extends Component{
                     </MenuList>
                 </Link>
             </div>
+
         );
     }
 }
@@ -82,6 +87,7 @@ const styles = {
         width: wrapperWidth,
         height: windowHeight,
         backgroundColor: 'rgba(255, 255, 255, 0.92)',
+        transition: 'transform .7s ease-in-out',
         zIndex: '1000'
     }
 }

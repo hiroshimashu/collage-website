@@ -136,7 +136,7 @@ class AboutScreen extends Component {
     render() {
 
         return(
-            <Fade in = { this.state.show}>
+            <Fade in = { this.state.show} timeout = {1000}>
                 <div ref = {aboutWrapper => this.aboutWrapper = aboutWrapper} className="aboutWrapper"  style={styles.aboutWrapper}>
                     <div style = {styles.conceptWrapper}>
                         <Logo />

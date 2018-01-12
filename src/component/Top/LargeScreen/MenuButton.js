@@ -75,11 +75,6 @@ class MenuButton extends Component {
     }
 }
 
-const styles = {
-    div1: {
-
-    }
-}
 
 
 export default MenuButton;
