@@ -29,7 +29,7 @@ class AnimationSceen5 extends Component {
 
         this.state = {
             show: false,
-            green:true,
+            green:false,
             red: false,
             pink:false,
             purple: false,
@@ -57,7 +57,12 @@ class AnimationSceen5 extends Component {
         this.handleStateChange = this.handleStateChange.bind(this);
 
         setTimeout(() => {
-            this.setState({show: !this.state.show});
+            this.setState(() => {
+                return {
+                    show: true,
+                    green: true
+                };
+            });
         }, 0);
     }
 
@@ -117,23 +122,23 @@ class AnimationSceen5 extends Component {
 
 
         return(
-            <Fade in = { this.state.show} timeout = {1000}>
-                <div>
-                    <Fade in = {this.state.green} timeout = {2000}>
-                        <img src = {Logo} alt = 'sceen1' style = { this.styles.collage}/>
-                    </Fade>
-                    <Fade in = {this.state.red} timeout = {2000}>
-                        <img src = {Logo2} alt = "screen1" style = {this.styles.collage} />
-                    </Fade>
-                    <Fade in = {this.state.pink} timeout = {2000}>
-                        <img src = {Logo3} alt = "screen1" style = {this.styles.collage} />
-                    </Fade>
-                    <Fade in = {this.state.purple} timeout = {2000}>
-                        <img src = {Logo4} alt = "screen1" style = {this.styles.collage} />
-                    </Fade>
+            <div>
+                <Fade in = {this.state.green} timeout = {2000}>
+                    <img src = {Logo} alt = 'sceen1' style = { this.styles.collage}/>
+                </Fade>
+                <Fade in = {this.state.red} timeout = {2000}>
+                    <img src = {Logo2} alt = "screen1" style = {this.styles.collage} />
+                </Fade>
+                <Fade in = {this.state.pink} timeout = {2000}>
+                    <img src = {Logo3} alt = "screen1" style = {this.styles.collage} />
+                </Fade>
+                <Fade in = {this.state.purple} timeout = {2000}>
+                    <img src = {Logo4} alt = "screen1" style = {this.styles.collage} />
+                </Fade>
+                <Fade in = {this.state.show} timeout = {2000}>
                     <SNS />
-                </div>
-            </Fade>
+                </Fade>
+            </div>
         );
     }
 }

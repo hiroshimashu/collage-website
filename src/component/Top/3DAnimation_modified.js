@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import * as THREE from 'three';
 import { CSSTransition } from 'react-transition-group';
-import '../../../index.css';
-import Particle from '../../../static/particle.png';
+import '../../index.css';
+import Particle from '../../static/particle.png';
 import OrbitControls from 'three-orbitcontrols';
 import TWEEN from '@tweenjs/tween.js';
 
@@ -62,7 +62,7 @@ class Scene extends Component {
         renderer.setSize(windowWidth, windowHeight);
 
         const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 1, 1000);
-        camera.position.set(750, 0, 0);
+        camera.position.set(1000, 0, 0);
 
         const pos = {x: 0};
         let tween = new TWEEN.Tween(pos)
@@ -82,7 +82,7 @@ class Scene extends Component {
         this.rotation = rotation;
         this.ParticleColor = ParticleColor;
         this.dirs = [];
-        console.log(this.mount)
+        console.log(this.mount);
         this.mount.appendChild(this.renderer.domElement);
         let orbit = new OrbitControls(camera, this.renderer.domElement);
         this.orbit =  orbit;

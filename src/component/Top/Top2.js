@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Logo from '../Service/InteractiveMovie/Logo';
+import Background from './3DAnimation_modified';
 import AnimationScene1 from './AnimationSceen1';
 import AnimationScene3 from './AnimationSceen3';
 import AnimationScene4 from './AnimationScene4';
@@ -62,8 +63,8 @@ class Top2 extends Component {
             <div>
                 <Logo />
                 <AnimationScene1 handleAnimation = {this.handleAnimation1}/>
-                {this.state.show2 && <AnimationScene3 handleAnimation = {this.handleAnimation2} />}
-                {this.state.show3 && <AnimationScene4 handleAnimation = {this.handleAnimation3} handleType = {this.handleAnimation1} handleImg = {this.handleAnimation2} />}
+                {this.state.show2 && <Background show = {this.state.show2} handleAnimation = {this.handleAnimation2} />}
+                {this.state.show3 && <AnimationScene3 show = {this.state.show3} handleAnimation = {this.handleAnimation3} />}
                 {this.state.show4 && <AnimationSceen5 />}
             </div>
         );

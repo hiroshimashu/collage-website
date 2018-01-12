@@ -24,7 +24,7 @@ const styles = {
         height: logoWidth,
         top: logoY,
         left: logoX,
-        zIndex:2
+        zIndex:6
     },
 }
 
