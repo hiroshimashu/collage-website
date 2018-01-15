@@ -8,6 +8,8 @@ import CSSTransition from 'react';
 import { connect } from 'react-redux';
 import Logo from './component/Top/LargeScreen/Logo';
 import Header from './component/Header';
+import Menu from './component/Top/LargeScreen/Menu2';
+import MenuButton from './component/Top/LargeScreen/MenuButton2';
 import Top from './containers/TopScreen';
 import Top_Night from './component/Top/LargeScreen/Top_Night';
 import About from './component/About/LargeScreen/AboutScreen';
@@ -39,9 +41,15 @@ class App3 extends Component {
             header: false,
             night: false,
             window: this.props.windowsize,
-            height: window.innerHeight
+            height: window.innerHeight,
+            menu: this.props.menu,
         };
 
+        setTimeout(() => {
+            this.setState(() => {
+                return { menu: this.props.menu};
+            });
+        }, 5500);
     }
 
     componentWillMount() {
@@ -53,7 +61,6 @@ class App3 extends Component {
             });
         }
     }
-
 
     componentDidMount() {
 
@@ -67,9 +74,7 @@ class App3 extends Component {
                 }
             );
         });
-
     }
-
 
     render() {
         return (
@@ -78,8 +83,9 @@ class App3 extends Component {
                 <div>
                     <Header />
                     <Logo />
+                    <MenuButton showMenu = {this.state.menu} />
                     {!this.state.night &&<Route exact path = '/' component = {Top} />}
-                    {this.state.night && <Route exact path = '/' component = {Top_Night} />}
+                    {this.state.night && <Route exact path = '/' component = {Top} />}
                     <Route path="/about" component={About} />
                     <Route path="/works" component={Works} />
                     <Route path="/service" component={Service} />
@@ -93,7 +99,8 @@ class App3 extends Component {
 
 function mapStateToProps(state) {
     return {
-        window: state.windowsize
+        window: state.windowsize,
+        menu: state.showMenu.visible
     };
 }
 

@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 import { CSSTransition } from 'react-transition-group';
 import '../../../index.css';
+import { connect } from 'react-redux';
 import Header from '../../Header';
 import Logo from '../../../static/collage_red.png';
 import Logo2 from '../../../static/blueCollage.png';
 import Logo3 from '../../../static/pinkCollage.png';
 import Logo4 from '../../../static/purpleCollage.png';
+import showMenu from '../../../actions/showMenu';
 
 import Menu from './Menu';
-import MenuButton from './MenuButton';
 
 const windowWidth = window.innerWidth;
 const windowHeight = window.innerHeight;
@@ -67,7 +68,10 @@ class AnimationSceen5 extends Component {
 
     componentDidMount() {
         setInterval(this.handleStateChange, 2000);
+        this.props.showMenu();
+        console.log(this.props.show);
     }
+
 
 
     handleStateChange() {
@@ -138,14 +142,8 @@ class AnimationSceen5 extends Component {
                         <img src = {Logo4} alt = "screen1" style = {styles.collage} />
                     </Fade>
                     {!this.state.ready &&<Menu handleClick = {this.handleClick}/>}
-                    {this.state.ready && <MenuButton
-                        target1 = {this.props.target1}
-                        target2 = {this.props.target2}
-                        target3 = {this.props.target3}
-                        target4 = {this.props.target4}
-                    />}
-            </div>
 
+            </div>
         );
     }
 }
@@ -161,5 +159,18 @@ const styles = {
     }
 }
 
+function mapStateToProps(state) {
+    return {
+        show: state.showMenu.visible
+    };
+}
 
-export default AnimationSceen5;
+function mapDispatchToProps(dispatch) {
+    return {
+        showMenu() {
+            dispatch(showMenu());
+        }
+    };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(AnimationSceen5);

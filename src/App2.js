@@ -49,7 +49,6 @@ class App2 extends Component {
         return (
             <Router>
                 <div className="App">
-
                     <Menu onHandleClick={this.handleShowMenu} showMenu = {this.state.showMenu}/>
                     <MenuButton handleClick={this.handleShowMenu} />
                     {!this.state.night && <Route exact path="/" component={Top2} />}

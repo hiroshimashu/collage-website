@@ -25,6 +25,7 @@ class MenuButton extends Component {
                     >
                         <Brightness />
                     </IconButton>
+
                     <IconButton
                         iconStyle = {{width:'15px', height:'15px',color:'#e9e9e9'}}
                         tooltip="works"
@@ -36,6 +37,7 @@ class MenuButton extends Component {
                     >
                         <Brightness />
                     </IconButton>
+
                     <IconButton
                         iconStyle = {{width:'15px', height:'15px',color:'#e9e9e9'}}
                         tooltip="service"
