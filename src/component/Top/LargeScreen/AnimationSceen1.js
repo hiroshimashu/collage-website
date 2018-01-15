@@ -39,7 +39,7 @@ class AnimationSceen1 extends Component {
 
         setTimeout(() => {
             this.setState({show: !this.state.show});
-        }, 800);
+        }, 1500);
 
 
     }
@@ -47,7 +47,7 @@ class AnimationSceen1 extends Component {
     componentDidMount() {
         setTimeout(() => {
             this.props.handleAnimation();
-        }, 1500);
+        }, 2300);
     }
 
     render() {

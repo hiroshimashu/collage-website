@@ -2,13 +2,17 @@ import React, { Component } from 'react';
 import { CSSTransition } from 'react-transition-group';
 import '../../index.css';
 import Logo from '../../static/logo.png';
+const windowWidth = window.innerWidth;
+const windowHeight = 1334 / 750 * windowWidth;
 
-const windowWidth =  window.innerWidth;
-const windowHeight = window.innerHeight
-const imageWidth = windowWidth * 0.133;
-const imageHeight = imageWidth * 0.99;
-const imageX = windowWidth * 326 / 750;
-const imageY = (windowHeight - imageHeight) / 2;
+
+const imageWidth = 100;
+const imageHeight = 99;
+const imageX =  548 / 1200 *  windowWidth;
+function CalculatePositionY() {
+    return (windowHeight - imageHeight) / 2;
+}
+const imageY = CalculatePositionY();
 
 const Fade = ({ children, ...props }) => (
     <CSSTransition
@@ -22,7 +26,7 @@ const Fade = ({ children, ...props }) => (
 
 
 
-class AnimationSceen1 extends Component {
+class AnimationScene1_Night extends Component {
     constructor(props){
         super(props);
 
@@ -34,7 +38,7 @@ class AnimationSceen1 extends Component {
 
         setTimeout(() => {
             this.setState({show: !this.state.show});
-        }, 1500);
+        }, 800);
 
 
     }
@@ -42,7 +46,7 @@ class AnimationSceen1 extends Component {
     componentDidMount() {
         setTimeout(() => {
             this.props.handleAnimation();
-        }, 2300);
+        }, 1500);
     }
 
     render() {
@@ -58,11 +62,11 @@ const styles = {
     logo : {
         position: 'absolute',
         width: imageWidth,
-        height: imageHeight ,
+        height: imageHeight,
         top: imageY,
-        bottom: imageY,
+        bottom : imageY,
         left: imageX
     }
 }
 
-export default AnimationSceen1;
+export default AnimationScene1_Night;

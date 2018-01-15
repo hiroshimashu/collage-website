@@ -7,7 +7,7 @@ import OrbitControls from 'three-orbitcontrols';
 import TWEEN from '@tweenjs/tween.js';
 
 const windowWidth = window.innerWidth;
-const windowHeight = window.innerHeight;
+const windowHeight = 1334 / 750 * windowWidth;
 
 const Fade = ({ children, ...props }) => (
     <CSSTransition
@@ -217,9 +217,7 @@ class Scene extends Component {
 
     render() {
         return(
-            <Fade in = { this.props.show} timeout = {2000}>
-                <div style = {{width: windowWidth, height: windowHeight, position: 'absolute', zIndex: 5}} ref={(mount) => { this.mount = mount; }} />
-            </Fade>
+            <div style = {{width: windowWidth, height: windowHeight, position: 'absolute', zIndex: 5}} ref={(mount) => { this.mount = mount; }} />
         );
     }
 }

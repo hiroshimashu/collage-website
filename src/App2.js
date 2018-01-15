@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {  BrowserRouter as Router, Route} from 'react-router-dom';
 import Top2 from './component/Top/Top2';
-import TopNight2 from './component/Top/Top_Night2';
+import TopNight2 from './component/Top/Top_Night_Main2';
 import Menu from './component/Menu';
 import AboutScreen from './component/About/AboutScreen';
 import WorksScreen from './component/Works/WorksScreen2';
