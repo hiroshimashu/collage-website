@@ -3,6 +3,9 @@ import SellingMain from '../../../../static/SellingMain.gif';
 import SellingTitle from '../../../../static/SellingTitle.png';
 import LeftTalk from '../../../../static/leftTalk.png';
 import RightTalk from '../../../../static/rightTalk.png';
+import { CSSTransition } from 'react-transition-group';
+import '../../../../index.css';
+import '../../../../service.css';
 
 
 
@@ -33,6 +36,18 @@ const rightWidth = windowWidth * 0.246;
 const rightHeight = windowHeight * 0.296;
 const rightX = 832 / 1200 * windowWidth;
 const rightY = windowHeight * 311 / 750;
+
+const Slide = ({ children, ...props }) => (
+    <CSSTransition
+        {...props}
+        timeout={1000}
+        classNames="slide"
+        unmountOnExit={true}
+    >
+        {children}
+    </CSSTransition>
+);
+
 
 
 
@@ -77,11 +92,19 @@ class Screen1 extends Component {
 
     render() {
         return(
-            <div>
-                <img src ={ SellingMain }  style = {{...styles.main, width: this.state.mainWidth, left: this.state.mainX, right: this.state.mainX}}/>
-                <img src ={ SellingTitle }  style = {{...styles.title, width:this.state.titleWidth,left: this.state.titleX, right: this.state.titleX }}/>
-                <img src ={ LeftTalk }  style = {{...styles.left, width: this.state.leftWidth, left: this.state.leftX }}/>
-                <img src ={ RightTalk }  style = {{...styles.right, width: this.state.rightWidth, left: this.state.rightX }}/>
+            <div className = 'sellingPlanScreen1Wrapper'
+                 style ={{
+                     position: 'absolute',
+                     width: 1023,
+                     height: 341,
+                     left: 'calc(50vw - 511.5px)',
+                     top: 222
+                 }}
+            >
+                <img src ={ SellingMain } className="sellingMain" style = {styles.main}/>
+                <img src ={ SellingTitle } className="sellingTitle" style = {{...styles.title}}/>
+                <img src ={ LeftTalk }  className = 'sellingLeft' style = {{...styles.left}}/>
+                <img src ={ RightTalk } className = 'sellingRight' style = {{...styles.right}}/>
             </div>
         );
     }
@@ -90,23 +113,31 @@ class Screen1 extends Component {
 const styles = {
     main: {
         position: 'absolute',
-        height: 'auto',
-        top: mainY,
+        width: 384,
+        height: 188,
+        top: 153,
+        left: 320
     },
     title: {
         position: 'absolute',
-        height: 'auto',
-        top: titleY,
+        width: 436,
+        height: 89,
+        top: 0,
+        left: 283
     },
     left: {
         position: 'absolute',
-        height: 'auto',
-        top: leftY,
+        width: 287,
+        height: 214,
+        top:47,
+        left: 0
     },
     right: {
         position: 'absolute',
-        height: 'auto',
-        top: rightY,
+        width: 287,
+        height:214,
+        top: 89,
+        left: 736
     }
 }
 

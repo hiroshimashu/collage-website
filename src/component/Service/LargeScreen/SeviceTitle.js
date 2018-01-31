@@ -1,5 +1,5 @@
 import React from 'react';
-import Service from '../../../static/ServiceTitle.png';
+import Service from '../../../static/sevice-title-mod.png';
 
 
 const windowSize = window.innerWidth;
@@ -16,7 +16,7 @@ const imgY = windowHeight * 41 / 750;
 
 function ServiceTitle(props) {
     return (
-        <img src = {Service} alt =  'smallImage' style =  {{...styles.serviceTitle, left: props.titleX, right: props.titleX}} />
+        <img src = {Service}  className="serviceTitle" alt =  'smallImage' style =  {{...styles.serviceTitle}} />
     );
 }
 
@@ -25,7 +25,8 @@ const styles = {
         position: 'absolute',
         width: imgWidth,
         height:imgHeight,
-        top:imgY,
+        top: '41px',
+        left: 'calc(50vw - 251.5px)'
     }
 };
 

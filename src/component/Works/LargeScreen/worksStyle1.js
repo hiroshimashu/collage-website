@@ -14,20 +14,16 @@ const titleY = 230 / 2246 * windowHeight;
 const worksStyle1 =  {
     imgStyle: {
         position: 'absolute',
-        width: imgWidth,
-        height: imgHeight,
-        top: imgY,
+        width: 50 +'vw',
+        height: 'auto',
+        top: 17.666 + 'vw',
     },
     titleStyle: {
         position: 'absolute',
-        width: titleWidth,
+        width: 46 + 'vw',
         height: 'auto',
-        top: titleY,
-        left: titleX,
-        ':hover': {
-            transform: 'scale(1.05)',
-        },
-
+        top: 20.666 + 'vw',
+        left: 51 + 'vw',
     }
 };
 

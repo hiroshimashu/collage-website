@@ -22,10 +22,10 @@ class On extends Component {
 const styles = {
     on: {
         position: 'absolute',
-        width: onWidth,
+        width: 16 + 'vw',
         height: 'auto',
         top: 0,
-        left: onX
+        left: 41.75 + 'vw'
     }
 }
 

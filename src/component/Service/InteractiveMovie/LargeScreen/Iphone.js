@@ -3,11 +3,14 @@ import Radium from 'radium';
 import iphone from '../../../../static/Iphone.png';
 import Potato from '../../../../static/potato.png';
 import Play from '../../../../static/play.png';
+import '../../../../service.css';
 
 const windowWidth = window.innerWidth;
 const windowHeight =  window.innerHeight;
 const iphoneWidth = windowWidth * 0.518;
 const iphoneHeight = windowHeight *  0.411;
+
+
 
 const iphoneX = 541 /1200 * windowWidth;
 const iphoneY = windowHeight * 220 / 750;
@@ -59,42 +62,29 @@ class Iphone extends Component {
 
         return (
             <div className='iphoneWrapper'>
-                <img src={ iphone } style={{
+                <img  className="iphone1" src={ iphone } style={{
                     position: 'absolute',
-                    width: this.state.iphoneWidth,
-                    height: 'auto',
-                    top: iphoneY,
-                    left: this.state.iphoneX,
-                    filter: `${this.props.blur}`
+                    top: 0,
+                    left: 442,
+                    width: '622px',
+                    height: '308px',
                 }}/>
-                <img src={ Potato } style={{
+                <img  className="potato" src={ Potato } style={{
                     position: 'absolute',
-                    width: this.state.potatoWidth,
-                    height: 'auto',
-                    '@media(max-width: 1000px)': {
-                        top: potatoYsmall
-                    },
-                    '@media(min-width: 1001px)': {
-                        top: potatoY
-                    },
-                    left: this.state.potatoX,
+                    width: 488,
+                    height: 274,
+                    top: 18,
+                    left: 508,
                     zIndex: 1,
-                    filter: `${this.props.blur}`
                 }}/>
                 <a href='http://collage-movie.hippy.jp/cooking/cooking.html' target="_blank">
-                    <img src={ Play } style={{
+                    <img  className = 'play' src={ Play } style={{
                         position: 'absolute',
-                        width: this.state.playWidth,
-                        height: 'auto',
-                        '@media(max-width: 1000px)': {
-                            top: playYsmall,
-                        },
-                        '@media(min-width: 1001px)': {
-                            top: playY
-                        },
-                        left: this.state.playX,
+                        width: 79,
+                        height: 79,
+                        top: 121,
+                        left: 713,
                         zIndex: 2,
-                        filter: `${this.props.blur}`
                     }} onClick={() => {
                         console.log('hello');
                     }}/>

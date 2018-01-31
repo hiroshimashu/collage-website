@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import title1 from '../../../../static/title1.png';
-const windowWidth = window.innerWidth;
+import MediaQuery from 'react-responsive';
+const windowWidth = 1.6 * windowHeight;
 const windowHeight =  window.innerHeight;
-const introWidth = windowWidth * 0.335;
-const introHeight = windowHeight *  0.16;
+const introWidth = windowHeight * 0.335 * 1.6;
+const introHeight = windowHeight *  0.16 ;
 const introX = windowWidth * 99 / 1200;
 const introY = windowHeight * 283 / 750;
+
 
 class Introduce extends Component {
     constructor(props) {
@@ -31,14 +33,16 @@ class Introduce extends Component {
 
     render() {
         return (
-            <img src={title1} alt='introduce1' style={{
+            <div className="introduce1" style={{
                 position: 'absolute',
-                width: this.state.width,
-                height: 'auto',
-                top: introY,
-                left:  this.state.introX,
-                filter: `${this.props.blur}`
-            }}/>
+                width:402,
+                height: 120,
+                top: 63,
+                left: 0
+            }}>
+                <img src={title1} alt='introduce1' />
+            </div>
+
 
 
         );

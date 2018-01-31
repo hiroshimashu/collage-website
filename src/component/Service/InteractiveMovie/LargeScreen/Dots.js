@@ -19,11 +19,20 @@ class Dots extends Component {
         return(
             <MuiThemeProvider>
                 <div>
-                    <Brightness style = {{zIndex: 100, position: 'absolute', width: dot1Width, height: dot1Height, top: dot1Y, left: dot1X, color: `${this.props.color1}`}} onClick = {this.props.handleClick1}/>
-                    <Brightness style = {{zIndex: 100, position: 'absolute', width: dot2Width, height: dot2Height, top: dot2Y, left: dot2X, color: `${this.props.color2}`}} onClick = {this.props.handleClick2}/>
+                    <Brightness style = {{...styles.dots, zIndex: 100, top: 46.93 + 'vh', color: `${this.props.color1}`}} onClick = {this.props.handleClick1}/>
+                    <Brightness style = {{...styles.dots, zIndex: 100, top: 51.5 + 'vh', color: `${this.props.color2}`}} onClick = {this.props.handleClick2}/>
                 </div>
             </MuiThemeProvider>
         );
+    }
+}
+
+const styles = {
+    dots: {
+        position: 'absolute',
+        width: 1.2 + 'vw',
+        height: 1.9 + 'vh',
+        left: 2.0 + 'vw',
     }
 }
 

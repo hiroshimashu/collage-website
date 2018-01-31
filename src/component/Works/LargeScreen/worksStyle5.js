@@ -11,20 +11,20 @@ const titleY = 1542 / 2246 * windowHeight;
 
 
 
-const worksStyle3 =  {
+const worksStyle5 =  {
     imgStyle: {
         position: 'absolute',
-        width: imgWidth,
-        height: imgHeight,
-        top: imgY,
+        width: 50 + 'vw',
+        height: 'auto',
+        top: 167.293 + 'vw',
     },
     titleStyle: {
         position: 'absolute',
-        width: titleWidth,
+        width: 26.6 + 'vw',
         height: 'auto',
-        top: titleY,
-        left: titleX,
+        top: 170.293 + 'vw',
+        left: 51.083 + 'vw',
     }
 };
 
-export default worksStyle3;
+export default worksStyle5;

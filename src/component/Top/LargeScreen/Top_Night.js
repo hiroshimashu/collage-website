@@ -28,8 +28,8 @@ class Top_Night extends Component {
 
     render() {
         return(
-            <div  style = {{position: 'relative', width: windowWidth, height: windowHeight}}>
-                <img src = {Background} style = {{position:'absolute',width:windowWidth, height:windowHeight}} />
+            <div  style = {{position: 'relative', width: 100 + 'vw', height: 100 + 'vh', overflow: 'hidden'}}>
+                <img src = {Background} style = {{position:'absolute',width:100 + 'vw', height:100 + 'vh'}} />
                 <AnimationScene1_Night handleAnimation = {this.handleAnimation} />
                 {this.state.show2 && <Top_Night_Main />}
             </div>

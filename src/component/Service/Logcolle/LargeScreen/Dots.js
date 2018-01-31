@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Brightness from 'material-ui/svg-icons/image/brightness-1';
 import Radium from 'radium';
+import '../../../../service.css';
 
 const windowWidth = window.innerWidth;
 const windowHeight =  window.innerHeight;
@@ -70,67 +71,11 @@ class Dots extends Component {
     render() {
         return(
             <div>
-                <div style = {{...styles.dot1,
-                    '@media (min-width: 1001px)': {
-                        top: dot1Y,
-                        left: this.state.dot1X,
-                    },
-                    '@media(max-width: 1000px)': {
-                        top: dot3Y,
-                        left: this.state.dot1Xsmall,
-                    },
-                    color: `${this.props.color1}`
-                }}>
-                    <Brightness  style = {{...styles.dot1, color: `${this.props.color1}`}} onClick = {this.props.handleClick1}/>
-                </div>
-                <div style = {{...styles.dot2,
-                    '@media (min-width: 1001px)': {
-                        top: dot2Y,
-                        left: this.state.dot2X,
-                    },
-                    '@media(max-width: 1000px)': {
-                        top: dot3Y,
-                        left: this.state.dot2Xsmall,
-                    },
-                    color: `${this.props.color2}`}}>
-                    <Brightness style = {{...styles.dot2, color: `${this.props.color2}`}} onClick = {this.props.handleClick2}/>
-                </div>
-                <div style = {{...styles.dot3,
-                    '@media (min-width: 1001px)': {
-                        top: dot3Y,
-                        left: this.state.dot3X,
-                    },
-                    '@media(max-width: 1000px)': {
-                        top: dot3Y,
-                        left: this.state.dot3Xsmall,
-                    },
-                    color: `${this.props.color3}`}}>
-                    <Brightness style =  {{...styles.dot3, color: `${this.props.color3}`}} onClick = {this.props.handleClick3}/>
-                </div>
-                <div style = {{...styles.dot4,
-                    '@media (min-width: 1001px)': {
-                        top: dot4Y,
-                        left: this.state.dot4X,
-                    },
-                    '@media(max-width: 1000px)': {
-                        top: dot3Y,
-                        left: this.state.dot4Xsmall,
-                    },
-                    color: `${this.props.color4}`}} >
-                    <Brightness  style = {{...styles.dot4, color: `${this.props.color4}`}} onClick = {this.props.handleClick4}/>
-                </div>
-                <div  style = {{...styles.dot5,
-                    '@media (min-width: 1001px)': {
-                        top: dot5Y,
-                        left: this.state.dot5X,
-                    },
-                    '@media(max-width: 1000px)': {
-                        top: dot3Y,
-                        left: this.state.dot5Xsmall
-                    },
-                    color: `${this.props.color5}`}}>
-                    <Brightness style = {{...styles.dot5, color: `${this.props.color5}`}} onClick = {this.props.handleClick5}/>
-                </div>
+                <Brightness className = 'logColleDots' style = {{...styles.dot1, color: `${this.props.color1}`}} onClick = {this.props.handleClick1}/>
+                <Brightness className = 'logColleDots' style = {{...styles.dot2, color: `${this.props.color2}`}} onClick = {this.props.handleClick2}/>
+                <Brightness className = 'logColleDots' style =  {{...styles.dot3, color: `${this.props.color3}`}} onClick = {this.props.handleClick3}/>
+                <Brightness className = 'logColleDots' style = {{...styles.dot4, color: `${this.props.color4}`}} onClick = {this.props.handleClick4}/>
+                <Brightness className = 'logColleDots' style = {{...styles.dot5, color: `${this.props.color5}`}} onClick = {this.props.handleClick5}/>
             </div>
         );
     }
@@ -138,34 +83,44 @@ class Dots extends Component {
 
 const styles = {
     dot1: {
-        height: dot1Width,
-        zIndex: 100,
         position: 'absolute',
-        width: dot1Width
+        width: 8,
+        height: 8,
+        top: 294,
+        left: 0,
+        zIndex: 100,
     },
     dot2: {
-        zIndex: 100,
         position: 'absolute',
-        width: dot2Width,
-        height: dot2Width,
+        width: 8,
+        height: 8,
+        top: 313,
+        left: 0,
+        zIndex: 100,
     },
     dot3: {
-        zIndex: 100,
         position: 'absolute',
-        width: dot3Width,
-        height: dot3Width
+        width: 8,
+        height: 8,
+        top: 332,
+        left: 0,
+        zIndex: 100,
     },
     dot4: {
-        zIndex: 100,
         position: 'absolute',
-        width: dot3Width,
-        height: dot3Width
+        width: 8,
+        height: 8,
+        top: 351,
+        left: 0,
+        zIndex: 100,
     },
     dot5: {
-        zIndex: 100,
         position: 'absolute',
-        width: dot3Width,
-        height: dot3Width
+        width: 8,
+        height: 8,
+        top: 369,
+        left: 0,
+        zIndex: 100,
     }
 };
 

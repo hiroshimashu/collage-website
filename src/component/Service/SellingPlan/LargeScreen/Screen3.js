@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Price from '../../../../static/price.png';
+import '../../../../service.css';
 
 const windowWidth = window.innerWidth;
 const windowHeight = window.innerHeight;
@@ -27,7 +28,7 @@ class Screen3 extends Component {
 
     render() {
         return(
-            <img src = {Price} alt = 'price' style = {{...styles.price, width: this.state.priceWidth, left: this.state.priceX}}/>
+            <img src = {Price} alt = 'price' style = {{...styles.price}} className = 'price'/>
         );
     }
 }
@@ -35,8 +36,10 @@ class Screen3 extends Component {
 const styles = {
     price: {
         position: 'absolute',
-        height: 'auto',
-        top: priceY
+        width: 767,
+        height:354,
+        top:228,
+        left: 'calc(50vw - 383.5px)'
     }
 }
 

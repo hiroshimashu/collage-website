@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { CSSTransition } from 'react-transition-group';
 import '../../../index.css';
-import CollageGold from '../../../static/COLLAGE_Gold_mod.png';
-import Logo_Night from '../../../static/top(2).png';
+import CollageGold from '../../../static/top_light_on_mod.png';
+import Logo_Night from '../../../static/COLLAGE_gold.png';
 
 const windowWidth = window.innerWidth;
 const windowHeight = window.innerHeight;
@@ -48,10 +48,10 @@ class NightTitleOn extends Component {
 const styles = {
     collage: {
         position: 'absolute',
-        width: titleWidth,
+        width: 46.8 + 'vw',
         height: 'auto',
-        top: titleY,
-        left: titleX,
+        top: 41.6 + 'vh',
+        left: 26.483 + 'vw',
         zIndex: 100
     }
 }

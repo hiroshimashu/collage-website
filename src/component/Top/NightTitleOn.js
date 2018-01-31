@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { CSSTransition } from 'react-transition-group';
 import '../../index.css';
-import CollageGold from '../../static/CollageGold.png';
+import CollageGold from '../../static/top_light_on.png';
 
 const windowWidth = window.innerWidth;
 const windowHeight = 1334 / 750 * windowWidth;

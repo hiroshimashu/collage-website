@@ -29,18 +29,18 @@ class Forest extends Component {
 const styles = {
     forest1: {
         position: 'absolute',
-        width:forest1Width,
-        height: forest1Height,
+        width:49.8 + 'vw',
+        height: 24.3 + 'vh',
         left: 0,
-        top: forest1Y,
+        top: 75.733 + 'vh',
         zIndex:1
     },
     forest2: {
         position: 'absolute',
-        width:forest2Width,
-        height: forest2Height,
-        left: forest2X,
-        top: forest2Y,
+        width:99.5 + 'vw',
+        height: 35.7 + 'vh',
+        left: 0.5 + 'vw',
+        top: 64.266 + 'vh',
         zIndex: 1
     }
 };

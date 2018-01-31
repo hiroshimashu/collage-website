@@ -33,10 +33,10 @@ const Menu = (props) => {
 const styles = {
     menu: {
         position: 'fixed',
-        width: '42px',
+        width: 5.6 + 'vh',
         height: 'auto',
-        marginTop: '78px',
-        marginLeft: '19px',
+        marginTop: '67.2px',
+        marginLeft: 18.6 + 'px',
         zIndex:1000
     }
 }

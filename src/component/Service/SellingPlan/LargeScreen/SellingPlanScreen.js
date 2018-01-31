@@ -1,10 +1,23 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Dots from './Dots';
+import { CSSTransition } from 'react-transition-group';
+import '../../../../index.css';
 import Screen1 from './Screen1';
 import Screen2 from './Screen2';
 import Screen3 from './Screen3';
 import Screen4 from './Screen4';
+
+const Slide = ({ children, ...props }) => (
+    <CSSTransition
+        {...props}
+        timeout={1000}
+        classNames="slide"
+        unmountOnExit={true}
+    >
+        {children}
+    </CSSTransition>
+);
 
 
 
@@ -18,8 +31,10 @@ class SellingPlanScreen extends Component {
             color2: '#bfbfbf',
             color3: '#bfbfbf',
             color4: '#bfbfbf',
-            page: 1,
-            blur: '',
+            page1: true,
+            page2: false,
+            page3: false,
+            page4: false,
             width: this.props.window.width
         };
 
@@ -33,16 +48,16 @@ class SellingPlanScreen extends Component {
 
     componentDidMount() {
         this.id = setInterval(() => {
-            if (this.state.page === 1) {
+            if (this.state.page1 === true) {
                 this.handleClick2();
-            } else if (this.state.page === 2) {
+            } else if (this.state.page2 === true) {
                 this.handleClick3();
-            } else if (this.state.page === 3) {
+            } else if (this.state.page3 === true) {
                 this.handleClick4();
             } else {
                 this.handleClick1();
             }
-        }, 4000);
+        }, 500000);
     }
 
     componentWillReceiveProps() {
@@ -63,8 +78,10 @@ class SellingPlanScreen extends Component {
                 color2: '#bfbfbf',
                 color3: '#bfbfbf',
                 color4: '#bfbfbf',
-                page: 1,
-                blur: ''
+                page1: true,
+                page2: false,
+                page3: false,
+                page4: false,
             };
         });
     }
@@ -78,8 +95,10 @@ class SellingPlanScreen extends Component {
                 color2: '#a99fc5',
                 color3: '#bfbfbf',
                 color4: '#bfbfbf',
-                page: 2,
-                blur: 'blur(10px)'
+                page1: false,
+                page2: true,
+                page3: false,
+                page4: false
             };
         });
     }
@@ -91,8 +110,10 @@ class SellingPlanScreen extends Component {
                 color2: '#bfbfbf',
                 color3: '#a99fc5',
                 color4: '#bfbfbf',
-                page: 3,
-                blur: 'blur(10px)'
+                page1: false,
+                page2: false,
+                page3: true,
+                page4: false
             };
         });
     }
@@ -104,8 +125,10 @@ class SellingPlanScreen extends Component {
                 color2: '#bfbfbf',
                 color3: '#bfbfbf',
                 color4: '#a99fc5',
-                page: 4,
-                blur: 'blur(10px)'
+                page1: false,
+                page2: false,
+                page3: false,
+                page4: true
             };
         });
     }
@@ -123,12 +146,19 @@ class SellingPlanScreen extends Component {
                     handleClick2 = {this.handleClick2}
                     handleClick3 = {this.handleClick3}
                     handleClick4 = {this.handleClick4}
-
                 />
-                {this.state.page === 1 && <Screen1 width = {this.state.width}/>}
-                {this.state.page === 2 && <Screen2 width = {this.state.width}/>}
-                {this.state.page === 3 && <Screen3 width = {this.state.width} />}
-                {this.state.page === 4 && <Screen4 width = {this.state.width}/>}
+                <Slide in = {this.state.page1}>
+                    <Screen1/>
+                </Slide>
+                <Slide in = {this.state.page2}>
+                    <Screen2 />
+                </Slide>
+                <Slide in = {this.state.page3}>
+                    <Screen3 />
+                </Slide>
+                <Slide in = {this.state.page4}>
+                    <Screen4 />
+                </Slide>
             </div>
         );
     }

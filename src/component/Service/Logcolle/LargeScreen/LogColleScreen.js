@@ -181,62 +181,78 @@ class LogColle extends Component {
         console.log(window.innerWidth);
 
         return(
-            <StyleRoot>
-                <div>
-                    <img src = {Explanation1} alt = 'exp' style = {{...styles.ex, width: this.state.exWidth,left: this.state.exX }} />
-                    <iframe id="ytplayer" type="text/html" style = {{...styles.video, width: this.state.exWidth,left: this.state.exX}} src="http://www.youtube.com/embed/M7lc1UVf-VE?autoplay=1&origin=http://example.com" frameBorder="0"/>
-                    <img src = {Iphone} alt = 'iphone' style = {{...styles.iphone, width: this.state.iphoneWidth,left: this.state.iphoneX}} />
-                    <img src = {Google} style = {{...styles.google, width: this.state.googleWidth,left: this.state.googleX}} />
-                    <img src = {Apple} style = {{...styles.apple, width: this.state.appleWidth,left: this.state.appleX}} />
-                    {this.state.page === 1 &&<Screen1 screenWidth = {this.state.screenWidth} screenX = {this.state.screenX} logWidth = {this.state.logWidth} logX = {this.state.logX} />}
-                    {this.state.page === 2 &&<Screen2 screenWidth = {this.state.screenWidth} screenX = {this.state.screenX} />}
-                    {this.state.page === 3 &&<Screen3 screenWidth = {this.state.screenWidth} screenX = {this.state.screenX} />}
-                    {this.state.page === 4 &&<Screen4 screenWidth = {this.state.screenWidth} screenX = {this.state.screenX} />}
-                    {this.state.page === 5 &&<Screen5 screenWidth = {this.state.screenWidth} screenX = {this.state.screenX} />}
-                    <Dots
-                        color1 = {this.state.color1}
-                        color2 = {this.state.color2}
-                        color3 = {this.state.color3}
-                        color4 = {this.state.color4}
-                        color5 = {this.state.color5}
-                        handleClick1 = {this.handleClick1}
-                        handleClick2 = {this.handleClick2}
-                        handleClick3 = {this.handleClick3}
-                        handleClick4 = {this.handleClick4}
-                        handleClick5 = {this.handleClick5}
-                        width = {this.state.width}
-                    />
-                </div>
-            </StyleRoot>
+            <div className="logColleScreenWrapper" style = {styles.wrapper}>
+                <img src = {Explanation1} alt = 'exp' style = {{...styles.ex}} className = 'explanation' />
+                <iframe id="ytplayer" type="text/html" style = {{...styles.video}} src="http://www.youtube.com/embed/M7lc1UVf-VE?autoplay=1&origin=http://example.com" frameBorder="0"/>
+                <img className = 'iphone' src = {Iphone} alt = 'iphone' style = {{...styles.iphone}} />
+                <img className = 'google' src = {Google} style = {{...styles.google}} />
+                <img className = 'apple' src = {Apple} style = {{...styles.apple}} />
+                {this.state.page === 1 &&<Screen1 />}
+                {this.state.page === 2 &&<Screen2 />}
+                {this.state.page === 3 &&<Screen3 />}
+                {this.state.page === 4 &&<Screen4  />}
+                {this.state.page === 5 &&<Screen5 />}
+                <Dots
+                    color1 = {this.state.color1}
+                    color2 = {this.state.color2}
+                    color3 = {this.state.color3}
+                    color4 = {this.state.color4}
+                    color5 = {this.state.color5}
+                    handleClick1 = {this.handleClick1}
+                    handleClick2 = {this.handleClick2}
+                    handleClick3 = {this.handleClick3}
+                    handleClick4 = {this.handleClick4}
+                    handleClick5 = {this.handleClick5}
+                />
+            </div>
+
         );
     }
 }
 
 const styles = {
+    wrapper: {
+        position: 'absolute',
+        width: 540,
+        height: 387,
+        top:232,
+        left: 'calc(50vw - 270px)'
+    },
+
     ex: {
         position: 'absolute',
-        height: 'auto',
-        top: exY,
+        width:285,
+        height:168,
+        top:15,
+        left:248
     },
     video: {
         position: 'absolute',
-        top: videoY,
-        height: 'auto'
+        width: 285,
+        height:160.3125,
+        top: 195,
+        left:248
     },
     google: {
         position: 'absolute',
+        width: 120,
         height: 'auto',
-        top: googleY
+        top: 365.3125,
+        left:248
     },
     apple: {
         position: 'absolute',
+        width: 120,
         height: 'auto',
-        top: appleY
+        top: 365.3125,
+        left: 413
     },
     iphone: {
         position: 'absolute',
-        height: 'auto',
-        top: iphoneY
+        width: 191,
+        height: 387,
+        top:0,
+        left: 18
     },
 };
 

@@ -64,12 +64,12 @@ class AnimationSceen5 extends Component {
             });
         }, 0)
         this.handleClick = this.handleClick.bind(this);
+
+        this.props.showMenu();
     }
 
     componentDidMount() {
         setInterval(this.handleStateChange, 2000);
-        this.props.showMenu();
-        console.log(this.props.show);
     }
 
 
@@ -129,20 +129,18 @@ class AnimationSceen5 extends Component {
     render() {
         return(
             <div>
-                    <Fade in = {this.state.green} timeout = {2000}>
-                        <img src = {Logo} alt = 'sceen1' style = { styles.collage}/>
-                    </Fade>
-                    <Fade in = {this.state.red} timeout = {2000}>
-                        <img src = {Logo2} alt = "screen1" style = {styles.collage} />
-                    </Fade>
-                    <Fade in = {this.state.pink} timeout = {2000}>
-                        <img src = {Logo3} alt = "screen1" style = {styles.collage} />
-                    </Fade>
-                    <Fade in = {this.state.purple} timeout = {2000}>
-                        <img src = {Logo4} alt = "screen1" style = {styles.collage} />
-                    </Fade>
-                    {!this.state.ready &&<Menu handleClick = {this.handleClick}/>}
-
+                <Fade in = {this.state.green} timeout = {2000}>
+                    <img src = {Logo} alt = 'sceen1' style = { styles.collage}/>
+                </Fade>
+                <Fade in = {this.state.red} timeout = {2000}>
+                    <img src = {Logo2} alt = "screen1" style = {styles.collage} />
+                </Fade>
+                <Fade in = {this.state.pink} timeout = {2000}>
+                    <img src = {Logo3} alt = "screen1" style = {styles.collage} />
+                </Fade>
+                <Fade in = {this.state.purple} timeout = {2000}>
+                    <img src = {Logo4} alt = "screen1" style = {styles.collage} />
+                </Fade>
             </div>
         );
     }
@@ -153,8 +151,8 @@ const styles = {
         position: 'absolute',
         width: titleWidth,
         height: titleHeight,
-        top: titleY,
-        left: titleX,
+        top: 'calc(50vh - 47px)',
+        left: 'calc(50vw - 267.5px)',
         zIndex: 101
     }
 }

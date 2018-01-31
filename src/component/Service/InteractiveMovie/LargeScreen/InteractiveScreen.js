@@ -6,6 +6,8 @@ import Introduce2 from './Introduce2';
 import Dots from './Dots';
 import Screen2 from './InteractiveScreen2';
 import { StyleRoot } from 'radium';
+import { CSSTransition } from 'react-transition-group';
+import '../../../../index.css';
 
 const windowWidth = window.innerWidth;
 const windowHeight = 750 / 1200  * windowWidth;
@@ -18,6 +20,16 @@ function calculatePositionX() {
 const imgX = calculatePositionX();
 const imgY = windowHeight * 41 / 750;
 
+const Slide = ({ children, ...props }) => (
+    <CSSTransition
+        {...props}
+        timeout={1000}
+        classNames="slide"
+        unmountOnExit={true}
+    >
+        {children}
+    </CSSTransition>
+);
 
 
 class InteractiveScreen extends Component {
@@ -26,7 +38,7 @@ class InteractiveScreen extends Component {
         this.state = {
             color1: '#a99fc5',
             color2: '#bfbfbf',
-            page: 1,
+            page: true,
             blur: '',
             width: this.props.window.width
 
@@ -40,12 +52,12 @@ class InteractiveScreen extends Component {
 
     componentDidMount() {
         this.id = setInterval(() => {
-            if (this.state.page === 2) {
+            if (this.state.page === false) {
                 this.handleClick1();
             } else {
                 this.handleClick2();
             }
-        }, 3000);
+        }, 100000);
     }
 
     componentWillReceiveProps(){
@@ -67,7 +79,7 @@ class InteractiveScreen extends Component {
             return {
                 color1: '#a99fc5',
                 color2: '#bfbfbf',
-                page: 1,
+                page: true,
                 blur: ''
             };
         });
@@ -78,7 +90,7 @@ class InteractiveScreen extends Component {
             return {
                 color1: '#bfbfbf',
                 color2: '#a99fc5',
-                page: 2,
+                page: false,
                 blur: 'blur(20px)'
             };
         });
@@ -87,13 +99,25 @@ class InteractiveScreen extends Component {
     render() {
         return(
             <StyleRoot>
-                <div>
-                    <Iphone blur = {this.state.blur} width = {this.state.width} />
-                    <Introduce1  blur = {this.state.blur} width = {this.state.width}/>
-                    <Introduce2  blur = {this.state.blur} width = {this.state.width}/>
-                    <Dots color1 = {this.state.color1} color2 = {this.state.color2} handleClick1 = {this.handleClick1} handleClick2 = {this.handleClick2}/>
-                    {this.state.page === 2 && <Screen2 width = {this.state.width} />}
-                </div>
+                <Slide in = {this.state.page}>
+                    <div className = 'serviceScreen1Wrapper' style = {{
+                        position: 'absolute',
+                        width: 1064,
+                        height: '308px',
+                        left:'calc(50vw - 532px)',
+                        top: '271px'
+                    }}>
+                        <Iphone />
+                        <Introduce1 />
+                        <Introduce2 />
+                    </div>
+                </Slide>
+                <Dots color1 = {this.state.color1} color2 = {this.state.color2} handleClick1 = {this.handleClick1} handleClick2 = {this.handleClick2}/>
+                <Slide in = {!this.state.page}>
+                    <Screen2
+                        in = {!this.state.page}
+                    />
+                </Slide>
             </StyleRoot>
         );
     }

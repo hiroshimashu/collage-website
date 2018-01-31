@@ -15,16 +15,17 @@ const titleY = 133 /2744 * windowHeight;
 
 function GroupTitle2(props) {
     return(
-        <img src = {group} className="groupTitle" alt = 'group' style = {{...styles.group, left:props.groupTitleX, right: props.groupTitleX}} />
+        <img src = {group} className="groupTitle" alt = 'group' style = {{...styles.group}} />
     );
 }
 
 const styles = {
     group: {
         position: 'absolute',
-        width: titleWidth,
+        width: 16.5 + 'vw',
         height: 'auto',
-        top: titleY
+        top: 11.083 + 'vw',
+        left: 41.75 + 'vw'
     }
 }
 

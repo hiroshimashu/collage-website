@@ -24,52 +24,60 @@ const divider2Y = 466 / 2744 * windowHeight;
 const groupStyle = {
     cImage1: {
         position: 'absolute',
-        width: cImage1Width,
+        width: 28.5 + 'vw',
         height: 'auto',
-        top: cImage1Y,
+        top: 22.583 + 'vw',
+        left: 10.083 + 'vw'
     },
     name1: {
         position: 'absolute',
-        width: companyName1Width,
+        width: 30.8 + 'vw',
         height: 'auto',
-        top: companyName1Y,
+        top: 21.5 + 'vw',
+        left:45.75 + 'vw'
     },
     exStyle1: {
         position: 'absolute',
-        width: companyMain1Width,
+        width: 42.5 + 'vw',
         height: 'auto',
-        top: companyMain1Y,
+        top: 25.333 + 'vw',
+        left: 45.666 + 'vw'
     },
     cImage2: {
         position: 'absolute',
-        width: cImage2Width,
+        width: 26.9 + 'vw',
         height: 'auto',
-        top: cImage2Y,
+        top: 41.666 + 'vw',
+        left: 10.083 + 'vw'
     },
     name2: {
         position: 'absolute',
-        width: companyName2Width,
+        width: 30.8 + 'vw',
         height:'auto',
-        top: companyName2Y,
+        top: 39.333 + 'vw',
+        left:45.75 + 'vw'
     },
     exStyle2: {
         position: 'absolute',
-        width: companyMain2Width,
+        width: 42.6 + 'vw',
         height:'auto',
-        top: companyMain2Y,
+        top: 43.166 + 'vw',
+        left: 45.666 + 'vw'
     },
     divider1: {
         position: 'absolute',
-        width: dividerWidth,
-        height: dividerHeight,
-        top: dividerY,
+        width: 1 + 'vw',
+        height: 12.5 + 'vw',
+        top: 21 + 'vw',
+        left: 41.416 + 'vw',
         borderLeft: '1px solid #9f9f9f'
     },
     divider2: {
         position: 'absolute',
-        width: dividerWidth,
-        height: dividerHeight,
-        top: divider2Y,
+        width: 1 + 'vw',
+        height: 12.5 + 'vw',
+        top: 38.333 + 'vw',
+        left: 41.416 + 'vw',
         borderLeft: '1px solid #9f9f9f'
     }
 

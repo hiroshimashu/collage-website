@@ -17,16 +17,17 @@ const titleY = 183 / 2744 * windowHeight;
 
 function GroupSubTitle(props) {
     return(
-        <img src = {sub} alt = 'sub' style = {{...styles.subtitle, left:props.groupSubTitleX, right:props.groupSubTitleX}} />
+        <img src = {sub} alt = 'sub' style = {{...styles.subtitle}} />
     );
 }
 
 const styles = {
     subtitle: {
         position: 'absolute',
-        width: titleWidth,
+        width: 7.8 + 'vw',
         height: 'auto',
-        top: titleY
+        top: 15.25 + 'vw',
+        left: 46.1 + 'vw'
     }
 };
 

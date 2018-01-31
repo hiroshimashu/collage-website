@@ -17,16 +17,17 @@ const conceptY = windowHeight * 322 / 2917;
 
 function ConceptMain(props) {
     return(
-        <img src ={concept} style={{...styles.conceptMain, left: props.conceptX, right: props.conceptX}} />
+        <img src ={concept} style={{...styles.conceptMain}} />
     );
 }
 
 const styles = {
     conceptMain: {
         position: 'absolute',
-        width: conceptWidth,
+        width: 44.916 + 'vw',
         height: 'auto',
-        top:conceptY
+        top: 26.833 + 'vw',
+        left: 27.542 + 'vw'
     }
 }
 

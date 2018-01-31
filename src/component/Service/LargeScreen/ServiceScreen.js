@@ -2,14 +2,13 @@ import React, { Component } from 'react';
 import {  BrowserRouter as Router, Route} from 'react-router-dom';
 import { connect } from 'react-redux';
 import ServiceTitle from './SeviceTitle';
-import Share from 'material-ui/svg-icons/social/share';
+import SNS from './SNS';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import ServiceSelector from './ServiceSelector';
 import InteractiveScreen from '../InteractiveMovie/LargeScreen/InteractiveScreen';
 import Selling from '../SellingPlan/LargeScreen/SellingPlanScreen';
 import LogColle from '../Logcolle/LargeScreen/LogColleScreen';
 import LineStamp from '../LineStamp/LargeScreen/LineStampScreen';
-
 import Mail from '../../../static/mail.png';
 import BackgroundParticle from './BackroundParticle';
 
@@ -66,16 +65,16 @@ class ServiceScreen extends Component {
         return(
             <Router>
                 <MuiThemeProvider>
-                    <div style = {{position: 'relative', width: this.state.width, height: windowHeight}}>
-                        <BackgroundParticle width = {this.state.width}/>
-                        <ServiceTitle titleX = {this.state.titleX}/>
-                        <Share style = {{...styles.share, left: this.state.shareX}} />
+                    <div class = 'serviceScreenWrapper' style = {{position: 'relative', width: 100 + 'vw', height: 100 + 'vh'}}>
+                        <BackgroundParticle />
+                        <SNS />
+                        <ServiceTitle titleX = {this.state.titleX} />
                         <ServiceSelector selectorX = {this.state.selectorX} src1 = {this.props.match.url} src2 ={`${this.props.match.url}/selling`} src3 = {`${this.props.match.url}/logcolle`} src4 = {`${this.props.match.url}/line`} />
                         <Route exact path = { this.props.match.url } component = {InteractiveScreen} />
                         <Route path = {`${this.props.match.url}/selling` } component = {Selling} />
                         <Route path = {`${this.props.match.url}/logcolle`} component = {LogColle} />
                         <Route path = {`${this.props.match.url}/line`} component = {LineStamp} />
-                        <img src = {Mail} alt = 'mail' style = {{...styles.mail, left: this.state.mailX, right: this.state.mailX}} />
+                        <img src = {Mail} alt = 'mail' className = 'mail' style = {styles.mail} />
                     </div>
                 </MuiThemeProvider>
             </Router>
@@ -100,10 +99,10 @@ const styles = {
     },
     mail: {
         position: 'absolute',
-        width: img2Width,
-        height:'auto',
-        top:img2Y,
-
+        width: 324,
+        height:28,
+        top: 91.86 + 'vh',
+        left: 'calc(50vw - 162px)'
     }
 }
 

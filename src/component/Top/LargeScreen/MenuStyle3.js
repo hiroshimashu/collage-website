@@ -1,5 +1,5 @@
 const windowWidth =  window.innerWidth;
-const windowHeight = windowWidth *  1334 /750;
+const windowHeight = window.innerHeight;
 
 
 const mainWidth = windowWidth * 0.139
@@ -21,10 +21,10 @@ const lineY = windowHeight * 341 / 1334;
 const menuStyle3 = {
     mainStyle: {
         position: 'absolute',
-        width: mainWidth,
-        height: mainHeight,
-        top: mainY,
-        left: mainX,
+        width: 11.6 + 'vw',
+        height: 1.6 + 'vh',
+        top: 21.81 + 'vh',
+        left: 2.19 + 'vw',
         fontFamily: 'dnp-shuei-mgothic-std',
         fontSize: '13px',
         color: '#505050',
@@ -34,17 +34,17 @@ const menuStyle3 = {
     },
     imgStyle: {
         position: 'absolute',
-        width: imgWidth,
-        height: imgHeight,
-        top: imgY,
-        left: imgX
+        width: 1.02 + 'vw',
+        height: 'auto',
+        top: 21.89 + 'vh',
+        left: 21.9 + 'vw'
     },
     lineStyle: {
         position: 'absolute',
-        width: lineWidth,
-        height: lineHeight,
-        top: lineY,
-        left: lineX,
+        width: 20.49 + 'vw',
+        height: 0.1 + 'vh',
+        top: 25.56 + 'vh',
+        left: 3.2 + 'vw',
         borderBottom:'1px solid #dcdcdc'
     }
 };

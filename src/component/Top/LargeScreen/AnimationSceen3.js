@@ -71,10 +71,8 @@ const styles = {
         position: 'absolute',
         width: titleWidth,
         height: titleHeight,
-        top: titleY,
-        bottom: titleY,
-        left: titleX,
-        right: titleX,
+        top: 'calc(50vh - 47px)',
+        left: 'calc(50vw - 267.5px)',
         zIndex: 100
     }
 }

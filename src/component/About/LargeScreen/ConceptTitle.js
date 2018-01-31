@@ -19,16 +19,17 @@ const titleY = windowHeight *  253 / 2744;
 
 function ConceptTitle(props) {
     return(
-        <img src = {conceptTitle} alt = 'conceptTitle' style = {{...styles.conceptMainTitle, left: props.conceptTitleX, right: props.conceptTitleX}}/>
+        <img src = {conceptTitle} alt = 'conceptTitle' style = {{...styles.conceptMainTitle}}/>
     );
 }
 
 const styles = {
     conceptMainTitle: {
         position: 'absolute',
-        width: titleWidth,
-        height: titleHeight,
-        top: titleY,
+        width: 17.08 + 'vw',
+        height: 'auto',
+        top: 21.083 + 'vw',
+        left: 41.46 + 'vw'
     }
 };
 

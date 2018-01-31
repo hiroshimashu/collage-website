@@ -35,32 +35,14 @@ class Introduce2 extends Component {
 
     render() {
         return (
-            <div style={{
+            <img src={title2}  className = 'introduce2' style={{
                 position: 'absolute',
-                width: this.state.width,
-                height: 'auto',
-                left: this.state.intro2X,
-                '@media (min-width: 1001px)': {
-                    top: intro2Ymedium
-                },
-                '@media (min-width: 1201px)': {
-                    top: intro2Y
-                },
-                '@media(min-with: 1300px)': {
-                    top: intro2YXL
-                },
-                '@media (max-width: 1000px)': {
-                    top: intro2Ysmall
-                }
-            }}
-            >
-                <img src={title2} style={{
-                    position: 'aboslute',
-                    width: this.state.width,
-                    height: 'auto',
-                    filter: `${this.props.blur}`
-                }}/>
-            </div>
+                width: 309,
+                height: 40,
+                top: 200,
+                left: 96
+            }} />
+
         );
     }
 }

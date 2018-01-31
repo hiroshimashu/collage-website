@@ -1,5 +1,5 @@
 import React from 'react';
-import Arrow from '../static/arrow-point-to-right.png';
+import Arrow from '../static/arrow_menu.svg';
 
 
 function MenuList(props) {

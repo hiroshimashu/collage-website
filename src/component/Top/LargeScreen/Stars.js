@@ -22,8 +22,8 @@ class Stars extends Component {
 const styles = {
     star: {
         position: 'absolute',
-        width: windowWidth,
-        height: windowHeight,
+        width: 100 + 'vw',
+        height: 100  + 'vh',
     }
 }
 

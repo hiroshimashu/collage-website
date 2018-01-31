@@ -6,6 +6,8 @@ import Woman from '../../../../static/woman.svg';
 import who1 from '../../../../static/who1.png';
 import who2 from '../../../../static/who2.png';
 import Man from '../../../../static/man.svg';
+import Link from '../../../../static/link.png';
+import '../../../../service.css';
 
 const windowWidth = window.innerWidth;
 const windowHeight = window.innerHeight;
@@ -63,14 +65,21 @@ class Screen4 extends Component {
 
     render() {
         return(
-            <div>
-                <img src = {Title} alt = 'title' style = {{...styles.title, width: this.state.titleWidth, left: this.state.titleX}} />
-                <img src = {Feel1} alt = 'feel1' style = {{...styles.feel1, width: this.state.feel1Width, left: this.state.feel1X}} />
-                <img src = {Feel2} alt = 'feel1' style = {{...styles.feel2, width: this.state.feel2Width, left: this.state.feel2X}} />
-                <img src = {Woman} alt = 'woman' style = {{...styles.woman, width: this.state.womanWidth, left: this.state.womanX}} />
-                <img src = {who1}  alt = 'who1' style = {{...styles.who1,  width: this.state.who1Width,  left: this.state.who1X }} />
-                <img src = {Man}  alt = 'woman' style = {{...styles.man, width: this.state.manWidth, left: this.state.manX}} />
-                <img src = {who2} alt = 'who2'  style = {{...styles.who2,  width: this.state.who2Width, left: this.state.who2X}} />
+            <div className = 'sellingPlanScreen4' style = {{
+                position: 'absolute',
+                width: 1067,
+                height: 341,
+                top: 227,
+                left: 'calc(50vw - 533.5px)'
+            }}>
+                <img src = {Title} alt = 'title' style = {{...styles.title}} className="serviceScreen4Title"/>
+                <img src = {Feel1} alt = 'feel1' style = {{...styles.feel1}} className = 'feel1'/>
+                <img src = {Feel2} alt = 'feel2' style = {{...styles.feel2}} className = 'feel2'/>
+                <img src = {Woman} alt = 'woman' style = {{...styles.woman}} className = "woman" />
+                <img src = {who1}  alt = 'who1' style = {{...styles.who1}}   className = "who1"/>
+                <img src = {Man}  alt = 'woman' style = {{...styles.man}}    className = "man"/>
+                <img src = {who2} alt = 'who2'  style = {{...styles.who2}}   className = "who2"/>
+                <img src = {Link} alt = 'link'  style = {{...styles.link}}   className = "link"/>
             </div>
         );
     }
@@ -79,39 +88,61 @@ class Screen4 extends Component {
 const styles = {
     feel1: {
         position: 'absolute',
-        height: 'auto',
-        top: feel1Y
+        width: 351,
+        height: 314,
+        top: 19,
+        left:0
     },
     feel2: {
         position: 'absolute',
-        height: 'auto',
-        top: feel2Y
+        width:365,
+        height:314,
+        top:27,
+        left: 702
     },
     title: {
         position: 'absolute',
-        height: 'auto',
-        top: titleY
+        width:197,
+        height: 27,
+        top:0,
+        left: 417,
     },
     woman: {
         position: 'absolute',
-        height: 'auto',
-        top: womanY
+        width:85,
+        height: 118,
+        top:87,
+        left: 367
     },
     man: {
         position: 'absolute',
-        height: 'auto',
-        top: manY
+        width: 85,
+        height: 118,
+        top: 87,
+        left: 582
     },
     who1: {
         position: 'absolute',
-        height: 'auto',
-        top: who1Y
+        width:119,
+        height:41,
+        top: 230,
+        left: 350
     },
     who2: {
         position: 'absolute',
-        height:'auto',
-        top: who2Y
+        width: 119,
+        height:41,
+        top: 230,
+        left: 565
+    },
+    link: {
+        position: 'absolute',
+        width: 292,
+        height:16,
+        top: 319,
+        left: 379
     }
+
 }
 
 export default Screen4;

@@ -10,6 +10,7 @@ import ProfileDivider from './ProfileDivider';
 import GroupTitle from './GroupTitle';
 import GroupSubTitle from './GroupSubTitle';
 import GroupInformation from './GroupInformation';
+import showMenu from '../../../actions/showMenu';
 import group1 from '../../../static/group1.png';
 import group2 from '../../../static/group2.png';
 import detail1 from '../../../static/group1Detail.png';
@@ -80,6 +81,7 @@ class AboutScreen extends Component {
             main7: this.props.window.width * 508 / 1200,
             img8: this.props.window.width * 329 / 1200,
             main8: this.props.window.width * 508 / 1200,
+            menu: this.props.show
 
         };
 
@@ -125,20 +127,25 @@ class AboutScreen extends Component {
         });
     }
 
+    componentDidMount() {
+        this.props.showMenu();
+    }
+
+
     calculateX(window, width) {
         return (window - width) / 2;
     }
 
     render() {
         return(
-            <div className="aboutWrapper" style = {{position: 'relative', width:this.state.width, height:windowHeight}}>
+            <div className="aboutWrapper" style = {{position: 'relative', width: 100 + 'vw', height: 228.66 + 'vw'}}>
                 <BackgroundParticle width = {this.state.width} />
-                <div style = {{...styles.aboutWrapper, width: this.state.width}}>
+                <div style = {{...styles.aboutWrapper, width: 100 + 'vw'}}>
                     <AboutTitle titleX = {this.state.titleX} />
                     <ConceptTitle conceptTitleX = {this.state.conceptTitleX}/>
                     <ConceptMain conceptX = {this.state.conceptX} />
                 </div>
-                <div style = {{...styles.profileWrapper, width:this.state.width}}>
+                <div style = {{...styles.profileWrapper, width: 100 + 'vw'}}>
                     <CompanyProfileTitle companyProfileTitleX = {this.state.companyProfileTitleX}/>
                     <CompanyProfile
                         img1 = {this.state.img1}
@@ -162,7 +169,7 @@ class AboutScreen extends Component {
                         dividerX = {this.state.dividerX}
                     />
                 </div>
-                <div className = 'groupWrapper' style = {{...styles.groupWrapper, width: this.state.width}}>
+                <div className = 'groupWrapper' style = {{...styles.groupWrapper}}>
                     <GroupTitle
                         groupTitleX = {this.state.groupTitleX}
                     />
@@ -211,24 +218,33 @@ class AboutScreen extends Component {
 
 const styles = {
     aboutWrapper: {
-        height: aboutWrapperHeight,
+        height: 77.518 + 'vw',
         position: 'relative',
     },
     profileWrapper: {
         position: 'relative',
-        height : profileWrapperHeight,
+        height : 89.6373 + 'vw'
     },
     groupWrapper: {
         position: 'relative',
-        height: groupWrapperHeight
+        width: 100 +'vw',
+        height: 61.511 + 'vw'
     },
 
 }
 
 function mapStateToProps(state) {
     return {
-        window: state.windowsize
+        window: state.windowsize,
+        show: state.showMenu.visible
+    };
+}
+function mapDispatchToProps(dispatch) {
+    return {
+        showMenu() {
+            dispatch(showMenu());
+        }
     };
 }
 
-export default connect(mapStateToProps)(AboutScreen);
+export default connect(mapStateToProps, mapDispatchToProps)(AboutScreen);

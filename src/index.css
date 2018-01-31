@@ -30,6 +30,28 @@ body {
   transform: translate3d(0vw, 0, 0);
 }
 
+.slide-enter {
+  opacity: 0;
+  transform: translate3d(100vw, 0, 0);
+}
+.slide-enter-active {
+  opacity: 1;
+  transform: translate3d(0vw, 0, 0);
+  transition: transform 1000ms ease-in-out;
+}
+.slide-exit {
+  opacity: 1;
+  transform: translate3d(0vw, 0, 0);
+}
+.slide-exit-active {
+  opaicty: 0;
+  transform: translate3d(-100vw, 0, 0);
+  transition: transform 1000ms ease-in-out;
+}
+
+
+
+
 #defaultCanvas0 {
   position: absolute;
   z-index: 1;

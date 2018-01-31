@@ -5,12 +5,12 @@ import worksStyle3 from './worksStyle3';
 import worksStyle4 from './worksStyle4';
 import worksStyle5 from './worksStyle5';
 import worksStyle6 from './worksStyle6';
-import Ads from '../../../static/ads.png';
-import Event from '../../../static/event.png';
-import Campaign from '../../../static/campaign.png';
-import Casting from '../../../static/casting.png';
+import Ads from '../../../static/ads.jpg';
+import Event from '../../../static/event.jpg';
+import Campaign from '../../../static/campaign.jpg';
+import Casting from '../../../static/casting.jpg';
 import PR from '../../../static/PR.png';
-import Media from '../../../static/media.png';
+import Media from '../../../static/media.jpg';
 import title1 from '../../../static/detail1.png';
 import title2 from '../../../static/detail2.png';
 import title3 from '../../../static/detail3.png';
@@ -39,36 +39,36 @@ function WorksCard2(props) {
             if(card.flag === 1) {
                 return (
                     <div style={{display: 'flex'}}>
-                        <img src={card.src1} alt={card.src1} key={card.src1} style={{...card.style1, width:props.width * 0.50}}/>
-                        <img src={card.src2} alt={card.src2} key={card.src2} style={{...card.style2, left: props.width * 613 /1200, width: props.width * 0.476}}/>
+                        <img src={card.src1} alt={card.src1} key={card.src1} style={{...card.style1}}/>
+                        <img src={card.src2} alt={card.src2} key={card.src2} style={{...card.style2}}/>
                     </div>
                 );
             }else if(card.flag === 3){
                 return (
                     <div style={{display: 'flex'}}>
-                        <img src={card.src1} alt={card.src1} key={card.src1} style={{...card.style1, width: props.width * 0.088}}/>
-                        <img src={card.src2} alt={card.src2} key={card.src2} style={{...card.style2, left: props.width * 0.50, width: props.width * 0.50 }}/>
+                        <img src={card.src1} alt={card.src1} key={card.src1} style={{...card.style1}}/>
+                        <img src={card.src2} alt={card.src2} key={card.src2} style={{...card.style2}}/>
                     </div>
                 );
             }else if(card.flag === 2){
                 return (
                     <div style={{display: 'flex'}}>
-                        <img src={card.src1} alt={card.src1} key={card.src1} style={{...card.style1, width: props.width * 0.33}} />
-                        <img src={card.src2} alt={card.src2} key={card.src2} style={{...card.style2, left: props.width * 0.50, width: props.width * 0.50}}/>
+                        <img src={card.src1} alt={card.src1} key={card.src1} style={{...card.style1}} />
+                        <img src={card.src2} alt={card.src2} key={card.src2} style={{...card.style2}}/>
                     </div>
                 );
             }else if(card.flag === 4){
                 return (
                     <div style={{display: 'flex'}}>
-                        <img src={card.src1} alt={card.src1} key={card.src1} style={{...card.style1, width: props.width * 0.229}} />
-                        <img src={card.src2} alt={card.src2} key={card.src2} style={{...card.style2, left: props.width * 0.50, width: props.width * 0.50}}/>
+                        <img src={card.src1} alt={card.src1} key={card.src1} style={{...card.style1}} />
+                        <img src={card.src2} alt={card.src2} key={card.src2} style={{...card.style2}}/>
                     </div>
                 );
             }else if(card.flag === 5){
                 return (
                     <div style={{display: 'flex'}}>
-                        <img src={card.src1} alt={card.src1} key={card.src1} style={{...card.style1, width:props.width * 0.50}} />
-                        <img src={card.src2} alt={card.src2} key={card.src2} style={{...card.style2, left: props.width * 613 /1200, width: props.width *  0.266}}/>
+                        <img src={card.src1} alt={card.src1} key={card.src1} style={{...card.style1}} />
+                        <img src={card.src2} alt={card.src2} key={card.src2} style={{...card.style2}}/>
                     </div>
                 );
             }

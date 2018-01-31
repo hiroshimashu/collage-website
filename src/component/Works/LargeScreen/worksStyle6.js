@@ -15,27 +15,24 @@ const backgroundY = windowHeight * 1630 / 2246;
 
 
 
-const worksStyle4 =  {
+const worksStyle6 =  {
     imgStyle: {
         position: 'absolute',
-        width: titleWidth,
+        width: 8.8 + 'vw',
         height: 'auto',
-        left: titleX,
-        top: titleY,
+        left: 40.2 + 'vw',
+        top: 207.793 + 'vw',
         zIndex: 2,
     },
     titleStyle: {
         position: 'absolute',
-        width: imgWidth,
-        height: imgHeight,
-        top: imgY,
-        left: imgX,
-        zIndex:2,
-        ':hover': {
-            transform: 'scale(1.05)',
-        },
+        width: 50 + 'vw',
+        height: 'auto',
+        top: 204.793 + 'vw',
+        left: 50 + 'vw',
+
 
     }
 };
 
-export default worksStyle4;
+export default worksStyle6;

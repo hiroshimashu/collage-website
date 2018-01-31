@@ -88,16 +88,15 @@ class Access extends Component {
     render() {
         return (
             <MuiThemeProvider>
-                <div className="wrapper" style={{position: 'relative', width: this.state.width, height: windowHeight}}>
+                <div className="wrapper" style={{position: 'relative', width:100 + 'vw', height: 100 + 'vh', overflow: 'hidden'}}>
                     <BackgroundParticle width = {this.state.width} />
-                    <img src = {Title} alt = 'title' style = {{...styles.title, left: this.state.titleX, right: this.state.titleX}} />
-                    <Share style = {{...styles.share, left:this.state.shareX}} />
-                    <img src = {Address} alt = 'address' style = {{...styles.address, left: this.state.addressX, right: this.state.addressX}}/>
+                    <img src = {Title} alt = 'title' style = {{...styles.title}} />
+                    <img src = {Address} alt = 'address' style = {{...styles.address}}/>
                     <Map
                         googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places"
-                        loadingElement={<div style={{height: imgHeight}}/>}
-                        containerElement={<div style={{height: img4Height, width: img4Width, top: img4Y ,position: 'absolute', left: this.state.mapX, right: this.state.mapX}}/>}
-                        mapElement={<div style={{height: '100%'}}/>}
+                        loadingElement={<div style={{height: 60 + 'vh'}}/>}
+                        containerElement={<div style={{position: 'absolute', width: 55.5 + 'vw', height: '60' + 'vh', left: 22.25 + 'vw', top: 32 + 'vh'}}/>}
+                        mapElement={<div style={{height: 100 + '%'}}/>}
                     />
                 </div>
             </MuiThemeProvider>
@@ -115,24 +114,26 @@ function mapStateToProps(state) {
 const styles = {
     share: {
         position: 'absolute',
-        width: imgWidth,
-        height: imgHeight,
-        left: imgX,
-        right: imgX,
-        top: imgY,
+        width: 2.5 + 'vw',
+        height: 4.3 + 'vh',
+        left: 95.666 + 'vw',
+
+        top: 2.666 + 'vh',
         color: '#b3b3b3'
     },
     address: {
         position: 'absolute',
-        width: img2Width,
+        width: 37.166 + 'vw',
         height: 'auto',
-        top: img2Y,
+        top: 22.133 + 'vh',
+        left: 31.416 + 'vw'
     },
     title: {
         position: 'absolute',
-        width: img3Width,
-        height: img3Height,
-        top: img3Y,
+        width: 32.75 + 'vw',
+        left: 33.625 +'vw',
+        height:'auto',
+        top: 5.25 + 'vh',
     }
 }
 

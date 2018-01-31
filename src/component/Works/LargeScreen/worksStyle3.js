@@ -17,16 +17,16 @@ const backgroundY = windowHeight * 212 / 2246 + imgY
 const worksStyle3 =  {
     imgStyle: {
         position: 'absolute',
-        width: imgWidth,
-        height: imgHeight,
-        top: imgY,
+        width: 50 + 'vw',
+        height: 'auto' ,
+        top: 92.593 + 'vw',
     },
     titleStyle: {
         position: 'absolute',
-        width: titleWidth,
+        width: 46 + 'vw',
         height: 'auto',
-        top: titleY,
-        left: titleX,
+        top: 95.893 + 'vw',
+        left: 51.083 + 'vw',
         zIndex: 2
     }
 };

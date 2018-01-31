@@ -12,7 +12,7 @@ const screenY = windowHeight * 273 / 750;
 function Screen2(props) {
     return(
         <div>
-            <img src = {sns} style = {{...styles.screen, width: props.screenWidth, left: props.screenX}} />
+            <img className = 'logColleScreen2' src = {sns} style = {{...styles.screen}} />
         </div>
     );
 }
@@ -20,8 +20,10 @@ function Screen2(props) {
 const styles = {
     screen: {
         position: 'absolute',
-        height: 'auto',
-        top: screenY,
+        width: 170,
+        height: 302,
+        top:41,
+        left:29
     }
 };
 

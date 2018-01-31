@@ -104,8 +104,17 @@ class Scene extends Component {
             this.renderer.render(this.scene, this.camera);
         }, 3000); */
 
-        console.log(this.renderer.context.canvas, this.camera);
+        window.addEventListener('resize', this.handleResize, false);
+    }
 
+    componentWillUnmount() {
+        window.removeEventListener('resize', this.handleResize);
+    }
+
+    handleResize = () => {
+        this.renderer.setSize(window.innerWidth, window.innerHeight);
+        this.camera.aspect = window.innerWidth / window.innerHeight;
+        this.camera.updateProjectionMatrix();
     }
 
 
@@ -218,7 +227,7 @@ class Scene extends Component {
     render() {
         return(
             <Fade in = { this.props.show} timeout = {2000}>
-                <div style = {{width: windowWidth, height: windowHeight, position: 'absolute', zIndex: 5}} ref={(mount) => { this.mount = mount; }} />
+                <div style = {{width: 100 + 'vw', height: 100 + 'vh', position: 'absolute', zIndex: 5, overflow: 'hidden'}} ref={(mount) => { this.mount = mount; }} />
             </Fade>
         );
     }

@@ -29,12 +29,22 @@ class Dots extends Component {
     render() {
         return(
             <div>
-                <Brightness style = {{zIndex: 100, position: 'absolute', width: dot1Width, height: dot1Height, top: dot1Y, left: dot1X, color: `${this.props.color1}`}} onClick = {this.props.handleClick1}/>
-                <Brightness style = {{zIndex: 100, position: 'absolute', width: dot2Width, height: dot2Height, top: dot2Y, left: dot2X, color: `${this.props.color2}`}} onClick = {this.props.handleClick2}/>
-                <Brightness style = {{zIndex: 100, position: 'absolute', width: dot3Width, height: dot3Height, top: dot3Y, left: dot3X, color: `${this.props.color3}`}} onClick = {this.props.handleClick3}/>
-                <Brightness style = {{zIndex: 100, position: 'absolute', width: dot4Width, height: dot4Height, top: dot4Y, left: dot4X, color: `${this.props.color4}`}} onClick = {this.props.handleClick4}/>
+                <Brightness style = {{...styles.dots, top: 42.533 + 'vh', color: `${this.props.color1}`}} onClick = {this.props.handleClick1}/>
+                <Brightness style = {{...styles.dots, top: 46.9333 + 'vh', color: `${this.props.color2}`}} onClick = {this.props.handleClick2}/>
+                <Brightness style = {{...styles.dots, top: 51.46 + 'vh',color: `${this.props.color3}`}} onClick = {this.props.handleClick3}/>
+                <Brightness style = {{...styles.dots, top: 55.86 + 'vh',color: `${this.props.color4}`}} onClick = {this.props.handleClick4}/>
             </div>
         );
+    }
+}
+
+const styles = {
+    dots: {
+        position: 'absolute',
+        width: 1.2 + 'vw',
+        height: 1.9 + 'vh',
+        left: 2.083 + 'vw',
+        zIndex: 100
     }
 }
 

@@ -74,8 +74,8 @@ class WorksScreen extends Component {
     render() {
         return(
 
-            <div className="worksWrapper" style = {{...styles.worksWrapper, width: this.state.width}}>
-                <img src = {WorksTitle} style = {{...styles.title, left: this.state.titleX, right: this.state.titleX}} />
+            <div className="worksWrapper" style = {{...styles.worksWrapper}}>
+                <img src = {WorksTitle} style = {{...styles.title}} />
                 <BackgroundParticle />
                 <WorksCard width ={this.state.width} />
             </div>
@@ -86,13 +86,16 @@ class WorksScreen extends Component {
 const styles = {
     worksWrapper: {
         position: 'relative',
-        height: windowHeight,
+        width: 100 + 'vw',
+        height: 242.293 + 'vw',
+        overflow: 'hidden'
     },
     title: {
         position: 'absolute',
-        width: titleWidth,
-        height: titleHeight,
-        top: titleY
+        width: 32.75 + 'vw',
+        left: 33.625 +'vw',
+        height:'auto',
+        top: 5.25 + 'vw',
     },
     logo: {
         position: 'absolute',

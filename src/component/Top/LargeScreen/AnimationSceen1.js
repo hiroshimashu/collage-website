@@ -62,11 +62,10 @@ class AnimationSceen1 extends Component {
 const styles = {
     logo : {
         position: 'absolute',
-        width: imageWidth,
-        height: imageHeight,
-        top: imageY,
-        bottom : imageY,
-        left: imageX
+        width: '100px',
+        height: '99px',
+        top:'calc(50vh - 49.5px)',
+        left:'calc(50vw - 50px)'
     }
 }
 

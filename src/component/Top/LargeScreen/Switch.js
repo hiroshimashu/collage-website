@@ -17,10 +17,10 @@ class Switch extends Component {
             <img src = {icon} alt = 'icon'
                  style ={{
                     position: 'absolute',
-                    width:iconWidth,
-                    height: iconHeight,
-                    left: iconX,
-                    top: iconY,
+                    width:2. + 'vw',
+                    height: 'auto',
+                    left: 95.083 + 'vw',
+                    top: 3.466 + 'vh',
                     zIndex: 1,
                      opacity:this.props.opacity
                 }}

@@ -17,16 +17,17 @@ const titleY = windowHeight * 142 / 2744;
 
 function CompanyProfileTitle(props) {
     return(
-        <img style = {{...styles.profileTitle, left: props.companyProfileTitleX, right: props.companyProfileTitleX}} src = {CompanyTitle} alt =  'companytitle'/>
+        <img style = {{...styles.profileTitle}} src = {CompanyTitle} alt =  'companytitle'/>
     );
 }
 
 const styles = {
     profileTitle: {
         position: 'absolute',
-        width: titleWidth,
-        height: titleHeight,
-        top: titleY
+        width: 34.5 + 'vw',
+        height: 'auto',
+        top: 11.833 + 'vw',
+        left: 32.75 +  'vw'
     }
 };
 

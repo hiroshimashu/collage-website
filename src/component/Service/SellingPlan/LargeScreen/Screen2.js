@@ -11,6 +11,7 @@ import Sample from '../../../../static/sample.png';
 import applyTitle from '../../../../static/applyTitle.png';
 import orientationTitle from '../../../../static/orientationTitle.png';
 import completeTitle from '../../../../static/completeTitle.png';
+import '../../../../service.css';
 
 const windowWidth = window.innerWidth;
 const windowHeight =window.innerHeight;
@@ -101,20 +102,29 @@ class Screen2 extends Component {
 
     render() {
         return(
-            <div>
-                <img src = {Title} alt = 'title' style = {{...styles.title, width: this.state.titleWidth, left: this.state.titleX, right: this.state.titleX}}/>
-                <img src = {Contract} alt ='contract' style = {{...styles.contract, width: this.state.contractWidth, height: this.state.contractWidth, left: this.state.contractX}} />
-                <img style = {{...styles.apply, left: this.state.applyX, width: this.state.applyWidth}} src = {applyTitle} alt = 'apply'/>
-                <img src = {Operator} alt = 'operator' style = {{...styles.operator, width: this.state.operatorWidth, left: this.state.operatorX, height: this.state.operatorWidth }} />
-                <img style = {{...styles.orientation, left: this.state.oriX, width: this.state.oriWidth}} src = {orientationTitle} alt =  'orientation' />
-                <img src = {NewsPaper} alt = 'newspaper' style = {{...styles.news, width: this.state.newsWidth, height: this.state.newsWidth, left: this.state.newsX }} />
-                <img src = {completeTitle} style = {{...styles.complete, width: this.state.completeWidth, left: this.state.completeX}} alt = 'complete'/>
-                <img src = {Apply} alt = 'apply' style = {{...styles.applyDiscription , width: this.state.d1Width, left: this.state.d1X}}/>
-                <img src = {Orientation} alt = 'orientation' style = {{...styles.orienDiscription, width: this.state.d2Width, left: this.state.d2X }}/>
-                <img src = {Complete} alt = 'complete' style = {{...styles.completeDiscription, width: this.state.d3Width, left: this.state.d3X }} />
-                <RightArrow style = {{...styles.arrow, left: this.state.arrowX, width: this.state.arrowWidth}} alt = 'arrow' />
-                <img src = {Sample} alt = 'sample' style = {{...styles.sample, width: this.state.sampleWidth, left:this.state.sampleX}} />
+        <div>
+            <div className="serviceScreen2Wrapper" style = {{
+                position: 'absolute',
+                width: 809,
+                height: 361,
+                top:227,
+                left: 'calc(50vw - 404.5px)'
+            }}>
+                <img src = {Title} alt = 'title' className="serviceScreen2Title" style = {{...styles.title}}/>
+                <img src = {Contract} alt ='contract' className = 'contract' style = {{...styles.contract}} />
+                <img style = {{...styles.apply}} src = {applyTitle} alt = 'apply' className = 'applyTitle'/>
+                <img src = {Operator} alt = 'operator' style = {{...styles.operator}} className = 'operator' />
+                <img style = {{...styles.orientation}} src = {orientationTitle} alt =  'orientation' className = 'orientationTitle'/>
+                <img src = {NewsPaper} alt = 'newspaper' style = {{...styles.news }} className = 'newspaper'/>
+                <img src = {completeTitle} style = {{...styles.complete}} alt = 'complete' className = 'complete'/>
+                <img src = {Apply} alt = 'apply' style = {{...styles.applyDiscription}} className="applyDiscription"/>
+                <img src = {Orientation} alt = 'orientation' style = {{...styles.orienDiscription}} className="orientationDiscription"/>
+                <img src = {Complete} alt = 'complete' style = {{...styles.completeDiscription}} className = 'completeDiscription'/>
             </div>
+            <RightArrow style = {{...styles.arrow}} alt = 'arrow'  className = 'arrow'/>
+            <img src = {Sample} alt = 'sample' style = {{...styles.sample}} className = 'sample'/>
+        </div>
+
         );
     }
 }
@@ -122,60 +132,88 @@ class Screen2 extends Component {
 const styles = {
     title: {
         position: 'absolute',
-        height: 'auto',
-        top: titleY
+        width: 167,
+        height: 27,
+        top:0,
+        left:314
     },
     contract: {
         position: 'absolute',
-        top: contractY
+        width: 82,
+        height: 82,
+        top: 85,
+        left:103
     },
     apply: {
         position: 'absolute',
-        height: 'auto',
-        top: applyY
+        width: 100,
+        height:19,
+        top: 193,
+        left: 82
     },
     operator: {
         position: 'absolute',
-        top: operatorY
+        width: 84,
+        height: 84,
+        top: 81,
+        left: 354
     },
     orientation: {
         position: 'absolute',
-        height: 'auto',
-        top: oriY
+        width: 79,
+        height:19,
+        top:192,
+        left: 350
     },
     news: {
         position: 'absolute',
-        top: newsY
+        width:81,
+        height:81,
+        top:84,
+        left:614
     },
     complete: {
         position: 'absolute',
-        height: 'auto',
-        top: completeY
+        width:39,
+        height:19,
+        top:192,
+        left: 639
     },
     applyDiscription: {
         position: 'absolute',
-        height: 'auto',
-        top: d1Y
+        width: 214,
+        height: 68,
+        top: 242,
+        left: 27
     },
     orienDiscription: {
         position: 'absolute',
-        height: 'auto',
-        top: d2Y
+        width:215,
+        height:118,
+        top:242,
+        left:290
     },
     completeDiscription: {
         position: 'absolute',
-        height: 'auto',
-        top: d3Y
+        width:204,
+        height:40,
+        top:242,
+        left:562
+
     },
     arrow: {
         position: 'absolute',
-        height: 'auto',
-        top: arrowY
+        width: 17,
+        height: 29,
+        top:350,
+        left:94.5 + 'vw'
     },
     sample: {
         position: 'absolute',
-        height: 'auto',
-        top: sampleY
+        width: 20,
+        height: 228,
+        top: 251,
+        left: 91.6 + 'vw'
     }
 }
 

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import MenuList from './MenuList';
 import '../../../index.css';
+import Close from '../../../static/close.svg';
 import MenuStyle1 from './MenuStyle1';
 import MenuStyle2 from './MenuStyle2';
 import MenuStyle3 from './MenuStyle3';
@@ -9,8 +10,8 @@ import MenuStyle4 from './MenuStyle4';
 import MenuStyle5 from './MenuStyle5';
 
 const windowWidth =  window.innerWidth;
-const windowHeight = windowWidth *  1334 /750;
-const wrapperWidth = windowWidth * 0.50;
+const windowHeight = window.innerHeight;
+const wrapperWidth = windowWidth * 0.350;
 
 
 class Menu extends Component{
@@ -35,7 +36,6 @@ class Menu extends Component{
                         HOME
                     </MenuList>
                 </Link>
-
                 <Link to= '/about'  onClick = {this.props.onHandleClick}>
                     <MenuList
                         mainStyle = {MenuStyle2.mainStyle}
@@ -56,7 +56,7 @@ class Menu extends Component{
                     </MenuList>
                 </Link>
 
-                <Link to = '/service/interactive' onClick = {this.props.onHandleClick}>
+                <Link to = '/service' onClick = {this.props.onHandleClick}>
                     <MenuList
                         mainStyle = {MenuStyle4.mainStyle}
                         imgStyle = {MenuStyle4.imgStyle}
@@ -75,6 +75,7 @@ class Menu extends Component{
                         ACCESS
                     </MenuList>
                 </Link>
+                <img src = {Close} style = {styles.close} onClick = {this.props.onHandleClick}/>
             </div>
 
         );
@@ -84,11 +85,18 @@ class Menu extends Component{
 const styles = {
     wrapper: {
         position: 'fixed',
-        width: wrapperWidth,
+        width: 35.0 + 'vw',
         height: windowHeight,
         backgroundColor: 'rgba(255, 255, 255, 0.92)',
         transition: 'transform .7s ease-in-out',
-        zIndex: '1000'
+        zIndex: 1000
+    },
+    close: {
+        position: 'fixed',
+        width: 2.5 + 'vw',
+        height: 'auto',
+        marginLeft: 33.75 + 'vw',
+        zIndex: 1000
     }
 }
 

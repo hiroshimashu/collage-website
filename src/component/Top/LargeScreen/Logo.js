@@ -24,10 +24,10 @@ function Logo() {
 const styles = {
     logo: {
         position: 'fixed',
-        width: '42px',
-        height: '42px',
-        marginTop: '20px',
-        marginLeft: '19px',
+        width: 'auto',
+        height: 5.6 + 'vh',
+        marginTop: '13.28px',
+        marginLeft: 18.6 + 'px',
         zIndex:6
     },
 }

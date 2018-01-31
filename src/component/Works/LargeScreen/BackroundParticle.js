@@ -25,8 +25,8 @@ function BackgroundParticles(props) {
                     }
                 }
             }}
-            width = {'100%'}
-            height = {'100%'}
+            width = {100 + 'vw'}
+            height = {242.293 + 'vw'}
             style =  {{
                 position:'absolute',
                 zIndex: '-100',

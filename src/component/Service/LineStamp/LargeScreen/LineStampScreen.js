@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import LineStore from '../../../../static/lineStoreLarge.png';
 import Characters from '../../../../static/characters.png';
+import '../../../../service.css';
 
 const windowWidth = window.innerWidth;
 const windowHeight = window.innerHeight;
@@ -47,8 +48,8 @@ class LineStampScreen extends Component{
     render() {
         return (
             <div>
-                <img src={Characters} alt='character' style={{...styles.character, left: this.state.img1X, width: this.state.img1Width}}/>
-                <img src={LineStore} alt='line' style={{...styles.line, left: this.state.lineX, right: this.state.lineX}}/>
+                <img className = 'characters' src={Characters} alt='character' style={{...styles.character}}/>
+                <img className = 'line' src={LineStore} alt='line' style={{...styles.line}}/>
             </div>
         );
     }
@@ -57,15 +58,17 @@ class LineStampScreen extends Component{
 const styles = {
     character: {
         position: 'absolute',
-        height: 'auto',
-        top: img1Y
+        width: 731,
+        height:311,
+        top: 228,
+        left: 'calc(50vw - 365.5px)'
     },
     line: {
         position: 'absolute',
-        width: img4Width,
-        height: 'auto',
-        left: img4X,
-        top: img4Y
+        width: 157,
+        height: 46,
+        top:592,
+        left: 'calc(50vw - 78.5px)'
     },
 }
 

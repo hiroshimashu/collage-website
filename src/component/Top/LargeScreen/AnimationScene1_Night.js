@@ -38,7 +38,7 @@ class AnimationScene1_Night extends Component {
 
         setTimeout(() => {
             this.setState({show: !this.state.show});
-        }, 800);
+        }, 1500);
 
 
     }
@@ -46,7 +46,7 @@ class AnimationScene1_Night extends Component {
     componentDidMount() {
         setTimeout(() => {
             this.props.handleAnimation();
-        }, 1500);
+        }, 2300);
     }
 
     render() {

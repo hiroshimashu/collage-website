@@ -23,11 +23,10 @@ function ServiceTitle() {
 const styles = {
     serviceTitle: {
         position: 'absolute',
-        width: imgWidth,
-        height:imgHeight,
-        left:imgX,
-        right:imgX,
-        top:imgY,
+        width: '347px',
+        height: '47px',
+        left: 46.266 + 'vh',
+        top: 5.466 + 'vh',
     }
 };
 

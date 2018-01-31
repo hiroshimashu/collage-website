@@ -35,7 +35,6 @@ class Menu extends Component{
                         HOME
                     </MenuList>
                 </Link>
-
                 <Link to= '/about'  onClick = {this.props.onHandleClick}>
                     <MenuList
                         mainStyle = {MenuStyle2.mainStyle}

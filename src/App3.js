@@ -16,6 +16,7 @@ import About from './component/About/LargeScreen/AboutScreen';
 import Works from './component/Works/LargeScreen/WorksScreen';
 import Service from './component/Service/LargeScreen/ServiceScreen';
 import Access from './component/Access/Access';
+import showMenu from './actions/showMenu';
 
 
 const Fade = ({ children, ...props }) => (
@@ -27,6 +28,10 @@ const Fade = ({ children, ...props }) => (
         {children}
     </CSSTransition>
 );
+
+let TimerID;
+let TimerID2;
+let date;
 
 class App3 extends Component {
     constructor(props) {
@@ -43,29 +48,33 @@ class App3 extends Component {
             window: this.props.windowsize,
             height: window.innerHeight,
             menu: this.props.menu,
+            showMenu: false
         };
 
-        setTimeout(() => {
-            this.setState(() => {
-                return { menu: this.props.menu};
-            });
-        }, 5500);
+        this.handleShowMenu = this.handleShowMenu.bind(this);
+
+
     }
 
     componentWillMount() {
-        const date = new Date().getHours();
+        date = new Date().getHours();
         console.log(date);
-        if(date >= 18 || date <= 6) {
+
+        this.handleMenu();
+        if (date >= 18 || date <= 6) {
             this.setState(() => {
                 return {night: true};
             });
         }
+
+
     }
+
 
     componentDidMount() {
 
         this.setState(() => {
-            return(
+            return (
                 {
                     target1: this.aboutScreen,
                     target2: this.workScreen,
@@ -74,6 +83,50 @@ class App3 extends Component {
                 }
             );
         });
+
+
+        if (this.state.night) {
+            clearTimeout(TimerID);
+            TimerID2 = setTimeout(() => {
+                console.log('night timer is on')
+                this.setState(() => {
+                    return {menu: this.props.menu};
+                });
+            }, 2500);
+
+            const location = window.location.href
+
+            if(location.match(/about|works|service|access/)) {
+                clearTimeout(TimerID2);
+            }
+        }
+    }
+
+    handleShowMenu() {
+        console.log('switch');
+        this.setState( (prevState) => {
+            return {showMenu: !prevState.showMenu};
+        });
+    }
+
+    handleMenu = () => {
+        console.log('show menu')
+
+
+        const location = window.location.href
+
+        if(location.match(/about|works|service|access/)) {
+            this.setState(() => {
+                return { menu: true };
+            });
+        }else {
+
+            TimerID = setTimeout(() => {
+                this.setState(() => {
+                    return { menu: this.props.menu};
+                });
+            }, 5500);
+        }
     }
 
     render() {
@@ -81,11 +134,11 @@ class App3 extends Component {
 
             <Router>
                 <div>
-                    <Header />
                     <Logo />
-                    <MenuButton showMenu = {this.state.menu} />
+                    <MenuButton showMenu = {this.state.menu} handleClick = {this.handleShowMenu} />
+                    <Menu onHandleClick={this.handleShowMenu} showMenu = {this.state.showMenu} />
                     {!this.state.night &&<Route exact path = '/' component = {Top} />}
-                    {this.state.night && <Route exact path = '/' component = {Top} />}
+                    {this.state.night && <Route exact path = '/' component = {Top_Night} />}
                     <Route path="/about" component={About} />
                     <Route path="/works" component={Works} />
                     <Route path="/service" component={Service} />
@@ -103,6 +156,15 @@ function mapStateToProps(state) {
         menu: state.showMenu.visible
     };
 }
+
+function mapDispatchToProps(dispatch) {
+    return {
+        showMenu() {
+            dispatch(showMenu());
+        }
+    };
+}
+
 
 export default connect(mapStateToProps)(App3);
 

@@ -13,23 +13,19 @@ const titleY = 1250 / 2246 * windowHeight;
 const worksStyle4 =  {
     imgStyle: {
         position: 'absolute',
-        width: titleWidth,
+        width: 22.9 + 'vw',
         height: 'auto',
-        left: titleX ,
-        top: titleY,
+        left: 26.1 + 'vw' ,
+        top: 132.793 + 'vw',
         zIndex:2
     },
     titleStyle: {
         position: 'absolute',
-        width: imgWidth,
-        height: imgHeight,
-        top: imgY,
-        left: imgX,
+        width: 50 + 'vw',
+        height: 'auto',
+        top: 129.793 + 'vw',
+        left: 50 + 'vw',
         zIndex:2,
-        ':hover': {
-            transform: 'scale(1.05)',
-        },
-
     }
 };
 

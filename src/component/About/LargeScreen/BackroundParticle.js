@@ -26,12 +26,12 @@ function BackgroundParticles(props) {
                     }
                 }
             }}
-            width = {props.width}
-            height = {'100%'}
+            width = {100 + 'vw'}
+            height = {228.66 + 'vw'}
             style =  {{
                 position:'absolute',
                 zIndex: '-100',
-                left: 0
+                left: 0,
             }}
             className =   'particleWrapper'
         />

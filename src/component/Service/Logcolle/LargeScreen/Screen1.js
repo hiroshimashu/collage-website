@@ -15,8 +15,8 @@ const logY = windowHeight * 0.499;
 function Screen1(props) {
     return(
         <div>
-            <img src = {whiteScreen} style = {{...styles.screen, width: props.screenWidth, left: props.screenX}} />
-            <img src = {LogColle} style = {{...styles.log, width: props.logWidth, left: props.logX }} />
+            <img className = 'whiteScreen' src = {whiteScreen} style = {{...styles.screen}} />
+            <img className = 'log' src = {LogColle} style = {{...styles.log}} />
         </div>
     );
 }
@@ -24,17 +24,17 @@ function Screen1(props) {
 const styles = {
     screen: {
         position: 'absolute',
-        width: screenWidth,
-        height: 'auto',
-        top: screenY,
-        left: screenX
+        width: 170,
+        height: 302,
+        top:41,
+        left:29
     },
     log: {
         position: 'absolute',
-        width: logWidth,
-        height: 'auto',
-        top: logY,
-        left: logX
+        width: 100,
+        height: 100,
+        top: 128,
+        left:62
     },
 
 

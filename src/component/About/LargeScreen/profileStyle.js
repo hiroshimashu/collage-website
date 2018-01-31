@@ -68,84 +68,100 @@ const mainY8 = windowHeight * 907 / 2744;
 
 const profileStyle = {
     img1: {
-        width: imgWidth1,
-        height: imgWidth1,
-        top: imgY1,
+        width: 4.4 + 'vw',
+        height: 'auto',
+        top: 18.833 + 'vw',
+        left: 27.5 + 'vw'
     },
     main1: {
-        width: mainWidth1,
+        width: 20.3 + 'vw',
         height: 'auto',
-        top: mainY1,
+        top: 18.833 + 'vw',
+        left: 42.333 + 'vw'
     },
     img2: {
-        width: imgWidth2,
-        height: imgHeight2,
-        top: imgY2
+        width: 3.1 + 'vw',
+        height: 'auto',
+        top: 26.333 + 'vw',
+        left: 28.083 + 'vw'
     },
     main2: {
-        width: mainWidth2,
+        width: 40.1 + 'vw',
         height: 'auto',
-        top: mainY2,
+        top: 27.166 + 'vw',
+        left: 42.333 + 'vw'
     },
     img3: {
-        width: imgWidth3,
-        height: imgHeight3,
-        top: imgY3
+        width:4.4 + 'vw',
+        height: 'auto',
+        top: 34.083 + 'vw',
+        left: 27.416 + 'vw'
     },
     main3: {
-        width: mainWidth3,
+        width: 20.3 + 'vw',
         height: 'auto',
-        top: mainY3,
+        top: 34.916 + 'vw',
+        left: 42.333 + 'vw'
     },
     img4: {
-        width: imgWidth4,
-        height: imgHeight4,
-        top: imgY4
+        width: 4.4 + 'vw',
+        height: 'auto',
+        top: 41.5 + 'vw',
+        left: 27.416 + 'vw'
     },
     main4: {
-        width: mainWidth4,
+        width: 12 + 'vw',
         height: 'auto',
-        top: mainY4,
+        top: 42.333 + 'vw',
+        left: 42.333 + 'vw'
     },
     img5: {
-        width: imgWidth5,
-        height: imgHeight5,
-        top: imgY5
+        width: 4.4 + 'vw',
+        height: 'auto',
+        top: 49.166 + 'vw',
+        left: 27.416 + 'vw'
     },
     main5: {
-        width: mainWidth5,
+        width: 8.5 + 'vw',
         height: 'auto',
-        top: mainY5
+        top: 50.25 + 'vw',
+        left: 42.416 + 'vw'
     },
     img6: {
-        width: imgWidth6,
-        height: imgHeight6,
-        top: imgY6
+        width: 3.4 + 'vw',
+        height: 'auto',
+        top: 56.583 + 'vw',
+        left: 27.416 + 'vw'
     },
     main6: {
-        width: mainWidth6,
-        height: 'height',
-        top: mainY6,
+        width: 3.2 + 'vw',
+        height: 'auto',
+        top: 56.583 + 'vw',
+        left: 42.33 + 'vw'
     },
     img7: {
-        width: imgWidth7,
-        height: imgHeight7,
-        top: imgY7
+        width: 4.4 + 'vw',
+        height: 'auto',
+        top: 65.416 + 'vw',
+        left: 27.416 + 'vw'
     },
     main7: {
-        width: mainWidth7,
+        width: 31.7 + 'vw',
         height: 'auto',
-        top: mainY7,
+        top: 62.5833 + 'vw',
+        left: 42.33 + 'vw'
     },
     img8: {
-        width: imgWidth8,
-        height: imgHeight8,
-        top: imgY8
+        width: 4.4 + 'vw',
+        height: 'auto',
+        top: 74.441 + 'vw',
+        left: 27.416 + 'vw'
     },
     main8: {
-        width: mainWidth8,
-        height:'auto',
-        top: mainY8,
+        width: 33.9 + 'vw',
+        height: 'auto',
+        top: 75.583 + 'vw',
+        left: 42.33 + 'vw'
     },
 
 };

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ServiceElement from './ServiceElement';
 import {StyleRoot} from 'radium';
+import '../../../service.css';
 
 
 const windowWidth = window.innerWidth;
@@ -81,7 +82,7 @@ class ServiceSelector extends Component {
     render() {
         return(
             <StyleRoot>
-                <div className='selectWrapper' style =  {{ ...styles.selectWrapper, left:this.props.selectorX, right: this.props.selectorX }}>
+                <div className='selectWrapper' style =  {{ ...styles.selectWrapper }}>
                     <ServiceElement
                         src = {this.props.src1}
                         link = {this.state.link1}
@@ -123,11 +124,12 @@ const styles =  {
     selectWrapper: {
         display: 'flex',
         position: 'absolute',
-        width:selectorWidth,
-        height: selectorHeight,
-        top: selectorY,
+        width: 548 + 'px',
+        height: 18 + 'px',
+        top: 156 + 'px',
+        left: 'calc(50vw - 274px)',
         fontFamily: 'dnp-shuei-mgothic-std',
-        fontSize: '16.px',
+        fontSize: 16 + 'px',
         lineHeight: '16px',
         textAlign: 'left',
         zIndex: 100,

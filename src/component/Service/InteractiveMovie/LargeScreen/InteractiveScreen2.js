@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import Feature from '../../../../static/FEATURE.png';
+import '../../../../service.css';
 const windowWidth = window.innerWidth;
-const windowHeight = window.innerHeight
+const windowHeight = window.innerHeight;
 const interactive2Width = windowWidth * 0.674;
 const interactive2Height = windowHeight *  0.491;
 function CalculateX() {
@@ -41,7 +42,7 @@ class InteractiveScreen2 extends Component {
 
     render() {
         return (
-            <img src={Feature} alt='feature' style={{...styles.img, width: this.state.width, left: this.state.interactive2X, right: this.state.interactive2X,}}/>
+            <img  className = 'interactiveScreen2' src={Feature} alt='feature' style={styles.img} />
         );
     }
 }
@@ -49,9 +50,11 @@ class InteractiveScreen2 extends Component {
 const styles = {
     img: {
         position: 'absolute',
-        height: 'auto',
-        top: interactive2Y,
-        zIndex: 100
+        width: 809,
+        height: 368,
+        top: 227,
+        left: 'calc(50vw - 404.5px)',
+        zIndex: 100,
     }
 }
 

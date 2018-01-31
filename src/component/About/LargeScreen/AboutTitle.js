@@ -19,16 +19,17 @@ const imgY = windowHeight * 63 / 2744;
 
 function AboutTitle(props) {
     return(
-        <img className="AboutTitle" src = {aboutImage} alt = 'aboutTitle' style = {{...styles.image,left:props.titleX,right:props.titleX,}}/>
+        <img className="AboutTitle" src = {aboutImage} alt = 'aboutTitle' style = {{...styles.image}}/>
     );
 }
 
 const styles = {
     image: {
         position: 'absolute',
-        width: imgWidth,
-        height:imgHeight,
-        top:imgY,
+        width: 32.75 + 'vw',
+        left: 33.625 +'vw',
+        height:'auto',
+        top: 5.25 + 'vw',
     }
 }
 

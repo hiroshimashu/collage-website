@@ -21,10 +21,10 @@ function Moon() {
 const styles = {
     moon: {
         position: 'absolute',
-        width: moonWidth,
+        width: 5.2 + 'vw',
         height: 'auto',
-        top: moonY,
-        left: moonX
+        top: 10.1 + 'vh',
+        left: 9.583 + 'vw'
     }
 }
 

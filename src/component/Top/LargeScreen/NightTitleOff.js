@@ -47,10 +47,10 @@ class NightTitleOff extends Component {
 const styles = {
     collage: {
         position: 'absolute',
-        width: titleWidth,
+        width: 44.6 + 'vw',
         height: 'auto',
-        top: titleY,
-        left: titleX,
+        top: 43.6 + 'vh',
+        left: 27.583 + 'vw',
         zIndex: 100
     }
 }
