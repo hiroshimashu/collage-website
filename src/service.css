@@ -1,366 +1,114 @@
 
-@media only screen and  (min-width: 1300px) {
-
-    /* service title */
-    .serviceTitle {
-        left: 61.472vh
+@media only screen and  (min-width: 1151px) {
+    .interactiveScreen1Wrapper {
+        position: absolute;
+        width: 1064px;
+        left:calc(50vw - 532px);
     }
 
-    /* service selector */
-    .selectWrapper {
-        left: 59.44vh;
-    }
-
-    /* mail */
-    .mail {
-        left: 75.256vh;
-    }
-
-    /* interactive screen */
     .introduce1{
-        left: 23.2vh;
+        width: 402px;
+        height:auto;
+        top: 63px;
+        left: 0;
     }
-
     .introduce2{
-        left: 36vh;
+        width: 309px;
+        height: 40px;
+        top: 200px;
+        left: 96px;
     }
 
     .iphone1 {
-        left: 91.2vh;
+        position: absolute;
+        width: 622px;
+        height: auto;
+        left: 442px;
     }
 
     .potato {
-        left: 100.933vh;
+        position: absolute;
+        width: 488px;
+        height: auto;
+        left: 508px;
+        top: 18px;
     }
-
     .play {
-        left: 128.26vh;
+        width: 79px;
+        height: 79px;
+        top: 121px;
+        left: 713px;
     }
 
-    .interactiveScreen2 {
-        left: 40.6vh
+    .mail {
+        width: 324px;
+        height:28px;
+        top: 91.86vh;
+        left:calc(50vw - 162px);
     }
-
-    /* selling plan */
-    .sellingMain {
-        left:75.6vh
-    }
-
-    .sellingTitle {
-        left:70.666vh
-    }
-
-    .sellingLeft{
-        left: 32.933vh
-    }
-
-    .sellingRight{
-        left:  131.06vh
-    }
-
-    .serviceScreen2Title {
-        left: 88.88vh
-    }
-
-    .contract {
-        left: 60.5328vh
-    }
-
-    .applyTitle {
-        left:  57.732vh
-    }
-
-    .operator {
-        left: 94vh
-    }
-    .orientationTitle {
-        left:  93.464vh
-    }
-    .newspaper {
-        left: 128.665vh
-    }
-    .complete{
-        left: 132vh
-    }
-    .applyDiscription{
-        left: 50.4vh
-    }
-    .orientationDiscription{
-        left: 85.456vh
-    }
-    .completeDiscription{
-        left: 121.732vh
-    }
-    .arrow {
-        left:171.2vh
-    }
-
-    .sample {
-        left:166.665vh
-    }
-
-    .price {
-        left:48.665vh
-    }
-
-    .serviceScreen4Title {
-        left:86.932vh
-    }
-    .feel1 {
-        left:31.0656vh
-    }
-    .feel2 {
-        left:124.665vh
-    }
-
-    .woman {
-        left:80vh
-    }
-    .man {
-        left: 108.665vh
-    }
-
-    .who1 {
-        left:77.732vh
-    }
-    .who2 {
-        left:106.4vh
-    }
-
-    /* logColle*/
-
-    .explanation {
-        left: 99.065vh;
-    }
-
-    #ytplayer {
-        left: 99.065vh;
-    }
-    .iphone {
-        left: 68.8vh;
-    }
-
-    .google {
-        left: 99.065vh;
-    }
-
-    .apple {
-        left: 119.536vh;
-    }
-
-    .whiteScreen {
-        left: 70.2656vh;
-    }
-
-    .log {
-        left: 74.665vh;
-    }
-    .logColleScreen2 {
-        left: 70.2656vh;
-    }
-    .logColleScreen3 {
-        left: 70.2656vh;
-    }
-    .logColleScreen4 {
-        left: 70.2656vh;
-    }
-    .logColleScreen5 {
-        left: 70.2656vh;
-    }
-    .logColleDots {
-        left:  66.4vh;
-    }
-
-    /* Line */
-    .characters {
-        left:44.932vh;
-    }
-    .line {
-        left:82.932vh;
-    }
-
 }
 
-
-
-@media only screen and  (max-width: 1299px) {
-    /* service title */
-    .serviceTitle {
-        left: 46.472vh
-    }
-
-    /* service selector */
-    .selectWrapper {
-        left: 43.44vh;
-    }
-
-    /* mail */
-    .mail {
-        left: 58.256vh;
-    }
-
+@media only screen and  (max-width: 1150px) {
 
     /* interactive screen */
+    .interactiveScreen1Wrapper {
+        position: absolute;
+        width: 851.2px;
+        left:calc(50vw - 425.6px);
+    }
+
+
     .introduce1{
-        left: 13.2vh;
+        width: 321.6px;
+        height:auto;
+        top: 43px;
+        left: 0;
     }
 
     .introduce2{
-        left: 26vh;
+        width: 247.2px;
+        height: auto;
+        top: 160px;
+        left: 74.2px;
     }
 
     .iphone1 {
-        left: 72.133vh;
+        position: absolute;
+        width: 497.6px;
+        height: auto;
+        left: 350px;
     }
 
     .potato {
-        left: 80.933vh;
+        position: absolute;
+        width: 390.4px;
+        height: auto;
+        left: 404px;
+        top: 13px
     }
 
     .play {
-        left: 108.26vh;
+        width:63.2px;
+        height:63.2px;
+        top: 96px;
+        left: 567.6px;
     }
 
-    .interactiveScreen2 {
-        left: 25.6vh
+    .mail {
+        width: 324px;
+        height:28px;
+        top: 91.86vh;
+        left:calc(50vw - 162px);
     }
-
-    /* selling plan */
-    .sellingMain {
-        left:55.6vh
-    }
-
-    .sellingTitle {
-        left:50.666vh
-    }
-
-    .sellingLeft{
-        left: 12.933vh
-    }
-
-    .sellingRight{
-        left:  111.06vh
-    }
-
-    .serviceScreen2Title {
-        left: 68.88vh
-    }
-
-    .contract {
-        left: 40.5328vh
-    }
-
-    .applyTitle {
-        left:  37.732vh
-    }
-
-    .operator {
-        left: 74vh
-    }
-
-    .orientationTitle {
-        left:  73.464vh
-    }
-    .newspaper {
-        left: 108.665vh
-    }
-    .complete{
-        left:112vh
-    }
-    .applyDiscription{
-        left: 30.4vh
-    }
-    .orientationDiscription{
-        left: 65.456vh
-    }
-    .completeDiscription{
-        left: 101.732vh
-    }
-    .arrow {
-        left:151.2vh
-    }
-
-    .sample {
-        left:146.665vh
-    }
-    .price {
-        left:28.665vh
-    }
-
-    .serviceScreen4Title {
-        left:66.932vh
-    }
-    .feel1 {
-        left:11.0656vh
-    }
-    .feel2 {
-        left:104.665vh
-    }
-
-    .woman {
-        left:60vh
-    }
-    .man {
-        left: 88.665vh
-    }
-
-    .who1 {
-        left:57.732vh
-    }
-    .who2 {
-        left:86.4vh
-    }
-
-    /* logColle */
-    .explanation {
-        left: 79.065vh;
-    }
-    #ytplayer {
-        left: 79.065vh;
-    }
-
-    .iphone {
-        left: 48.8vh;
-    }
-
-    .google {
-        left: 79.065vh;
-    }
-
-    .apple {
-        left: 99.536vh;
-    }
-    .whiteScreen {
-        left: 50.2656vh;
-    }
-
-    .log {
-        left: 54.665vh;
-    }
-
-    .logColleScreen2 {
-        left: 50.2656vh;
-    }
-    .logColleScreen3 {
-        left: 50.2656vh;
-    }
-    .logColleScreen4 {
-        left: 50.2656vh;
-    }
-    .logColleScreen5 {
-        left: 50.2656vh;
-    }
-    .logColleDots {
-        left:46.4vh;
-    }
-
-    /* Line */
-    .characters {
-        left:34.932vh;
-    }
-    .line {
-        left:72.932vh;
-    }
-
 }
+
+@media only screen and  (max-height: 710px) {
+    .mail {
+        width: 324px;
+        height:28px;
+        top: 110.86vh;
+        left:calc(50vw - 162px);
+    }
+}
+
 

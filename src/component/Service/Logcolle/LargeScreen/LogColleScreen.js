@@ -11,6 +11,7 @@ import Explanation1 from '../../../../static/explanation1.png';
 import Google from '../../../../static/googleplay.png';
 import Apple from '../../../../static/appstore.png';
 import Iphone from '../../../../static/Iphone_vertical.png';
+import '../../../../service4.css';
 
 const windowWidth = window.innerWidth;
 const windowHeight = window.innerHeight;
@@ -212,11 +213,7 @@ class LogColle extends Component {
 
 const styles = {
     wrapper: {
-        position: 'absolute',
-        width: 540,
-        height: 387,
-        top:232,
-        left: 'calc(50vw - 270px)'
+        position: 'absolute'
     },
 
     ex: {

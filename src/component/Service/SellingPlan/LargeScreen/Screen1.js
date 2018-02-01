@@ -5,7 +5,7 @@ import LeftTalk from '../../../../static/leftTalk.png';
 import RightTalk from '../../../../static/rightTalk.png';
 import { CSSTransition } from 'react-transition-group';
 import '../../../../index.css';
-import '../../../../service.css';
+import '../../../../service2.css';
 
 
 
@@ -94,17 +94,13 @@ class Screen1 extends Component {
         return(
             <div className = 'sellingPlanScreen1Wrapper'
                  style ={{
-                     position: 'absolute',
-                     width: 1023,
-                     height: 341,
-                     left: 'calc(50vw - 511.5px)',
-                     top: 222
+                     position: 'absolute'
                  }}
             >
-                <img src ={ SellingMain } className="sellingMain" style = {styles.main}/>
-                <img src ={ SellingTitle } className="sellingTitle" style = {{...styles.title}}/>
-                <img src ={ LeftTalk }  className = 'sellingLeft' style = {{...styles.left}}/>
-                <img src ={ RightTalk } className = 'sellingRight' style = {{...styles.right}}/>
+                <img src ={ SellingMain } className="sellingMain" style = {styles.main} />
+                <img src ={ SellingTitle } className="sellingTitle" style = {styles.title} />
+                <img src ={ LeftTalk }  className = 'sellingLeft' style = {styles.left} />
+                <img src ={ RightTalk } className = 'sellingRight' style ={styles.right}/>
             </div>
         );
     }
@@ -112,32 +108,16 @@ class Screen1 extends Component {
 
 const styles = {
     main: {
-        position: 'absolute',
-        width: 384,
-        height: 188,
-        top: 153,
-        left: 320
+        position: 'absolute'
     },
     title: {
-        position: 'absolute',
-        width: 436,
-        height: 89,
-        top: 0,
-        left: 283
+        position: 'absolute'
     },
     left: {
-        position: 'absolute',
-        width: 287,
-        height: 214,
-        top:47,
-        left: 0
+        position: 'absolute'
     },
     right: {
-        position: 'absolute',
-        width: 287,
-        height:214,
-        top: 89,
-        left: 736
+        position: 'absolute'
     }
 }
 

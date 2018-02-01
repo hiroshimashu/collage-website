@@ -64,26 +64,15 @@ class Iphone extends Component {
             <div className='iphoneWrapper'>
                 <img  className="iphone1" src={ iphone } style={{
                     position: 'absolute',
-                    top: 0,
-                    left: 442,
-                    width: '622px',
-                    height: '308px',
+                    top: 0
                 }}/>
                 <img  className="potato" src={ Potato } style={{
                     position: 'absolute',
-                    width: 488,
-                    height: 274,
-                    top: 18,
-                    left: 508,
                     zIndex: 1,
                 }}/>
                 <a href='http://collage-movie.hippy.jp/cooking/cooking.html' target="_blank">
                     <img  className = 'play' src={ Play } style={{
                         position: 'absolute',
-                        width: 79,
-                        height: 79,
-                        top: 121,
-                        left: 713,
                         zIndex: 2,
                     }} onClick={() => {
                         console.log('hello');

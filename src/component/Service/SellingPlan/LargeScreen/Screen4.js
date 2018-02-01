@@ -7,7 +7,7 @@ import who1 from '../../../../static/who1.png';
 import who2 from '../../../../static/who2.png';
 import Man from '../../../../static/man.svg';
 import Link from '../../../../static/link.png';
-import '../../../../service.css';
+import '../../../../service3.css';
 
 const windowWidth = window.innerWidth;
 const windowHeight = window.innerHeight;
@@ -66,14 +66,10 @@ class Screen4 extends Component {
     render() {
         return(
             <div className = 'sellingPlanScreen4' style = {{
-                position: 'absolute',
-                width: 1067,
-                height: 341,
-                top: 227,
-                left: 'calc(50vw - 533.5px)'
+                position: 'absolute'
             }}>
-                <img src = {Title} alt = 'title' style = {{...styles.title}} className="serviceScreen4Title"/>
-                <img src = {Feel1} alt = 'feel1' style = {{...styles.feel1}} className = 'feel1'/>
+                <img src = {Title} alt = 'title' style = {styles.title} className="serviceScreen4Title"/>
+                <img src = {Feel1} alt = 'feel1' style = {styles.feel1} className = 'feel1'/>
                 <img src = {Feel2} alt = 'feel2' style = {{...styles.feel2}} className = 'feel2'/>
                 <img src = {Woman} alt = 'woman' style = {{...styles.woman}} className = "woman" />
                 <img src = {who1}  alt = 'who1' style = {{...styles.who1}}   className = "who1"/>
@@ -87,60 +83,28 @@ class Screen4 extends Component {
 
 const styles = {
     feel1: {
-        position: 'absolute',
-        width: 351,
-        height: 314,
-        top: 19,
-        left:0
+        position: 'absolute'
     },
     feel2: {
-        position: 'absolute',
-        width:365,
-        height:314,
-        top:27,
-        left: 702
+        position: 'absolute'
     },
     title: {
-        position: 'absolute',
-        width:197,
-        height: 27,
-        top:0,
-        left: 417,
+        position: 'absolute'
     },
     woman: {
-        position: 'absolute',
-        width:85,
-        height: 118,
-        top:87,
-        left: 367
+        position: 'absolute'
     },
     man: {
-        position: 'absolute',
-        width: 85,
-        height: 118,
-        top: 87,
-        left: 582
+        position: 'absolute'
     },
     who1: {
-        position: 'absolute',
-        width:119,
-        height:41,
-        top: 230,
-        left: 350
+        position: 'absolute'
     },
     who2: {
-        position: 'absolute',
-        width: 119,
-        height:41,
-        top: 230,
-        left: 565
+        position: 'absolute'
     },
     link: {
-        position: 'absolute',
-        width: 292,
-        height:16,
-        top: 319,
-        left: 379
+        position: 'absolute'
     }
 
 }

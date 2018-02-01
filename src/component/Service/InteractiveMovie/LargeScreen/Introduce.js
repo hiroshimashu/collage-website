@@ -33,18 +33,7 @@ class Introduce extends Component {
 
     render() {
         return (
-            <div className="introduce1" style={{
-                position: 'absolute',
-                width:402,
-                height: 120,
-                top: 63,
-                left: 0
-            }}>
-                <img src={title1} alt='introduce1' />
-            </div>
-
-
-
+            <img src={title1} alt='introduce1' className="introduce1" style={{position: 'absolute'}}/>
         );
     }
 }

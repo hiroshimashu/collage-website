@@ -8,6 +8,7 @@ import Screen2 from './InteractiveScreen2';
 import { StyleRoot } from 'radium';
 import { CSSTransition } from 'react-transition-group';
 import '../../../../index.css';
+import '../../../../service.css';
 
 const windowWidth = window.innerWidth;
 const windowHeight = 750 / 1200  * windowWidth;
@@ -100,11 +101,9 @@ class InteractiveScreen extends Component {
         return(
             <StyleRoot>
                 <Slide in = {this.state.page}>
-                    <div className = 'serviceScreen1Wrapper' style = {{
+                    <div className = 'interactiveScreen1Wrapper' style = {{
                         position: 'absolute',
-                        width: 1064,
                         height: '308px',
-                        left:'calc(50vw - 532px)',
                         top: '271px'
                     }}>
                         <Iphone />

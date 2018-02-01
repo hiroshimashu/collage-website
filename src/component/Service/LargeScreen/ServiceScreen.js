@@ -11,6 +11,7 @@ import LogColle from '../Logcolle/LargeScreen/LogColleScreen';
 import LineStamp from '../LineStamp/LargeScreen/LineStampScreen';
 import Mail from '../../../static/mail.png';
 import BackgroundParticle from './BackroundParticle';
+import '../../../service.css';
 
 
 const windowWidth = window.innerWidth;
@@ -65,7 +66,7 @@ class ServiceScreen extends Component {
         return(
             <Router>
                 <MuiThemeProvider>
-                    <div class = 'serviceScreenWrapper' style = {{position: 'relative', width: 100 + 'vw', height: 100 + 'vh'}}>
+                    <div className = 'serviceScreenWrapper' style = {{position: 'relative', width: 100 + 'vw', height: 100 + 'vh'}}>
                         <BackgroundParticle />
                         <SNS />
                         <ServiceTitle titleX = {this.state.titleX} />
@@ -102,7 +103,7 @@ const styles = {
         width: 324,
         height:28,
         top: 91.86 + 'vh',
-        left: 'calc(50vw - 162px)'
+        left:'calc(50vw - 162px)',
     }
 }
 

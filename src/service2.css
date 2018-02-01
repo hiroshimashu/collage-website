@@ -1,0 +1,71 @@
+@media only screen and  (min-width: 1150px) {
+    .sellingPlanScreen1Wrapper {
+        width: 1023px;
+        height: 341px;
+        left: calc(50vw - 511.5px);
+        top: 222px;
+    }
+    .sellingMain {
+        width: 384px;
+        height:auto;
+        left: 320px;
+        top: 153px;
+    }
+    .sellingTitle {
+        width:436px;
+        height:89px;
+        top:0;
+        left:283px;
+    }
+    .sellingLeft {
+        width: 287px;
+        height: 214px;
+        top:47px;
+        left: 0;
+    }
+
+    .sellingRight {
+        width: 287px;
+        height:214px;
+        top: 89px;
+        left: 736px;
+    }
+
+}
+
+@media only screen and  (max-width: 1149px) {
+    .sellingPlanScreen1Wrapper {
+        width: 818.4px;
+        height: 341px;
+        left: calc(50vw - 409.2px);
+        top: 222px;
+    }
+
+    .sellingMain {
+        width: 307.2px;
+        height: auto;
+        left:255.6px;
+        top: 123px;
+    }
+    .sellingTitle {
+        width:348.8px;
+        height:auto;
+        top:0;
+        left:235.1px;
+    }
+    .sellingLeft {
+        width: 229.6px;
+        height:auto;
+        top:27px;
+        left: 0;
+    }
+
+    .sellingRight {
+        width: 229.6px;
+        height:auto;
+        top: 69px;
+        left: 562.8px;
+    }
+}
+
+

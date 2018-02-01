@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Feature from '../../../../static/FEATURE.png';
-import '../../../../service.css';
+import '../../../../service4.css';
 const windowWidth = window.innerWidth;
 const windowHeight = window.innerHeight;
 const interactive2Width = windowWidth * 0.674;
@@ -49,12 +49,7 @@ class InteractiveScreen2 extends Component {
 
 const styles = {
     img: {
-        position: 'absolute',
-        width: 809,
-        height: 368,
-        top: 227,
-        left: 'calc(50vw - 404.5px)',
-        zIndex: 100,
+        position: 'absolute'
     }
 }
 

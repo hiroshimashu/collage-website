@@ -36,11 +36,7 @@ class Introduce2 extends Component {
     render() {
         return (
             <img src={title2}  className = 'introduce2' style={{
-                position: 'absolute',
-                width: 309,
-                height: 40,
-                top: 200,
-                left: 96
+                position: 'absolute'
             }} />
 
         );

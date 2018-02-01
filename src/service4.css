@@ -1,0 +1,60 @@
+@media only screen and  (min-height: 711px) {
+    .interactiveScreen2 {
+        width:809px;
+        height:368px;
+        top: 227px;
+        left: calc(50vw - 404.5px);
+        zIndex: 100;
+    }
+
+    .logColleScreenWrapper {
+        width: 540px;
+        height: 387px;
+        top:232px;
+        left:calc(50vw - 270px);
+    }
+
+    .characters {
+        width: 731px;
+        height:311px;
+        top: 228px;
+        left: calc(50vw - 365.5px);
+    }
+
+    .line {
+        width: 157px;
+        height: 46px;
+        top:592px;
+        left: calc(50vw - 78.5px);
+    }
+}
+
+
+@media only screen and  (max-height: 710px) {
+    .interactiveScreen2 {
+        width:809px;
+        height:360px;
+        top: 177px;
+        left: calc(50vw - 404.5px);
+        zIndex: 100;
+    }
+    .logColleScreenWrapper {
+        width: 540px;
+        height: 387px;
+        top:177px;
+        left:calc(50vw - 270px);
+    }
+    .characters {
+        width: 731px;
+        height:311px;
+        top: 177px;
+        left: calc(50vw - 365.5px);
+    }
+
+    .line {
+        width: 157px;
+        height: 46px;
+        top:541px;
+        left: calc(50vw - 78.5px);
+    }
+}

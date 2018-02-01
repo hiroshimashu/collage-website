@@ -1,0 +1,117 @@
+@media only screen and (min-width: 1150px) {
+   .sellingPlanScreen4 {
+       width: 1067px;
+       height: 341px;
+       top: 227px;
+       left: calc(50vw - 533.5px)
+   }
+
+    .serviceScreen4Title {
+        width:197px;
+        height: 27px;
+        top:0;
+        left: 417px;
+    }
+
+    .feel1 {
+        width: 351px;
+        height: 314px;
+        top: 19px;
+        left:0
+    }
+    .feel2 {
+        width:365px;
+        height:314px;
+        top:27px;
+        left: 702px;
+    }
+
+    .woman {
+        width:85px;
+        height: 118px;
+        top:87px;
+        left: 367px;
+    }
+    .man {
+        width: 85px;
+        height: 118px;
+        top: 87px;
+        left: 582px;
+    }
+    .who1{
+        width:119px;
+        height:41px;
+        top:230px;
+        left:350px;
+    }
+    .who2{
+        width:119px;
+        height:41px;
+        top:230px;
+        left:565px;
+    }
+    .link {
+        width: 292px;
+        height:16px;
+        top: 319px;
+        left: 379px;
+    }
+}
+
+@media only screen and (max-width: 1149px) {
+    .sellingPlanScreen4 {
+        width: 853.60px;
+        height: 341px;
+        top: 227px;
+        left: calc(50vw - 426.8px)
+    }
+
+    .serviceScreen4Title {
+        width:157.6px;
+        height: auto;
+        top:0;
+        left: 348px;
+    }
+    .feel1 {
+        width: 280.8px;
+        height: auto;
+        top: 19px;
+        left:0
+    }
+    .feel2 {
+        width:292px;
+        height:auto;
+        top:27px;
+        left: 563.6px;
+    }
+    .woman {
+        width:68px;
+        height:auto;
+        top:87px;
+        left: 290.8px;
+    }
+    .man {
+        width: 68px;
+        height: auto;
+        top: 87px;
+        left: 495.6px;
+    }
+    .who1{
+        width:95.2px;
+        height:auto;
+        top:200px;
+        left:277.2px;
+    }
+    .who2{
+        width:95.2px;
+        height:auto;
+        top:200px;
+        left:482px;
+    }
+    .link {
+        width: 233.6px;
+        height:auto;
+        top: 289px;
+        left: 310px;
+    }
+}
